@@ -1,0 +1,21 @@
+{
+  "welcome": "Welcome en-US",
+  "home_page_title": "Home page title",
+  "home_page_subtitle": "Home page subtitle",
+  "login_button": "Login button",
+  "logout_button": "Logout button",
+  "profile_greeting": "Profile greeting",
+  "footer_text": "Footer text",
+  "error_404_title": "Error 404 title",
+  "error_404_message": "Error 404 message",
+  "contact_us": "Contact us",
+  "learn_more": "Learn more",
+
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
+  },
+  "Manifest": {
+    "name": "next-intl example"
+  }
+}

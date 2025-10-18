@@ -1,0 +1,21 @@
+{
+  "welcome": "Bem-vindo pt-BR",
+  "home_page_title": "Página Inicial",
+  "home_page_subtitle": "Este é um exemplo de página inicial",
+  "login_button": "Entrar",
+  "logout_button": "Sair",
+  "profile_greeting": "Olá, {{name}}!",
+  "footer_text": "© 2025 SeuSite. Todos os direitos reservados.",
+  "error_404_title": "Página não encontrada",
+  "error_404_message": "Desculpe, a página que você procura não existe.",
+  "contact_us": "Fale conosco",
+  "learn_more": "Saiba mais",
+
+  "Error": {
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+    "title": "Something went wrong!"
+  },
+  "Manifest": {
+    "name": "next-intl example"
+  }
+}
