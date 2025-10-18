@@ -1,3 +1,10 @@
+// Import styles of packages that you've installed.
+// All packages except `@mantine/hooks` require styles imports
+import { ColorSchemeScript, MantineProvider, mantineHtmlProps } from '@mantine/core';
+import "./globals.css";
+import '@mantine/core/styles.css';
+import AppShellClient from "@/components/layout/AppShellClient";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -23,9 +30,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" {...mantineHtmlProps}>
+      <head>
+        <ColorSchemeScript defaultColorScheme="auto" />
+      </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+        <MantineProvider>
+          <AppShellClient>{children}</AppShellClient>
+        </MantineProvider>
       </body>
     </html>
   );
