@@ -1,4 +1,8 @@
 {
+  "LocaleLayout": {
+    "title": "next-intl example title"
+  },
+
   "welcome": "Welcome en-US",
   "home_page_title": "Home page title",
   "home_page_subtitle": "Home page subtitle",
@@ -10,6 +14,11 @@
   "error_404_message": "Error 404 message",
   "contact_us": "Contact us",
   "learn_more": "Learn more",
+
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, en_US {en-US English} en_GB {en-GB English} pt_BR {pt-BR Portuguese} pt_PT {pt-PT Portuguese} other {}}"
+  },
 
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",

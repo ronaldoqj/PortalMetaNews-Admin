@@ -3,6 +3,7 @@
 import { AppShell, Burger, MantineProvider, Group, ScrollArea, NavLink } from "@mantine/core";
 import { useDisclosure } from '@mantine/hooks';
 import React from "react";
+import LocaleSwitcher from '../layout/header/LocaleSwitcher';
 
 export default function AppShellClient({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
@@ -16,7 +17,8 @@ export default function AppShellClient({ children }: { children: React.ReactNode
       <AppShell.Header>
         <Group h="100%" px="md">
           <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-          Header
+            Header
+          <LocaleSwitcher />
         </Group>
       </AppShell.Header>
       <AppShell.Navbar>
