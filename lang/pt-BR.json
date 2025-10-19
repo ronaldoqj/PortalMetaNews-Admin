@@ -1,4 +1,7 @@
 {
+  "LocaleLayout": {
+    "title": "next-intl exemplo titulo"
+  },
   "welcome": "Bem-vindo pt-BR",
   "home_page_title": "Página Inicial",
   "home_page_subtitle": "Este é um exemplo de página inicial",
@@ -10,6 +13,11 @@
   "error_404_message": "Desculpe, a página que você procura não existe.",
   "contact_us": "Fale conosco",
   "learn_more": "Saiba mais",
+
+  "LocaleSwitcher": {
+    "label": "Trocar Idioma",
+    "locale": "{locale, select, en_US {en-US Inglês} en_GB {en-GB Inglês} pt_BR {pt-BR Português} pt_PT {pt-PT Português} other {}}"
+  },
 
   "Error": {
     "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
