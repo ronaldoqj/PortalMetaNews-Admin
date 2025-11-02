@@ -40,10 +40,10 @@ export default function HomeGrid(props: {title?: string}) {
 
   const items = mockdata.map((item) => (
     <UnstyledButton key={item.title} className={classes.item}>
-      <item.icon color={theme.colors[item.color][6]} size={32} />
-      <Text size="xs" mt={7}>
-        {item.title}
-      </Text>
+        <item.icon color={theme.colors[item.color][6]} size={32} />
+        <Text size="xs" mt={7}>
+          {item.title}
+        </Text>
     </UnstyledButton>
   ));
 
@@ -55,7 +55,7 @@ export default function HomeGrid(props: {title?: string}) {
           + 21 other services
         </Anchor>
       </Group>
-      <SimpleGrid cols={3} mt="md">
+      <SimpleGrid cols={3} mt="md" className={classes.itemCard}>
         {items}
       </SimpleGrid>
     </Card>

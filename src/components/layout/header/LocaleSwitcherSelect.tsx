@@ -38,21 +38,24 @@ export default function LocaleSwitcherSelect({
   }
 
   return (
-    <label
-      className={clsx(
-        'relative text-gray-400',
-        isPending && 'transition-opacity [&:disabled]:opacity-30'
-      )}
-    >
-      <p className="sr-only">{label}</p>
-      <select
-        className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
-        defaultValue={defaultValue}
-        disabled={isPending}
-        onChange={onSelectChange}
-      >
-        {children}
-      </select>
-    </label>
+    <div>
+      <table>
+        <tbody>
+          <tr>
+            <td>{label}</td>
+            <td>
+              <select
+                className="inline-flex appearance-none bg-transparent py-3 pl-2 pr-6"
+                defaultValue={defaultValue}
+              disabled={isPending}
+              onChange={onSelectChange}
+            >
+              {children}
+            </select>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
   );
 }
