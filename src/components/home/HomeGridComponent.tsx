@@ -22,6 +22,8 @@ import {
   useMantineTheme,
 } from '@mantine/core';
 import classes from './HomeGrid.module.scss';
+import classesCss from './HomeGrid.module.css';
+import cx from 'clsx';
 
 const mockdata = [
   { title: 'Credit cards', icon: IconCreditCard, color: 'violet' },
@@ -39,11 +41,11 @@ export default function HomeGrid(props: {title?: string}) {
   const theme = useMantineTheme();
 
   const items = mockdata.map((item) => (
-    <UnstyledButton key={item.title} className={classes.item}>
-      <item.icon color={theme.colors[item.color][6]} size={32} />
-      <Text size="xs" mt={7}>
-        {item.title}
-      </Text>
+    <UnstyledButton key={item.title} className={cx(classes.item, classesCss.item)}>
+        <item.icon color={theme.colors[item.color][6]} size={32} />
+        <Text size="xs" mt={7}>
+          {item.title}
+        </Text>
     </UnstyledButton>
   ));
 
@@ -55,7 +57,7 @@ export default function HomeGrid(props: {title?: string}) {
           + 21 other services
         </Anchor>
       </Group>
-      <SimpleGrid cols={3} mt="md">
+      <SimpleGrid cols={3} mt="md" className={classes.itemCard}>
         {items}
       </SimpleGrid>
     </Card>

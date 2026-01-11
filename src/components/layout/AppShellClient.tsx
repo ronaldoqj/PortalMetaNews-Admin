@@ -1,9 +1,11 @@
 "use client";
 
-import { AppShell, Burger, MantineProvider, Group, ScrollArea, NavLink } from "@mantine/core";
-import { useDisclosure } from '@mantine/hooks';
 import React from "react";
+import { AppShell, Burger, Group, ScrollArea, NavLink } from "@mantine/core";
+import { useDisclosure } from '@mantine/hooks';
 import LocaleSwitcher from '../layout/header/LocaleSwitcher';
+import style from "./header.module.scss";
+import { ThemeToggle } from "./header/ToogleTheme";
 
 export default function AppShellClient({ children }: { children: React.ReactNode }) {
   const [opened, { toggle }] = useDisclosure();
@@ -16,14 +18,25 @@ export default function AppShellClient({ children }: { children: React.ReactNode
     >
       <AppShell.Header>
         <Group h="100%" px="md">
-          <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
-            Header
-          <LocaleSwitcher />
+          <section className={style.header}>
+            <div>
+              <Burger opened={opened} onClick={toggle} hiddenFrom="sm" size="sm" />
+                Header
+            </div>
+            <div>
+              <LocaleSwitcher />
+            </div>
+            <div>
+              <ThemeToggle />
+            </div>
+          </section>
         </Group>
       </AppShell.Header>
       <AppShell.Navbar>
         <AppShell.Section p="md">Navbar header</AppShell.Section>
         <AppShell.Section grow my="md" component={ScrollArea} px="md">
+          <NavLink href="/" label="Home" />
+          <NavLink href="/news" label="News" />
           <p>60 links in a scrollable section:</p>
           {Array(60)
             .fill(0)
@@ -39,9 +52,7 @@ export default function AppShellClient({ children }: { children: React.ReactNode
         <AppShell.Section p="md">Navbar footer – always at the bottom</AppShell.Section>
       </AppShell.Navbar>
       <AppShell.Main>
-        <MantineProvider>
           {children}
-        </MantineProvider>
       </AppShell.Main>
     </AppShell>
   );

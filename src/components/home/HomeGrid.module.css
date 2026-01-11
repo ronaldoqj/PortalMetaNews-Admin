@@ -1,0 +1,9 @@
+.item {
+    @mixin light {
+      background-color: var(--mantine-color-background-1);
+    }
+
+    @mixin dark {
+      background-color: var(--mantine-color-background-8);
+    }
+}

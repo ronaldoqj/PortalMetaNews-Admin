@@ -1,27 +1,66 @@
 .card {
   background-color: light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-6));
-}
 
-.title {
-  font-family: Outfit, var(--mantine-font-family);
-  font-weight: 500;
-}
+  .itemCard {
+    :hover {
+      transform: scale(1.05);
+      transition: 0.3s all ease-in-out;
+      border: solid 1px var(--mantine-color-gray-4);
+      
+      svg,
+      p {
+        border:none;
+        transform: scale(1);
+      }
+    }
 
-.item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border-radius: var(--mantine-radius-md);
-  height: 90px;
-  background-color: var(--mantine-color-body);
-  transition:
-    box-shadow 150ms ease,
-    transform 100ms ease;
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: var(--mantine-radius-md);
+      height: 90px;
+      // background-color: var(--mantine-color-background-1);
+      
 
-  @mixin hover {
-    box-shadow: var(--mantine-shadow-md);
-    transform: scale(1.05);
+      transition: box-shadow 150ms ease, transform 100ms ease;
+
+      @mixin hover {
+        box-shadow: var(--mantine-shadow-md);
+        transform: scale(1.05);
+      }  
+
+      /**  ----------------------------------------------------- */
+      /**  this media query only work to definitions of browsers */
+      /**  ----------------------------------------------------- */
+      // @media (prefers-color-scheme: light) {
+      //   ToDo: Agregar estilos para modo claro
+      // }
+
+      // /* Estilos para Dark Mode */
+      // @media (prefers-color-scheme: dark) {
+      //     ToDo: Agregar estilos para modo oscuro
+      // }  
+
+      .title {
+        font-family: Outfit, var(--mantine-font-family);
+        font-weight: 500;
+      }
+    }
+    
   }
 }
+
+// html[data-mantine-color-scheme="light"] {
+//   .item {
+//     background-color: var(--mantine-color-background-0);
+//   }
+// }
+
+// html[data-mantine-color-scheme="dark"] {
+//   .item {
+//     background-color: var(--mantine-color-background-1);
+//   }
+// }

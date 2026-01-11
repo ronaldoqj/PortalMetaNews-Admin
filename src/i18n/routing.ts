@@ -16,12 +16,12 @@ export const routing = defineRouting({
     {
       domain: 'portalmetanews.com.br',
       defaultLocale: 'pt-BR',
-      locales: ['pt-BR', 'pt-PT']
+      locales: ['pt-BR']
     }, // Brasil / Portugal
     {
       domain: 'portalmetanews.pt',
       defaultLocale: 'pt-PT',
-      locales: ['pt-PT', 'pt-BR']
+      locales: ['pt-PT']
     } // Portugal / Brasil
   ],
   
