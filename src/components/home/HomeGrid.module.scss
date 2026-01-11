@@ -23,6 +23,8 @@
       border-radius: var(--mantine-radius-md);
       height: 90px;
       // background-color: var(--mantine-color-background-1);
+      
+
       transition: box-shadow 150ms ease, transform 100ms ease;
 
       @mixin hover {
@@ -51,14 +53,14 @@
   }
 }
 
-html[data-mantine-color-scheme="light"] {
-  .item {
-    background-color: var(--mantine-color-background-0);
-  }
-}
+// html[data-mantine-color-scheme="light"] {
+//   .item {
+//     background-color: var(--mantine-color-background-0);
+//   }
+// }
 
-html[data-mantine-color-scheme="dark"] {
-  .item {
-    background-color: var(--mantine-color-background-1);
-  }
-}
+// html[data-mantine-color-scheme="dark"] {
+//   .item {
+//     background-color: var(--mantine-color-background-1);
+//   }
+// }

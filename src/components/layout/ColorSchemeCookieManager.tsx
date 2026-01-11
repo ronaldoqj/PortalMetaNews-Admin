@@ -17,8 +17,6 @@ export const colorSchemeManager: MantineColorSchemeManager = {
     
     // Retorna o valor do cookie ('light' ou 'dark') ou 'light' como fallback
     const scheme = match ? (match[2] as MantineColorScheme) : 'light'; 
-    console.log('wwwwwwwwwwwwwww scheme: ', scheme);
-    
     return scheme;
   },
   
@@ -33,6 +31,8 @@ export const colorSchemeManager: MantineColorSchemeManager = {
   // podemos deixar os métodos de subscrição vazios ou simplesmente retornar uma função vazia,
   // a menos que você tenha uma loja de estado global (como Redux ou Zustand) gerenciando o tema.
   subscribe: (onUpdate) => {
+    console.log('onUpdateColorSchemeManager', onUpdate);
+    
     // Você pode adicionar um listener aqui se estiver usando um estado global.
     // Para persistência via cookie, isso geralmente não é estritamente necessário para o fluxo básico.
     // Retorna uma função de unsubscribe vazia

@@ -35,6 +35,8 @@ export default function AppShellClient({ children }: { children: React.ReactNode
       <AppShell.Navbar>
         <AppShell.Section p="md">Navbar header</AppShell.Section>
         <AppShell.Section grow my="md" component={ScrollArea} px="md">
+          <NavLink href="/" label="Home" />
+          <NavLink href="/news" label="News" />
           <p>60 links in a scrollable section:</p>
           {Array(60)
             .fill(0)

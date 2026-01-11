@@ -1,16 +1,19 @@
 'use client';
 
 import React from 'react';
-import { IconMoon, IconSun } from '@tabler/icons-react';
+import { IconMoon, IconSun, IconDeviceDesktop  } from '@tabler/icons-react';
 import { useMantineColorScheme } from '@mantine/core';
 
 export function ThemeToggle() {
-  const { colorScheme, toggleColorScheme } = useMantineColorScheme();
-  console.log("Current color scheme:", colorScheme);
-  console.log("Current color toggleColorScheme:", toggleColorScheme);
-  const setTheme = (theme: string) => {
+  const { setColorScheme } = useMantineColorScheme();
+
+  const setTheme = (theme: 'dark' | 'light' | 'auto') => {
     document.cookie = `theme=${theme}; path=/; max-age=${60 * 60 * 24 * 365}; SameSite=Lax`;
-    window.location.reload();
+    if (setColorScheme) {
+      setColorScheme(theme);
+    } else {
+      window.location.reload();
+    }
   };
 
   return (
@@ -20,6 +23,9 @@ export function ThemeToggle() {
       </button>
       <button onClick={() => setTheme('light')}>
         <IconSun stroke={1.5} />
+      </button>
+      <button onClick={() => setTheme('auto')}>
+        <IconDeviceDesktop stroke={1.5} />
       </button>
     </div>
   );

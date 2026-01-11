@@ -53,7 +53,9 @@ export default async function LocaleLayout({
       {/* <body className={`${geistSans.variable} ${geistMono.variable}`}> */}
       <body>
         <NextIntlClientProvider>
-          <MantineProvider theme={selectedTheme} forceColorScheme={currentThemeName} colorSchemeManager={colorSchemeManager}>
+          <MantineProvider theme={selectedTheme}
+           // forceColorScheme={currentThemeName}
+           colorSchemeManager={colorSchemeManager}>
             <AppShellClient>{children}</AppShellClient>
           </MantineProvider>
         </NextIntlClientProvider>

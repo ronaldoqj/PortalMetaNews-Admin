@@ -104,7 +104,15 @@ export class LayoutHelper {
     const cookieStore = await cookies();
     const themeCookie = cookieStore.get("theme");
 
-    return themeCookie?.value === 'dark' ? 'dark' : 'light';
+    // return themeCookie?.value === 'dark' ? 'dark' : 'light';
+    switch (themeCookie?.value) {
+      case 'dark':
+        return 'dark';
+      case 'light':
+        return 'light';
+      default:
+        return 'auto';
+    }
   }
 
   static getThemeFromString(theme: string) {
