@@ -1,0 +1,13 @@
+# Only what the image is built from reaches the build: never local settings (.env*), dependencies, outputs or tests.
+*
+!package.json
+!package-lock.json
+!next.config.ts
+!tsconfig.json
+!tsconfig.build.json
+!messages
+!content
+!public
+!src
+**/*.test.ts
+**/*.test.tsx

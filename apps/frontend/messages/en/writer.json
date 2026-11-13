@@ -1,0 +1,136 @@
+{
+  "Writer": {
+    "title": "AI writer",
+    "newConversation": "New article with AI",
+    "untitled": "Untitled conversation",
+    "hero": {
+      "title": "Write an article with AI",
+      "intro": "Describe the story with the facts you have. The AI writes the article, prepares the Portuguese and English versions, suggests the section, tags and SEO, and creates a cover image. Then turn the proposal into a draft in one click.",
+      "tipsTitle": "What to include in the brief",
+      "tips": [
+        "The facts: who, what, when, where and why.",
+        "Numbers, dates and names exactly as they must appear.",
+        "Quotes in quotation marks, with who said them.",
+        "Sources and links the newsroom has already checked."
+      ],
+      "examples": "Examples to start with",
+      "samples": [
+        "The city opened a 5 km linear park along the river today, with a cycle path and sports courts. The works cost R$ 12 million and took 18 months. The mayor said the park \"gives the river back to the city\".",
+        "Write a short note: the city library extends its opening hours from Monday, from 8 am to 10 pm, Saturdays included.",
+        "Write an explanatory article about the launch of a university satellite that will monitor wildfires, built by 40 students over three years."
+      ]
+    },
+    "list": {
+      "label": "Conversations",
+      "new": "New conversation",
+      "search": "Search conversations",
+      "empty": "No conversations yet.",
+      "noResults": "No conversation found.",
+      "rename": "Rename",
+      "title": "Title",
+      "renamed": "Conversation renamed.",
+      "actions": "Actions of the conversation {title}",
+      "linked": "Linked to an article"
+    },
+    "remove": {
+      "title": "Delete conversation",
+      "description": "The conversation “{title}” and its proposals will be deleted. Drafts already created and generated images stay in the newsroom.",
+      "done": "Conversation deleted."
+    },
+    "options": {
+      "label": "Writing options",
+      "language": "Writing language",
+      "languages": {
+        "pt": "Portuguese",
+        "en": "English"
+      },
+      "tone": "Tone",
+      "tones": {
+        "neutral": "Neutral (hard news)",
+        "explanatory": "Explanatory",
+        "analytical": "Analytical",
+        "light": "Light"
+      },
+      "length": "Length",
+      "lengths": {
+        "short": "Short (~250 words)",
+        "medium": "Medium (~500 words)",
+        "long": "Long (~900 words)"
+      },
+      "image": "Generate a cover image"
+    },
+    "composer": {
+      "label": "Article brief",
+      "placeholder": "Describe the story: facts, numbers, quotes and sources. Or ask for changes to the last proposal…",
+      "send": "Send",
+      "stop": "Stop",
+      "hint": "Ctrl + Enter sends. The AI uses only what you provide; whatever is missing appears as [to confirm: …].",
+      "count": "{count} / {max}"
+    },
+    "stages": {
+      "label": "Progress",
+      "writing": "Writing",
+      "structuring": "Preparing PT and EN",
+      "illustrating": "Creating the cover"
+    },
+    "stopped": "Stopped",
+    "you": "You",
+    "assistant": "Writer",
+    "linkedNews": "Linked article",
+    "openLinked": "Open the linked article",
+    "status": {
+      "local": "Local simulation mode: without an AI provider configured, the writer builds the draft from your brief, marks translations with [EN]/[PT] and draws an abstract illustration. No data leaves the server.",
+      "configure": "Configure artificial intelligence",
+      "unavailable": "The writer is unavailable",
+      "noImages": "The current provider does not generate images: proposals will have no cover."
+    },
+    "proposal": {
+      "title": "Article proposal",
+      "section": "Suggested section",
+      "noSection": "No section suggested",
+      "tags": "Tags",
+      "seo": "SEO",
+      "seoTitle": "Search engine title",
+      "seoDescription": "Search engine description",
+      "caption": "Cover caption",
+      "covers": "Cover",
+      "noCover": "No cover image",
+      "chooseCover": "Use this image as the cover",
+      "chosen": "Chosen cover",
+      "aiImage": "AI-generated image",
+      "create": "Create draft",
+      "creating": "Creating draft…",
+      "applyLinked": "Apply to the linked article",
+      "applyLinkedHint": "Replaces the linked article's title, subtitle, text, SEO, tags and cover (the revision history keeps the previous version).",
+      "applied": "Draft created.",
+      "appliedLinked": "Article updated.",
+      "open": "Open draft",
+      "cannotWrite": "Your account does not create articles; ask an editor to use this proposal.",
+      "illustrate": "Generate another image",
+      "illustrateTitle": "Generate another cover image",
+      "illustratePrompt": "Image description (English works best)",
+      "illustrating": "Generating the image… it may take up to two minutes.",
+      "illustrated": "New image added to the cover options.",
+      "article": "Written text",
+      "showArticle": "Show the text as written",
+      "hideArticle": "Hide the written text"
+    },
+    "errors": {
+      "ai_unconfigured": "No AI provider is configured. Set a key in Settings → Artificial intelligence.",
+      "ai_disabled": "Artificial intelligence is turned off in the panel's settings.",
+      "ai_key_rejected": "The provider rejected the configured API key.",
+      "ai_provider_failed": "The AI provider did not answer. Try again in a moment.",
+      "ai_images_unavailable": "The current provider does not generate images.",
+      "answer_in_progress": "An answer is still being written in this conversation.",
+      "brief_invalid": "Write the brief (up to 12,000 characters).",
+      "structure_failed": "The text was written, but it could not be prepared in PT and EN. Ask again or adjust the brief.",
+      "image_failed": "The article was prepared, but the cover image could not be generated.",
+      "interrupted": "The answer was interrupted.",
+      "proposal_missing": "This answer has no proposal to apply.",
+      "writer_options_invalid": "Invalid writing options.",
+      "failed": "It could not be completed."
+    },
+    "toBottom": "Go to the end",
+    "forbidden": "Your account may not use the AI writer."
+  }
+}

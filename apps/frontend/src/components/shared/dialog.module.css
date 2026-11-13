@@ -1,0 +1,53 @@
+.viewport {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Flex items default to `min-width: auto`, so one wide descendant would widen the whole dialog. */
+.viewport > * {
+  min-width: 0;
+}
+
+/*
+ * Mantine sets `overflow-y: auto` on the dialog, which makes the horizontal axis scrollable as well:
+ * a dialog never scrolls sideways, whatever its content (long text, zoom, injected elements).
+ */
+.content {
+  overflow-x: hidden;
+}
+
+.header {
+  flex-shrink: 0;
+}
+
+.body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  padding: 0;
+}
+
+.scrollContent {
+  flex: 1;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--mb-padding, var(--mantine-spacing-md));
+}
+
+.footer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: var(--mantine-spacing-sm);
+  flex-shrink: 0;
+  padding: var(--mb-padding, var(--mantine-spacing-md));
+  border-top: 1px solid var(--mantine-color-default-border);
+}
+
+.footer > * {
+  width: 100%;
+  min-width: 0;
+}

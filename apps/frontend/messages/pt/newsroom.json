@@ -1,0 +1,510 @@
+{
+  "News": {
+    "title": "Notícias",
+    "description": "Tudo o que a redação escreve, do rascunho à publicação, nos dois idiomas.",
+    "create": "Nova notícia",
+    "createWithAi": "Criar com IA",
+    "creating": "Criando o rascunho…",
+    "cannotCreate": "Seu perfil não cria notícias.",
+    "untitled": "Sem título",
+    "breaking": "Urgente",
+    "featured": "Destaque",
+    "aiAssisted": "IA",
+    "aiAssistedHint": "Criada ou ajudada pelo redator com IA",
+    "localeOn": "Publicada em {locale}",
+    "localeOff": "Não publicada em {locale}",
+    "empty": "Nenhuma notícia ainda",
+    "emptyFiltered": "Nenhuma notícia com estes filtros",
+    "emptyHint": "Crie uma notícia ou peça um rascunho ao redator com IA.",
+    "count": "{count, plural, =0 {Nenhuma notícia} one {# notícia} other {# notícias}}",
+    "status": {
+      "draft": "Rascunho",
+      "review": "Em revisão",
+      "scheduled": "Agendada",
+      "published": "Publicada",
+      "archived": "Arquivada"
+    },
+    "tabs": {
+      "all": "Todas ({count})",
+      "draft": "Rascunhos ({count})",
+      "review": "Em revisão ({count})",
+      "scheduled": "Agendadas ({count})",
+      "published": "Publicadas ({count})",
+      "archived": "Arquivadas ({count})"
+    },
+    "filters": {
+      "search": "Buscar pelo título",
+      "category": "Editoria",
+      "sort": "Ordenar por",
+      "mine": "Só as minhas"
+    },
+    "sort": {
+      "updated": "Última edição",
+      "published": "Publicação",
+      "views": "Leituras"
+    },
+    "columns": {
+      "title": "Notícia",
+      "status": "Situação",
+      "category": "Editoria",
+      "author": "Autor",
+      "date": "Data",
+      "views": "Leituras",
+      "cover": "Capa"
+    },
+    "dates": {
+      "published": "publicada",
+      "scheduled": "agendada para",
+      "updated": "editada"
+    },
+    "actions": {
+      "edit": "Editar",
+      "open": "Abrir",
+      "delete": "Excluir",
+      "submit": "Enviar para revisão",
+      "return": "Devolver para rascunho",
+      "publish": "Publicar agora",
+      "schedule": "Agendar publicação…",
+      "unpublish": "Despublicar",
+      "archive": "Arquivar",
+      "restore": "Restaurar como rascunho"
+    },
+    "confirm": {
+      "unpublish": {
+        "title": "Despublicar a notícia?",
+        "description": "“{title}” sai do site e volta a ser rascunho. O endereço deixa de funcionar até que seja publicada de novo."
+      },
+      "archive": {
+        "title": "Arquivar a notícia?",
+        "description": "“{title}” sai das listas e do site, mas fica guardada e pode ser restaurada."
+      },
+      "delete": {
+        "title": "Excluir a notícia?",
+        "description": "“{title}” e todo o seu histórico serão apagados de vez. Esta ação não pode ser desfeita."
+      }
+    },
+    "done": {
+      "unpublish": "Notícia despublicada.",
+      "archive": "Notícia arquivada.",
+      "delete": "Notícia excluída."
+    }
+  },
+  "Builder": {
+    "untitled": "Notícia sem título",
+    "save": "Salvar",
+    "saved": "Alterações salvas.",
+    "saving": "Salvando…",
+    "unsaved": "Alterações não salvas",
+    "autosaveFailed": "Não foi possível salvar automaticamente. Tente salvar de novo.",
+    "savedAt": "Salvo {when}",
+    "modes": {
+      "edit": "Editar",
+      "preview": "Pré-visualizar"
+    },
+    "history": "Histórico",
+    "sidebar": "Publicação e configurações da notícia",
+    "readOnly": "Você pode ler esta notícia, mas não editá-la: ela já foi publicada ou não é sua.",
+    "conflictTitle": "Esta notícia mudou",
+    "conflict": "Outra pessoa salvou esta notícia depois que você a abriu. Para não sobrescrever o trabalho dela, recarregue a versão atual (suas alterações não salvas serão perdidas).",
+    "reload": "Recarregar a versão atual",
+    "delete": "Excluir notícia",
+    "deleteTitle": "Excluir a notícia?",
+    "deleteDescription": "A notícia e todo o seu histórico serão apagados de vez. Esta ação não pode ser desfeita.",
+    "deleted": "Notícia excluída.",
+    "aiImage": "Imagem gerada por IA",
+    "counter": "{count} de {max} caracteres",
+    "fields": {
+      "title": "Título",
+      "subtitle": "Linha fina",
+      "body": "Texto da notícia",
+      "coverCaption": "Legenda da foto de capa",
+      "slug": "Endereço (slug)",
+      "seoTitle": "Título para buscadores",
+      "seoDescription": "Descrição para buscadores"
+    },
+    "help": {
+      "subtitle": "Uma frase que resume a notícia, abaixo do título.",
+      "slug": "Gerado a partir do título enquanto a notícia não é publicada; você pode ajustá-lo.",
+      "slugLive": "A notícia já está no ar: mudar o endereço quebra os links já compartilhados."
+    },
+    "placeholders": {
+      "title": "Escreva o título da notícia",
+      "body": "Comece pelo lide: quem, o quê, quando, onde e por quê."
+    },
+    "seo": {
+      "title": "Endereço e buscadores",
+      "description": "Em branco, os buscadores recebem o título e a linha fina."
+    },
+    "editor": {
+      "toolbar": "Formatação do texto",
+      "bold": "Negrito",
+      "italic": "Itálico",
+      "underline": "Sublinhado",
+      "strike": "Tachado",
+      "h2": "Intertítulo",
+      "h3": "Subintertítulo",
+      "bulletList": "Lista com marcadores",
+      "orderedList": "Lista numerada",
+      "blockquote": "Citação",
+      "hr": "Separador",
+      "link": "Inserir link",
+      "unlink": "Remover link",
+      "undo": "Desfazer",
+      "redo": "Refazer",
+      "clear": "Limpar formatação",
+      "image": "Inserir imagem da biblioteca"
+    },
+    "languages": {
+      "pt": "Português",
+      "en": "Inglês",
+      "title": "Idiomas",
+      "description": "Em quais idiomas a notícia é publicada.",
+      "missing": "Falta: {fields}"
+    },
+    "errors": {
+      "body": "O texto tem uma formatação que não é aceita. Remova o trecho colado e tente de novo.",
+      "slug": "Use no endereço só letras minúsculas, números e hífens.",
+      "incomplete": "Para publicar, cada idioma marcado precisa de título e texto.",
+      "noLocale": "Marque ao menos um idioma para publicar.",
+      "schedule": "Escolha uma data e hora no futuro.",
+      "status": "Esta ação não está disponível na situação atual da notícia. Recarregue a página.",
+      "deletePublished": "Despublique ou arquive a notícia antes de excluí-la."
+    },
+    "done": {
+      "submit": "Enviada para revisão.",
+      "return": "Devolvida para rascunho.",
+      "publish": "Notícia publicada.",
+      "schedule": "Publicação agendada.",
+      "unpublish": "Notícia despublicada.",
+      "archive": "Notícia arquivada.",
+      "restore": "Notícia restaurada como rascunho."
+    },
+    "publication": {
+      "title": "Publicação",
+      "publishedAt": "Publicada em",
+      "scheduledAt": "Agendada para",
+      "updatedAt": "Última edição",
+      "views": "Leituras",
+      "reading": "Tempo de leitura",
+      "minutes": "{locale}: {count} min",
+      "viewOnSite": "Ver no site ({locale})"
+    },
+    "classification": {
+      "title": "Classificação",
+      "category": "Editoria",
+      "noCategory": "Sem editoria",
+      "author": "Assinatura",
+      "authorLocked": "Só editores mudam a assinatura."
+    },
+    "cover": {
+      "title": "Foto de capa",
+      "description": "Aparece na capa, nas listas e ao compartilhar a notícia.",
+      "none": "Nenhuma imagem escolhida.",
+      "choose": "Escolher imagem",
+      "change": "Trocar imagem",
+      "remove": "Remover"
+    },
+    "highlight": {
+      "title": "Destaque",
+      "featured": "Destaque na capa",
+      "featuredHelp": "Pode ocupar a manchete e os destaques quando a capa não for definida à mão.",
+      "breaking": "Urgente",
+      "breakingHelp": "Aparece na faixa de urgentes do site por dois dias."
+    },
+    "ai": {
+      "title": "Redator com IA",
+      "description": "Peça um rascunho, uma nova versão ou outra imagem de capa.",
+      "open": "Abrir o redator com IA"
+    },
+    "sync": {
+      "noPermission": "Seu perfil não usa a tradução automática: escreva cada idioma à mão.",
+      "unavailableTitle": "Tradução automática desligada",
+      "unavailable": "Nenhum provedor de IA responde agora, então os idiomas não são sincronizados.",
+      "configure": "Configurar a inteligência artificial",
+      "running": "Sincronização automática ativa: o que você escreve em {from} é traduzido para {to}.",
+      "toggle": "Sincronizar",
+      "pausedTitle": "Sincronização pausada",
+      "paused": "Você editou o texto em {to} (ou desligou a sincronização), então as traduções automáticas pararam para não apagar sua revisão.",
+      "resume": "Sincronizar {from} → {to}",
+      "simulated": "Tradução simulada pelo provedor local (“[EN] …”): configure um provedor de IA para traduções reais.",
+      "translating": "traduzindo…",
+      "automatic": "tradução automática",
+      "automaticHint": "Preenchido pela tradução automática; revise antes de publicar.",
+      "confirmTitle": "Sincronizar {from} → {to}?",
+      "confirmDescription": "Todos os campos em {to} serão substituídos pela tradução, inclusive o que você editou à mão.",
+      "confirm": "Traduzir e substituir",
+      "sourceTag": "origem",
+      "targetTag": "tradução"
+    },
+    "tags": {
+      "label": "Tags",
+      "placeholder": "Busque ou crie tags",
+      "none": "Nenhuma tag encontrada",
+      "create": "Criar tag “{name}”",
+      "created": "Tag criada."
+    },
+    "revisions": {
+      "title": "Histórico de versões",
+      "back": "Voltar ao histórico",
+      "restore": "Restaurar esta versão",
+      "restoreTitle": "Restaurar esta versão?",
+      "restoreDescription": "O conteúdo atual será substituído por esta versão. A versão atual continua no histórico.",
+      "restored": "Versão restaurada.",
+      "noTitle": "Sem título",
+      "aiImage": "Imagem gerada por IA",
+      "failed": "Não foi possível carregar o histórico.",
+      "empty": "Nenhuma versão salva ainda.",
+      "system": "sistema",
+      "reasons": {
+        "save": "Edição",
+        "status": "Mudança de situação",
+        "restore": "Restauração",
+        "ai": "Redator com IA"
+      }
+    },
+    "schedule": {
+      "title": "Agendar publicação",
+      "description": "A notícia entra no ar sozinha no horário escolhido (horário deste navegador).",
+      "when": "Data e hora",
+      "future": "Escolha um horário no futuro.",
+      "cancel": "Cancelar",
+      "confirm": "Agendar"
+    }
+  },
+  "Media": {
+    "title": "Mídia",
+    "description": "As imagens das notícias: enviadas pela redação ou geradas por IA, descritas nos dois idiomas.",
+    "untitled": "Imagem sem título",
+    "ai": "IA",
+    "upload": "Enviar imagens",
+    "generate": "Gerar com IA",
+    "uploadTitle": "Enviar imagens",
+    "generateTitle": "Gerar imagem com IA",
+    "pickerTitle": "Escolher imagem",
+    "tabs": {
+      "library": "Biblioteca",
+      "upload": "Enviar",
+      "generate": "Gerar com IA"
+    },
+    "search": "Buscar por título, descrição ou crédito",
+    "source": "Origem",
+    "sources": {
+      "all": "Todas",
+      "upload": "Enviadas",
+      "ai": "Geradas por IA"
+    },
+    "empty": "Nenhuma imagem ainda",
+    "emptyHint": "Envie fotos ou gere ilustrações com IA para usar nas notícias.",
+    "count": "{count, plural, =0 {Nenhuma imagem} one {# imagem} other {# imagens}}",
+    "credit": "Crédito",
+    "creditHelp": "Quem fez a foto ou a ilustração; aparece abaixo da imagem no site.",
+    "dropTitle": "Arraste imagens para cá ou clique para escolher",
+    "dropHint": "PNG, JPG ou WebP. As imagens são regravadas em vários tamanhos e sem metadados (EXIF, GPS).",
+    "uploading": "Enviando imagem",
+    "prompt": "Descreva a imagem",
+    "promptHelp": "Diga o que deve aparecer, o clima e o enquadramento. Imagens geradas não mostram texto, marcas nem pessoas reais identificáveis.",
+    "generating": "Gerando a imagem… isso pode levar até um minuto.",
+    "aiUnavailable": "A geração de imagens está desligada ou nenhum provedor de IA com imagens responde agora.",
+    "aiSimulated": "Provedor local: será gerada uma ilustração abstrata provisória.",
+    "details": "Detalhes da imagem",
+    "saved": "Imagem atualizada.",
+    "fields": {
+      "title": "Título interno",
+      "alt": "Texto alternativo",
+      "altHelp": "Descreve a imagem para quem não a vê (leitores de tela e buscadores).",
+      "caption": "Legenda",
+      "credit": "Crédito"
+    },
+    "info": {
+      "source": "Origem",
+      "size": "Tamanho",
+      "usage": "Uso",
+      "usageCount": "{count, plural, =0 {Não é usada em notícias} one {Usada em # notícia} other {Usada em # notícias}}",
+      "created": "Adicionada",
+      "prompt": "Pedido feito à IA"
+    },
+    "delete": "Excluir imagem",
+    "deleteTitle": "Excluir a imagem?",
+    "deleteDescription": "A imagem e todos os seus tamanhos serão apagados de vez.",
+    "deleted": "Imagem excluída.",
+    "renditions": "Cada imagem é guardada em três larguras para o site e num recorte 1200 × 630 para redes sociais.",
+    "errors": {
+      "tooLarge": "A imagem excede o tamanho máximo permitido.",
+      "unsupportedType": "Envie uma imagem PNG, JPG ou WebP.",
+      "load": "Não foi possível carregar a biblioteca.",
+      "inUse": "Esta imagem é usada em {count, plural, one {# notícia} other {# notícias}}: troque-a nelas antes de excluir."
+    },
+    "listTitle": "Imagens",
+    "columns": {
+      "preview": "Imagem",
+      "title": "Título"
+    },
+    "actions": {
+      "edit": "Editar descrição",
+      "view": "Ver detalhes"
+    }
+  },
+  "Categories": {
+    "title": "Editorias",
+    "description": "As seções do portal: organizam as notícias, o menu do site e os blocos da capa.",
+    "listTitle": "Editorias",
+    "listDescription": "A ordem aqui é a ordem do menu do site.",
+    "add": "Nova editoria",
+    "edit": "Editar editoria",
+    "columns": {
+      "name": "Editoria",
+      "state": "Situação",
+      "news": "Notícias"
+    },
+    "active": "Ativa",
+    "inactive": "Inativa",
+    "inMenu": "No menu",
+    "fields": {
+      "name": "Nome",
+      "description": "Descrição",
+      "color": "Cor",
+      "slugPt": "Endereço em português",
+      "slugEn": "Endereço em inglês",
+      "slugHelp": "Em branco, é gerado a partir do nome.",
+      "active": "Ativa",
+      "activeHelp": "Editorias inativas não aparecem no site.",
+      "showInMenu": "Mostrar no menu",
+      "showInMenuHelp": "Exibe a editoria no menu principal do site."
+    },
+    "removeTitle": "Excluir a editoria?",
+    "removeDescription": "“{name}” será excluída. Só editorias sem notícias podem ser excluídas.",
+    "saved": "Editoria salva.",
+    "removed": "Editoria excluída.",
+    "empty": "Nenhuma editoria ainda",
+    "emptyHint": "Crie as seções do portal, como Inteligência Artificial, Dispositivos e Segurança."
+  },
+  "Tags": {
+    "title": "Tags",
+    "description": "Os assuntos das notícias, nos dois idiomas, com página própria no site.",
+    "listTitle": "Tags",
+    "listDescription": "Repórteres também criam tags direto no editor da notícia.",
+    "add": "Nova tag",
+    "edit": "Editar tag",
+    "search": "Buscar tags",
+    "columns": {
+      "name": "Tag",
+      "slug": "Endereços",
+      "news": "Notícias"
+    },
+    "fields": {
+      "name": "Nome",
+      "slugPt": "Endereço em português",
+      "slugEn": "Endereço em inglês",
+      "slugHelp": "Em branco, é gerado a partir do nome."
+    },
+    "removeTitle": "Excluir a tag?",
+    "removeDescription": "“{name}” será removida de {count, plural, =0 {nenhuma notícia} one {# notícia} other {# notícias}}. As notícias continuam publicadas.",
+    "saved": "Tag salva.",
+    "removed": "Tag excluída.",
+    "empty": "Nenhuma tag encontrada",
+    "emptyHint": "Crie tags aqui ou no editor das notícias.",
+    "count": "{count, plural, =0 {Nenhuma tag} one {# tag} other {# tags}}"
+  },
+  "FrontPage": {
+    "title": "Capa",
+    "description": "Escolha a manchete, os destaques e as editorias da página inicial do site.",
+    "automatic": "O que ficar vazio é preenchido automaticamente pelo site: primeiro as notícias marcadas como destaque, depois as mais recentes.",
+    "headline": {
+      "title": "Manchete",
+      "description": "A notícia principal, no topo da capa.",
+      "pick": "Busque uma notícia publicada"
+    },
+    "highlights": {
+      "title": "Destaques",
+      "description": "Até {max} notícias ao lado e abaixo da manchete, na ordem escolhida.",
+      "empty": "Nenhum destaque escolhido.",
+      "add": "Adicionar destaque"
+    },
+    "sections": {
+      "title": "Blocos de editorias",
+      "description": "Até {max} editorias exibidas em blocos, na ordem escolhida.",
+      "empty": "Nenhuma editoria escolhida: o site mostra as quatro primeiras.",
+      "add": "Adicionar editoria"
+    },
+    "preview": {
+      "title": "Prévia da capa",
+      "description": "Como a página inicial será montada.",
+      "headline": "Manchete",
+      "auto": "Automático",
+      "sections": "Editorias",
+      "sectionsAuto": "As quatro primeiras editorias do menu."
+    },
+    "moveUp": "Mover para cima",
+    "moveDown": "Mover para baixo",
+    "remove": "Remover",
+    "unknown": "Notícia indisponível",
+    "nothingFound": "Nenhuma notícia publicada encontrada",
+    "save": "Salvar capa",
+    "clear": "Esvaziar tudo",
+    "saved": "Capa atualizada.",
+    "errors": {
+      "unpublished": "Só notícias publicadas podem ficar na capa. Remova as que saíram do ar."
+    }
+  },
+  "Dashboard": {
+    "title": "Visão geral",
+    "greeting": "Olá, {name}. Veja como está a redação.",
+    "noNews": "Seu perfil não acessa as notícias.",
+    "create": "Nova notícia",
+    "createWithAi": "Criar com IA",
+    "untitled": "Sem título",
+    "seeAll": "Ver todas",
+    "increase": "Alta",
+    "decrease": "Queda",
+    "kpis": {
+      "published": "Publicadas",
+      "views": "Leituras",
+      "week": "Últimos 7 dias",
+      "previousWeek": "vs. semana anterior",
+      "review": "Em revisão",
+      "reviewCaption": "Aguardando um editor",
+      "scheduled": "Agendadas",
+      "scheduledCaption": "Entram no ar sozinhas",
+      "ai": "Com IA",
+      "aiCaption": "Notícias criadas com o redator"
+    },
+    "trend": {
+      "title": "Últimos 30 dias",
+      "description": "Leituras por dia e notícias publicadas por dia.",
+      "views": "Leituras",
+      "published": "Publicadas"
+    },
+    "sections": {
+      "title": "Editorias",
+      "description": "Notícias publicadas em cada editoria.",
+      "center": "publicadas",
+      "empty": "Nenhuma notícia publicada ainda."
+    },
+    "top": {
+      "title": "Mais lidas da semana",
+      "description": "Leituras dos últimos 7 dias.",
+      "views": "{count, plural, one {# leitura} other {# leituras}}",
+      "empty": "Sem leituras nesta semana."
+    },
+    "mine": {
+      "title": "Meu trabalho",
+      "description": "Seus rascunhos, revisões e agendamentos.",
+      "empty": "Nada pendente com você."
+    },
+    "review": {
+      "title": "Aguardando revisão",
+      "description": "As mais antigas primeiro.",
+      "empty": "Nada esperando revisão."
+    },
+    "scheduled": {
+      "title": "Próximas publicações",
+      "description": "Notícias agendadas.",
+      "empty": "Nenhuma publicação agendada."
+    },
+    "messages": {
+      "title": "Mensagens de leitores",
+      "unread": "{count, plural, =0 {Nenhuma mensagem nova} one {# mensagem nova} other {# mensagens novas}}",
+      "open": "Abrir mensagens"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "pt": {
+    "title": "Algo deu errado",
+    "description": "Não foi possível exibir esta página. Tente novamente em instantes.",
+    "retry": "Tentar novamente"
+  },
+  "en": {
+    "title": "Something went wrong",
+    "description": "This page could not be displayed. Please try again in a moment.",
+    "retry": "Try again"
+  }
+}

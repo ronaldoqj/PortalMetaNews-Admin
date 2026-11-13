@@ -1,0 +1,613 @@
+{
+  "Access": {
+    "title": "Team and roles",
+    "description": "The newsroom's accounts and the roles that define what each may do in the panel.",
+    "usersTab": "Accounts",
+    "rolesTab": "Roles",
+    "usersTitle": "Team accounts",
+    "usersDescription": "Each account signs in with its own e-mail and signs news with its own name.",
+    "rolesTitle": "Access roles",
+    "rolesDescription": "A role is a set of permissions. The four system roles may gain permissions but never lose their originals.",
+    "newUser": "New account",
+    "editUser": "Edit account",
+    "newRole": "New role",
+    "editRole": "Edit role",
+    "name": "Name",
+    "email": "E-mail",
+    "emailFixed": "The sign-in e-mail never changes; for another e-mail, create a new account.",
+    "newUserHelp": "The account gets a temporary password, shown once, and replaces it with a definitive one at first access.",
+    "role": "Role",
+    "selfHelp": "You cannot change your own role or disable your own account.",
+    "enabled": "Account enabled",
+    "enabledHelp": "Disabled, the account can no longer sign in and its sessions end; the news it signs stay online.",
+    "jobTitle": "Job title (byline)",
+    "bio": "Short bio",
+    "bioHelp": "Shown on the author's page on the site.",
+    "photo": "Photo",
+    "removePhotoTitle": "Remove the photo?",
+    "removePhotoWarning": "{name}'s photo will be deleted and the initials will show again.",
+    "noUsers": "No account yet.",
+    "noRoles": "No role yet.",
+    "you": "you",
+    "state": "Status",
+    "pendingFirstAccess": "Awaiting first access",
+    "active": "Enabled",
+    "inactive": "Disabled",
+    "news": "News",
+    "lastLogin": "Last sign-in",
+    "never": "Never",
+    "edit": "Edit",
+    "newPassword": "Issue temporary password",
+    "newPasswordTitle": "Issue a temporary password?",
+    "newPasswordWarning": "{name}'s current password stops working and open sessions end. The new password is shown only once.",
+    "system": "System",
+    "custom": "Custom",
+    "systemDescriptions": {
+      "admin": "Full control of the portal, including team, roles and integrations.",
+      "editor": "Edits and publishes any news item, runs the front page, sections and media.",
+      "reporter": "Writes their own news and sends them to review.",
+      "reviewer": "Reviews and corrects any news item, without publishing."
+    },
+    "roleDescription": "Description",
+    "systemRoleHelp": "System role: name and description are fixed, and the original permissions stay checked.",
+    "permissionsTitle": "Permissions",
+    "permissionCount": "{count, plural, one {# permission} other {# permissions}}",
+    "members": "Accounts",
+    "memberCount": "{count, plural, =0 {no account} one {# account} other {# accounts}}",
+    "delete": "Delete",
+    "deleteTitle": "Delete the role?",
+    "deleteWarning": "The role {name} will be deleted. Only roles without accounts can be deleted.",
+    "deleted": "Role deleted.",
+    "roleSaved": "Role saved.",
+    "userSaved": "Account saved.",
+    "errors": {
+      "email_taken": "An account with this e-mail already exists.",
+      "role_system": "System roles keep their name and description and cannot be deleted.",
+      "role_baseline": "System roles cannot lose their original permissions.",
+      "role_in_use": "This role still has accounts. Change their role before deleting it.",
+      "access_lockout": "At least one enabled account must keep the \"Team and roles\" permission.",
+      "role_not_found": "The chosen role no longer exists.",
+      "user_disabled": "Disabled accounts cannot get a temporary password: enable the account first."
+    },
+    "permissionGroups": {
+      "news": "News",
+      "content": "Content and newsroom",
+      "site": "Site",
+      "administration": "Administration"
+    },
+    "permissions": {
+      "news_read": {
+        "label": "Read news",
+        "description": "Sees every news item in the panel, in any status, and the overview."
+      },
+      "news_write": {
+        "label": "Write news",
+        "description": "Creates news and edits its own while they are drafts or in review."
+      },
+      "news_edit_all": {
+        "label": "Edit any news",
+        "description": "Edits news by any author, published ones included (corrections), and changes the byline."
+      },
+      "news_publish": {
+        "label": "Publish",
+        "description": "Publishes, schedules, unpublishes and archives news."
+      },
+      "news_delete": {
+        "label": "Delete news",
+        "description": "Deletes news that are not published."
+      },
+      "taxonomy_manage": {
+        "label": "Sections and tags",
+        "description": "Creates, edits, orders and removes sections and tags."
+      },
+      "media_manage": {
+        "label": "Media",
+        "description": "Uploads, describes, generates with AI and removes library images."
+      },
+      "ai_use": {
+        "label": "Use AI",
+        "description": "Uses the AI writer and the builder's automatic translation."
+      },
+      "front_page_manage": {
+        "label": "Front page",
+        "description": "Chooses the headline, highlights and sections of the home page."
+      },
+      "themes_manage": {
+        "label": "Themes and branding",
+        "description": "Creates and activates themes and replaces logos, favicons and the share image."
+      },
+      "site_manage": {
+        "label": "Site details",
+        "description": "Edits the site's name, description, social profiles and legal texts."
+      },
+      "contacts_read": {
+        "label": "Readers' messages",
+        "description": "Reads and organizes the messages sent through the contact form."
+      },
+      "users_manage": {
+        "label": "Team and roles",
+        "description": "Creates accounts, issues temporary passwords and defines roles and permissions."
+      },
+      "settings_manage": {
+        "label": "Integrations",
+        "description": "Configures artificial intelligence and e-mail (SMTP) and views storage."
+      },
+      "audit_read": {
+        "label": "Audit",
+        "description": "Reads the record of everything each account did in the panel."
+      },
+      "documentation_read": {
+        "label": "Documentation",
+        "description": "Reads the project's technical documentation published in the panel."
+      }
+    },
+    "forbiddenTitle": "No permission",
+    "forbiddenDescription": "Your role does not include this area. Ask whoever manages the team to adjust your permissions."
+  },
+  "Profile": {
+    "title": "My profile",
+    "description": "Your details in the panel and the author profile the site shows on your news.",
+    "account": "Account",
+    "accountHelp": "Name and photo shown in the panel and in bylines.",
+    "author": "Author profile",
+    "authorHelp": "Shown under your byline and on your author page, in Portuguese and English.",
+    "name": "Name",
+    "email": "Sign-in e-mail",
+    "emailHelp": "To use another e-mail, ask whoever manages the team for a new account.",
+    "jobTitle": "Job title",
+    "jobTitleHelp": "E.g. Artificial intelligence reporter.",
+    "bio": "Short bio",
+    "bioHelp": "Up to 1,000 characters.",
+    "role": "Access role",
+    "saved": "Profile updated.",
+    "photo": {
+      "label": "Photo",
+      "optional": "optional",
+      "choose": "Choose photo",
+      "change": "Change photo",
+      "discard": "Undo",
+      "remove": "Remove photo",
+      "removeTitle": "Remove the photo?",
+      "removeWarning": "The photo will be deleted and the initials will show again.",
+      "removed": "Photo removed.",
+      "pending": "The photo is sent when you save.",
+      "hint": "PNG, JPG or WebP up to 5 MB. The image is cropped square and rewritten without metadata (EXIF, GPS).",
+      "errors": {
+        "tooLarge": "The image exceeds 5 MB.",
+        "unsupportedType": "Send a PNG, JPG or WebP image.",
+        "invalidInput": "The image could not be processed.",
+        "forbidden": "You may not change this photo.",
+        "unavailable": "The photo could not be sent now. Please try again."
+      }
+    }
+  },
+  "Credentials": {
+    "title": "Temporary password",
+    "onceWarning": "Copy this password now: it is shown only this once and cannot be looked up later.",
+    "email": "Sign-in e-mail",
+    "password": "Temporary password",
+    "copy": "Copy password",
+    "copied": "Password copied",
+    "done": "Done",
+    "delivery": {
+      "manual": "Hand this password over through a safe channel. At first access, the person sets a definitive one."
+    }
+  },
+  "Contacts": {
+    "title": "Readers' messages",
+    "description": "What readers sent through the site's contact form: story tips, corrections, advertising and other subjects.",
+    "unread": "{count, plural, one {# new} other {# new}}",
+    "total": "{count, plural, =0 {No message} one {# message} other {# messages}}",
+    "empty": "No message found.",
+    "emptyHint": "Messages sent through the site appear here.",
+    "filters": {
+      "search": "Search",
+      "searchPlaceholder": "Name, e-mail or text",
+      "status": "Status",
+      "topic": "Subject"
+    },
+    "statuses": {
+      "new": "New",
+      "read": "Read",
+      "archived": "Archived"
+    },
+    "topics": {
+      "tip": "Story tip",
+      "correction": "Correction",
+      "advertising": "Advertising",
+      "press": "Press",
+      "privacy": "Privacy",
+      "other": "Other"
+    },
+    "back": "Back to messages",
+    "markUnread": "Mark as new",
+    "archive": "Archive",
+    "restore": "Restore",
+    "reply": "Reply by e-mail",
+    "replySubject": "Re: {topic} — Portal Meta News",
+    "fields": {
+      "email": "E-mail",
+      "received": "Received on",
+      "language": "Site language"
+    },
+    "languages": {
+      "pt": "Portuguese",
+      "en": "English"
+    },
+    "readBy": "Read by {name} on {date}",
+    "listTitle": "Messages received",
+    "columns": {
+      "from": "From",
+      "status": "Status",
+      "message": "Message",
+      "date": "Received"
+    }
+  },
+  "Audit": {
+    "title": "Audit",
+    "description": "The permanent record of what each account did in the panel: who, what, when and on which item. It never keeps article text or credentials.",
+    "filters": {
+      "action": "Action",
+      "actionPlaceholder": "E.g. news.published",
+      "outcome": "Outcome",
+      "any": "Any",
+      "from": "From",
+      "to": "To",
+      "resource": "Item (identifier)",
+      "resourcePlaceholder": "Item UUID",
+      "clear": "Clear",
+      "apply": "Filter"
+    },
+    "outcomes": {
+      "success": "Succeeded",
+      "denied": "Refused"
+    },
+    "columns": {
+      "when": "When",
+      "action": "Action",
+      "actor": "Who",
+      "outcome": "Outcome",
+      "details": "Details"
+    },
+    "system": "System (automatic)",
+    "removedActor": "Removed account",
+    "empty": "No record for these filters.",
+    "total": "{count, plural, =0 {No record} one {# record} other {# records}}",
+    "invalidRange": "The start date must come before the end date.",
+    "unavailable": "The audit trail could not be loaded now. Please try again.",
+    "areaAction": "Action on {area}",
+    "areas": {
+      "news": "News",
+      "theme": "Themes",
+      "user": "Accounts",
+      "role": "Roles",
+      "media": "Media",
+      "category": "Sections",
+      "tag": "Tags",
+      "site": "Site",
+      "settings": "Settings",
+      "ai_writer": "AI writer",
+      "contact": "Messages",
+      "front_page": "Front page",
+      "panel": "Panel",
+      "password": "Passwords"
+    },
+    "resources": {
+      "news": "News item",
+      "theme": "Theme",
+      "user": "Account",
+      "role": "Role",
+      "media": "Image",
+      "category": "Section",
+      "tag": "Tag",
+      "legal_document": "Legal text",
+      "contact_message": "Reader's message",
+      "ai_conversation": "AI conversation"
+    },
+    "actions": {
+      "panel_installed": "Panel installed",
+      "password_forced_change": "Temporary password replaced at first access",
+      "news_created": "News item created",
+      "news_submitted": "News item sent to review",
+      "news_returned": "News item returned to draft",
+      "news_published": "News item published",
+      "news_scheduled": "Publication scheduled",
+      "news_unpublished": "News item unpublished",
+      "news_archived": "News item archived",
+      "news_restored": "News item restored",
+      "news_deleted": "News item deleted",
+      "news_revision_restored": "Earlier version restored",
+      "theme_created": "Theme created",
+      "theme_updated": "Theme changed",
+      "theme_deleted": "Theme deleted",
+      "theme_activated": "Theme activated",
+      "site_identity_updated": "Site details changed",
+      "site_asset_updated": "Brand image replaced",
+      "site_asset_removed": "Brand image removed",
+      "site_legal_updated": "Legal text changed",
+      "site_legal_restored": "Legal text restored to default",
+      "category_created": "Section created",
+      "category_updated": "Section changed",
+      "category_deleted": "Section deleted",
+      "category_reordered": "Sections reordered",
+      "tag_created": "Tag created",
+      "tag_updated": "Tag changed",
+      "tag_deleted": "Tag deleted",
+      "media_uploaded": "Image uploaded",
+      "media_generated": "Image generated by AI",
+      "media_updated": "Image described",
+      "media_deleted": "Image deleted",
+      "user_created": "Account created",
+      "user_updated": "Account changed",
+      "user_temporary_password_issued": "Temporary password issued",
+      "user_profile_updated": "Own profile changed",
+      "user_avatar_updated": "Photo changed",
+      "user_avatar_removed": "Photo removed",
+      "role_created": "Role created",
+      "role_updated": "Role changed",
+      "role_deleted": "Role deleted",
+      "settings_ai_updated": "AI settings changed",
+      "settings_email_updated": "E-mail settings changed",
+      "ai_writer_requested": "AI writer request",
+      "ai_writer_applied": "AI proposal applied",
+      "contact_status_changed": "Reader's message moved",
+      "front_page_updated": "Front page changed"
+    },
+    "listTitle": "Records"
+  },
+  "Settings": {
+    "title": "Settings",
+    "description": "The portal's integrations, the site's details and its look. Each area shows for whoever holds its permission.",
+    "empty": "Your role includes no settings area.",
+    "entries": {
+      "ai": {
+        "title": "Artificial intelligence",
+        "description": "Provider, key, models and the style guide used by translation and the writer."
+      },
+      "email": {
+        "title": "E-mail (SMTP)",
+        "description": "Sending server and the delivery test."
+      },
+      "storage": {
+        "title": "Storage",
+        "description": "Where images are kept and how much the library holds."
+      },
+      "site": {
+        "title": "Site details",
+        "description": "Name, tagline, description, default language, contact and social profiles."
+      },
+      "themes": {
+        "title": "Themes",
+        "description": "Colours, typography and style of the site and the panel."
+      },
+      "branding": {
+        "title": "Branding",
+        "description": "Logos, favicons and the share image."
+      },
+      "legal": {
+        "title": "Legal texts",
+        "description": "Privacy policy and terms of use, in Portuguese and English."
+      },
+      "access": {
+        "title": "Team and roles",
+        "description": "Newsroom accounts, roles and permissions."
+      }
+    }
+  },
+  "AiSettings": {
+    "title": "Artificial intelligence",
+    "description": "The model provider of automatic translation, the AI writer and generated images.",
+    "current": "In use now",
+    "status": "Status",
+    "available": "Available",
+    "unavailable": "Unavailable",
+    "effectiveProvider": "Provider",
+    "key": "Key",
+    "keySet": "Key saved in the panel",
+    "keyEnvironment": "Server key (GEMINI_API_KEY)",
+    "keyMissing": "No key",
+    "textModel": "Text model",
+    "imageModel": "Image model",
+    "images": "Generate images",
+    "imagesOn": "On",
+    "imagesOff": "Off",
+    "codes": {
+      "ai_disabled": "AI is disabled.",
+      "ai_unconfigured": "No key configured: enter a Gemini key or choose the local provider (development only).",
+      "ai_provider_failed": "The provider did not answer. Try again in a moment.",
+      "ai_key_rejected": "The provider refused the key. Check the saved key.",
+      "ai_images_unavailable": "Image generation is off or the provider has no image model."
+    },
+    "localNotice": "The local provider uses no language model: it marks translations with [EN]/[PT], builds drafts from the request's own text and draws abstract covers. It lets you test every flow at no cost.",
+    "test": {
+      "run": "Test",
+      "ok": "The provider answered: the configuration works.",
+      "failed": "The test failed: {reason}"
+    },
+    "provider": "Provider",
+    "providerHelp": "Automatic uses Gemini when a key exists and, without one, the local provider (outside production only).",
+    "providers": {
+      "auto": "Automatic",
+      "gemini": "Google Gemini",
+      "local": "Local (simulation)",
+      "disabled": "Disabled"
+    },
+    "apiKey": "Gemini API key",
+    "apiKeyKept": "A key is saved: leave blank to keep it.",
+    "apiKeyHelp": "Write-only: once saved, the key is stored encrypted and never shown again.",
+    "apiKeyEnvironment": "The server also has a key (GEMINI_API_KEY); the one saved here takes precedence.",
+    "removeKey": "Remove the saved key",
+    "modelHelp": "Blank uses the default shown.",
+    "imageModelHelp": "\"gemini-*-image\" or \"imagen-*\" models. Blank uses the default shown.",
+    "imagesHelp": "Lets the AI writer and the media library generate cover images.",
+    "guidelines": "Newsroom style guide",
+    "guidelinesHelp": "Goes into every AI request (translation, writing, images): tone, preferred terms, spellings, what to avoid.",
+    "guidelinesPlaceholder": "E.g. Lowercase \"president\". Avoid adjectives. Spell out dates. In English, American spelling.",
+    "providerSection": "Provider and models",
+    "providerSectionHelp": "Who answers translation, writing and image requests.",
+    "guidelinesSection": "Editorial style",
+    "guidelinesSectionHelp": "The rules the AI follows to write like the newsroom.",
+    "saved": "Settings saved.",
+    "privacyNote": "The AI receives only each request's text and the style guide; never accounts, passwords or readers' messages.",
+    "errors": {
+      "keyRequired": "The Gemini provider needs a key (saved here or on the server).",
+      "keyInvalid": "The key looks invalid: check it was copied whole, without spaces.",
+      "modelInvalid": "Invalid model name.",
+      "invalidInput": "Check the fields."
+    }
+  },
+  "EmailSettings": {
+    "title": "E-mail (SMTP)",
+    "description": "The portal's outgoing e-mail: the notice of a new reader message to the contact address, and the test.",
+    "current": "Current status",
+    "status": "Sending",
+    "effective": {
+      "panel": "On · this panel's server",
+      "environment": "On · environment server",
+      "off": "Off",
+      "missing": "On, no server"
+    },
+    "environmentRelay": "Environment server (SMTP_*)",
+    "environmentYes": "Configured",
+    "environmentNo": "Not configured",
+    "panelRelay": "Server saved in the panel",
+    "panelRelayNone": "None",
+    "missingNotice": "Sending is on but there is no server: configure one below or the server's SMTP_* variables.",
+    "test": {
+      "run": "Send test",
+      "ok": "Test e-mail sent to your account.",
+      "failed": "The test failed: {reason}"
+    },
+    "codes": {
+      "smtp_unconfigured": "no server configured.",
+      "smtp_unreachable": "could not connect and authenticate to the server.",
+      "smtp_delivery_failed": "the server refused the message."
+    },
+    "enabled": "Send e-mails",
+    "enabledHelp": "Off, no e-mail leaves the portal; readers' messages stay in the panel.",
+    "host": "Server (host)",
+    "port": "Port",
+    "portHelp": "465 with TLS; 587, 25 or 2525 with STARTTLS.",
+    "secure": "Implicit TLS",
+    "secureHelp": "On for port 465; off for 587, 25 and 2525.",
+    "user": "User",
+    "password": "Password",
+    "passwordKept": "A password is saved: leave blank to keep it.",
+    "passwordHelp": "Stored encrypted and never shown again.",
+    "removePassword": "Remove the saved password",
+    "fromEmail": "Sender e-mail",
+    "fromName": "Sender name",
+    "sendingSection": "Sending",
+    "sendingSectionHelp": "Turns every e-mail of the portal on or off.",
+    "serverSection": "The panel's SMTP server",
+    "serverSectionHelp": "Without a server here, the portal uses the environment's (SMTP_*), if any.",
+    "saved": "E-mail settings saved.",
+    "errors": {
+      "invalid": "Check the server, the port (465 with TLS; 587, 25 or 2525 without), the sender and, with a user, the password."
+    }
+  },
+  "Storage": {
+    "title": "Storage",
+    "description": "Where the portal keeps images and how much the media library holds.",
+    "items": "Images",
+    "size": "Space used",
+    "generated": "Generated by AI",
+    "uploadLimit": "Upload limit",
+    "store": "File store",
+    "storeHelp": "Images live in a private store and the site serves them through its own address, never exposing the store.",
+    "driver": "Type",
+    "drivers": {
+      "local": "Server disk",
+      "s3": "S3-compatible bucket"
+    },
+    "status": "Status",
+    "reachable": "Reachable",
+    "unreachable": "Unreachable",
+    "bucket": "Bucket",
+    "unreachableNotice": "The store did not answer: new uploads fail until it is back. Check the server's configuration.",
+    "environmentNote": "The store type and its credentials are set in the API's environment variables (STORAGE_DRIVER, S3_*), never in the panel."
+  },
+  "SiteLegal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "description": "The text of the site's privacy page, in Portuguese and English. Each page of the site shows the edition of its language."
+    },
+    "terms": {
+      "title": "Terms of use",
+      "description": "The text of the site's terms of use page, in Portuguese and English. Each page of the site shows the edition of its language."
+    },
+    "editions": {
+      "pt": {
+        "label": "Portuguese",
+        "law": "Read on the Portuguese pages · legal reference: Brazil's LGPD (Law 13,709/2018)."
+      },
+      "en": {
+        "label": "English",
+        "law": "Read on the English pages · written for international readers."
+      }
+    },
+    "status": {
+      "default": "Default text",
+      "custom": "Custom text"
+    },
+    "unsaved": "Unsaved changes",
+    "updatedBy": "Updated on {date} by {name}",
+    "someone": "a removed account",
+    "viewOnSite": "View on site",
+    "restore": "Restore default",
+    "restoreTitle": "Restore the default text?",
+    "restoreWarning": "The {edition} edition goes back to the default text and the custom text is discarded. The site shows the default at once.",
+    "restored": "Default text restored.",
+    "save": "Save and publish",
+    "saved": "Text saved and published on the site.",
+    "edit": "Edit",
+    "preview": "Preview",
+    "emptyPreview": "Write the content to see the preview.",
+    "fields": {
+      "title": "Title",
+      "summary": "Summary",
+      "summaryHelp": "Shown at the top of the page and in the description for search engines.",
+      "content": "Content",
+      "contentHelp": "Use Markdown: ## for sections, ### for subsections, **bold**, lists with -, tables and callouts with > [!NOTE] or > [!IMPORTANT]. HTML is not accepted."
+    },
+    "characters": "{count, number} of {max, number} characters",
+    "onThisPage": "On this page",
+    "updatedOn": "Last updated on {date}",
+    "unavailable": "This document could not be loaded now. Please try again in a moment."
+  },
+  "Documentation": {
+    "document": "Document",
+    "title": "Documentation",
+    "description": "Guides, architecture rules and procedures of Portal Meta News, published from the repository's Markdown files as the project is built.",
+    "statDocuments": "{count, plural, one {document} other {documents}}",
+    "statGroups": "{count, plural, one {section} other {sections}}",
+    "statHours": "{count, plural, one {hour of reading} other {hours of reading}}",
+    "searchLabel": "Search the documentation",
+    "searchPlaceholder": "Search by title, subject or file",
+    "noResults": "No document found",
+    "noResultsHint": "Try other words or clear the search.",
+    "languageNote": "Guides are written in Portuguese and architecture rules in English, as in the repository.",
+    "readingTime": "{minutes} min read",
+    "source": "Source file in the repository",
+    "back": "Back to the documentation",
+    "onThisPage": "In this document",
+    "pagerLabel": "Other documents",
+    "previous": "Previous",
+    "next": "Next",
+    "copy": "Copy code",
+    "copied": "Copied",
+    "headingLink": "Link to this section",
+    "opensInNewTab": "Opens in a new tab",
+    "notPublished": "This file is in the repository and is not published in the panel.",
+    "unavailable": "This document could not be read now.",
+    "emptyTitle": "Documentation not published yet",
+    "empty": "No document is published in this environment. In development, the frontend's npm run dev publishes the DOCUMENTATION.md index automatically; otherwise run node scripts/sync-docs.mjs.",
+    "alerts": {
+      "note": "Note",
+      "tip": "Tip",
+      "important": "Important",
+      "warning": "Warning",
+      "caution": "Caution"
+    }
+  }
+}

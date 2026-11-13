@@ -1,0 +1,113 @@
+/*
+ * The two faces of a list (`DataView`). Colours come from the theme's variables only (`--app-*`), and corners from
+ * the theme's radius, so every theme, light and dark, draws them; nothing here names a colour of its own.
+ */
+.list { --data-view-accent: var(--app-primary); --data-view-soft: color-mix(in srgb, var(--app-primary) 7%, transparent); }
+
+/* Rows: a quiet header, airy rows, a tinted hover with an accent bar, the actions coming forward on hover. */
+.table { border-collapse: separate; border-spacing: 0; }
+.table thead th {
+  padding-block: 10px;
+  background: color-mix(in srgb, var(--app-background) 70%, var(--app-surface));
+  border-bottom: 1px solid var(--app-border);
+  color: var(--app-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.table tbody td { padding-block: 14px; border-bottom: 1px solid color-mix(in srgb, var(--app-border) 70%, transparent); transition: background-color 160ms ease; }
+.table tbody tr:last-child td { border-bottom: 0; }
+.row { animation: data-view-in 260ms ease-out backwards; animation-delay: var(--data-view-delay, 0ms); }
+.row > td:first-child { box-shadow: inset 3px 0 0 transparent; transition: box-shadow 160ms ease, background-color 160ms ease; }
+.row:hover > td { background: var(--data-view-soft); }
+.row:hover > td:first-child, .row[data-selected] > td:first-child { box-shadow: inset 3px 0 0 var(--data-view-accent); }
+.row[data-selected] > td { background: color-mix(in srgb, var(--app-primary) 11%, transparent); }
+.table[data-open] .row { cursor: pointer; }
+.rowActions > * { opacity: 0.55; transition: opacity 160ms ease; }
+.row:hover .rowActions > *, .rowActions:focus-within > * { opacity: 1; }
+
+/* Cards: as many columns as fit, each lifting a little under the pointer. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr));
+  gap: var(--mantine-spacing-md);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* Cards are frames of their own: the section around them loses its card, and its heading lines up with them. */
+:global([data-section]):has(> .grid) { background: transparent; border-color: transparent; box-shadow: none; overflow: visible !important; }
+:global([data-section]):has(> .grid) > :global([data-section-heading]) { padding-inline: 0 !important; }
+/* Anything else the section holds above the cards (a bar of bulk actions) becomes a box of its own. */
+:global([data-section]):has(> .grid) > :not(.grid):not(:global([data-section-heading])) {
+  margin-bottom: var(--mantine-spacing-md);
+  border: 1px solid var(--app-border);
+  border-radius: var(--mantine-radius-default);
+}
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-sm);
+  min-width: 0;
+  padding: var(--mantine-spacing-md);
+  border: 1px solid var(--app-border);
+  border-radius: calc(var(--mantine-radius-default) * 1.5);
+  background: var(--app-surface);
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+  animation: data-view-in 280ms ease-out backwards;
+  animation-delay: var(--data-view-delay, 0ms);
+}
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 3px;
+  background: linear-gradient(90deg, var(--app-primary), var(--app-secondary));
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+.card:hover, .card:focus-within { border-color: color-mix(in srgb, var(--app-primary) 35%, var(--app-border)); box-shadow: var(--mantine-shadow-md); transform: translateY(-2px); }
+.card:hover::before, .card:focus-within::before, .card[data-selected]::before { opacity: 1; }
+.card[data-selected] { border-color: var(--app-primary); background: color-mix(in srgb, var(--app-primary) 5%, var(--app-surface)); }
+.card[data-open] { cursor: pointer; }
+/* The cover runs edge to edge on top of the card, and zooms in a little under the pointer. */
+.cardCover {
+  margin: calc(var(--mantine-spacing-md) * -1) calc(var(--mantine-spacing-md) * -1) 0;
+  overflow: hidden;
+  background: var(--app-highlight);
+}
+.cardCover :where(img) { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 300ms ease; }
+.card:hover .cardCover :where(img) { transform: scale(1.04); }
+.cardHead { display: flex; align-items: flex-start; gap: var(--mantine-spacing-xs); }
+.cardTitle { flex: 1; min-width: 0; font-weight: 600; overflow-wrap: anywhere; }
+.cardMenu { flex: none; margin: -4px -6px 0 0; }
+.cardAside { display: flex; flex-wrap: wrap; gap: 6px; }
+.cardDetails {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--mantine-spacing-xs) var(--mantine-spacing-md);
+  margin: auto 0 0;
+  padding-top: var(--mantine-spacing-sm);
+  border-top: 1px dashed var(--app-border);
+  font-size: var(--mantine-font-size-sm);
+}
+.cardDetails > div { min-width: 0; }
+.cardDetails dt { color: var(--app-muted); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
+.cardDetails dd { margin: 2px 0 0; overflow-wrap: anywhere; }
+
+@keyframes data-view-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .row, .card { animation: none; }
+  .card, .card::before, .row > td, .rowActions > *, .cardCover :where(img) { transition: none; }
+  .card:hover, .card:focus-within, .card:hover .cardCover :where(img) { transform: none; }
+}
+
+/* A cover in the list: a thumbnail of the column's width, corners of the theme. */
+.coverCell :where(img, [data-cover]) { display: block; width: 100%; border-radius: var(--mantine-radius-default); overflow: hidden; }

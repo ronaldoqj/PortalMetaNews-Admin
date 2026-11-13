@@ -1,0 +1,4 @@
+# Nixpacks builds the API from this folder. Its default start would be `npm run start` (the development CLI);
+# production applies the pending migrations and then starts the compiled API, which never listens if one fails.
+[start]
+cmd = "npm run start:prod"

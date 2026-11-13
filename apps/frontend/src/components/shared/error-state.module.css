@@ -1,0 +1,85 @@
+.page {
+  position: relative;
+  display: grid;
+  align-items: center;
+  padding: clamp(48px, 8vw, 104px) clamp(20px, 5vw, 48px);
+  overflow: hidden;
+  background:
+    radial-gradient(720px 420px at 88% 8%, color-mix(in srgb, var(--app-secondary) 14%, transparent), transparent 70%),
+    radial-gradient(640px 420px at 0 100%, color-mix(in srgb, var(--app-primary) 10%, transparent), transparent 70%);
+}
+.standalone { min-height: 100dvh; background-color: var(--app-background); }
+.brand { position: absolute; top: var(--mantine-spacing-lg); left: clamp(20px, 5vw, 48px); }
+.brand img { display: block; width: auto; height: 40px; }
+.toolbar { position: absolute; top: var(--mantine-spacing-md); right: var(--mantine-spacing-md); display: flex; gap: var(--mantine-spacing-xs); }
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: clamp(32px, 6vw, 72px);
+  align-items: center;
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.text { display: grid; justify-items: start; gap: var(--mantine-spacing-md); }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border: 1px solid color-mix(in srgb, var(--app-primary) 22%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--app-primary) 8%, transparent);
+  color: var(--app-primary);
+  font-size: var(--mantine-font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.eyebrowDot { width: 7px; height: 7px; border-radius: 50%; background: var(--app-secondary); }
+.title { font-size: clamp(2rem, 4.4vw, 3.4rem); line-height: 1.06; letter-spacing: -0.02em; color: var(--app-ink); }
+.description { margin: 0; max-width: 520px; color: var(--app-muted); font-size: var(--mantine-font-size-lg); line-height: 1.6; }
+.actions { display: flex; flex-wrap: wrap; gap: var(--mantine-spacing-sm); margin-top: var(--mantine-spacing-xs); }
+.footnote { margin: 0; color: var(--app-muted); font-size: var(--mantine-font-size-xs); font-family: var(--mantine-font-family-monospace); }
+.artwork { width: 100%; max-width: 560px; justify-self: center; }
+
+@media (max-width: 860px) {
+  .layout { grid-template-columns: minmax(0, 1fr); }
+  .artwork { order: -1; max-width: 380px; }
+}
+
+/* The illustration: every colour is a token of the identity, in either scheme. */
+.art { display: block; width: 100%; height: auto; overflow: visible; }
+.haloPrimary { fill: color-mix(in srgb, var(--app-primary) 9%, transparent); }
+.haloSecondary { fill: color-mix(in srgb, var(--app-secondary) 13%, transparent); }
+.ringDashed { fill: none; stroke: color-mix(in srgb, var(--app-primary) 26%, transparent); stroke-width: 2; stroke-dasharray: 6 12; }
+.ring { fill: none; stroke: color-mix(in srgb, var(--app-primary) 16%, transparent); stroke-width: 2; }
+.cardShadow { fill: color-mix(in srgb, var(--app-primary) 12%, transparent); }
+.card { fill: var(--app-surface); stroke: var(--app-border); stroke-width: 2; }
+.cardBar { fill: var(--app-highlight); }
+.address { fill: var(--app-surface); opacity: 0.85; }
+.code { font-family: var(--mantine-font-family-headings); font-size: 68px; font-weight: 800; letter-spacing: -0.02em; fill: var(--app-primary); }
+.lineStrong { fill: color-mix(in srgb, var(--app-primary) 28%, transparent); }
+.lineSoft { fill: color-mix(in srgb, var(--app-ink) 12%, transparent); }
+.dotPrimary { fill: color-mix(in srgb, var(--app-primary) 55%, transparent); }
+.dotSecondary { fill: var(--app-secondary); }
+.dotMuted { fill: color-mix(in srgb, var(--app-ink) 22%, transparent); }
+.trail { fill: none; stroke: color-mix(in srgb, var(--app-primary) 40%, transparent); stroke-width: 3; stroke-dasharray: 6 9; stroke-linecap: round; }
+.lens { fill: color-mix(in srgb, var(--app-surface) 72%, transparent); stroke: var(--app-primary); stroke-width: 12; }
+.glare { fill: none; stroke: var(--app-secondary); stroke-width: 5; stroke-linecap: round; }
+.handle { fill: none; stroke: var(--app-primary); stroke-width: 16; stroke-linecap: round; }
+.cable { fill: none; stroke: color-mix(in srgb, var(--app-primary) 70%, transparent); stroke-width: 8; stroke-linecap: round; }
+.plug { fill: var(--app-primary); }
+.socket { fill: var(--app-secondary); }
+.prongs { fill: none; stroke: var(--app-primary); stroke-width: 6; stroke-linecap: round; }
+.spark { fill: none; stroke: var(--app-secondary); stroke-width: 4; stroke-linecap: round; }
+
+.float, .floatReverse { transform-box: fill-box; transform-origin: center; animation: drift 6s ease-in-out infinite; }
+.floatReverse { animation-direction: reverse; }
+@keyframes drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .float, .floatReverse { animation: none; }
+}

@@ -1,0 +1,510 @@
+{
+  "News": {
+    "title": "News",
+    "description": "Everything the newsroom writes, from draft to publication, in both languages.",
+    "create": "New article",
+    "createWithAi": "Create with AI",
+    "creating": "Creating the draft…",
+    "cannotCreate": "Your role does not create news.",
+    "untitled": "Untitled",
+    "breaking": "Breaking",
+    "featured": "Featured",
+    "aiAssisted": "AI",
+    "aiAssistedHint": "Created or helped by the AI writer",
+    "localeOn": "Published in {locale}",
+    "localeOff": "Not published in {locale}",
+    "empty": "No news yet",
+    "emptyFiltered": "No news with these filters",
+    "emptyHint": "Create an article or ask the AI writer for a draft.",
+    "count": "{count, plural, =0 {No articles} one {# article} other {# articles}}",
+    "status": {
+      "draft": "Draft",
+      "review": "In review",
+      "scheduled": "Scheduled",
+      "published": "Published",
+      "archived": "Archived"
+    },
+    "tabs": {
+      "all": "All ({count})",
+      "draft": "Drafts ({count})",
+      "review": "In review ({count})",
+      "scheduled": "Scheduled ({count})",
+      "published": "Published ({count})",
+      "archived": "Archived ({count})"
+    },
+    "filters": {
+      "search": "Search by title",
+      "category": "Section",
+      "sort": "Sort by",
+      "mine": "Mine only"
+    },
+    "sort": {
+      "updated": "Last edit",
+      "published": "Publication",
+      "views": "Reads"
+    },
+    "columns": {
+      "title": "Article",
+      "status": "Status",
+      "category": "Section",
+      "author": "Author",
+      "date": "Date",
+      "views": "Reads",
+      "cover": "Cover"
+    },
+    "dates": {
+      "published": "published",
+      "scheduled": "scheduled for",
+      "updated": "edited"
+    },
+    "actions": {
+      "edit": "Edit",
+      "open": "Open",
+      "delete": "Delete",
+      "submit": "Submit for review",
+      "return": "Return to draft",
+      "publish": "Publish now",
+      "schedule": "Schedule publication…",
+      "unpublish": "Unpublish",
+      "archive": "Archive",
+      "restore": "Restore as draft"
+    },
+    "confirm": {
+      "unpublish": {
+        "title": "Unpublish the article?",
+        "description": "“{title}” leaves the site and becomes a draft again. Its address stops working until it is published again."
+      },
+      "archive": {
+        "title": "Archive the article?",
+        "description": "“{title}” leaves the lists and the site, but is kept and can be restored."
+      },
+      "delete": {
+        "title": "Delete the article?",
+        "description": "“{title}” and its whole history will be permanently deleted. This cannot be undone."
+      }
+    },
+    "done": {
+      "unpublish": "Article unpublished.",
+      "archive": "Article archived.",
+      "delete": "Article deleted."
+    }
+  },
+  "Builder": {
+    "untitled": "Untitled article",
+    "save": "Save",
+    "saved": "Changes saved.",
+    "saving": "Saving…",
+    "unsaved": "Unsaved changes",
+    "autosaveFailed": "Automatic saving failed. Try saving again.",
+    "savedAt": "Saved {when}",
+    "modes": {
+      "edit": "Edit",
+      "preview": "Preview"
+    },
+    "history": "History",
+    "sidebar": "Publication and settings of the article",
+    "readOnly": "You can read this article but not edit it: it is already published or it is not yours.",
+    "conflictTitle": "This article changed",
+    "conflict": "Someone else saved this article after you opened it. To avoid overwriting their work, reload the current version (your unsaved changes will be lost).",
+    "reload": "Reload the current version",
+    "delete": "Delete article",
+    "deleteTitle": "Delete the article?",
+    "deleteDescription": "The article and its whole history will be permanently deleted. This cannot be undone.",
+    "deleted": "Article deleted.",
+    "aiImage": "AI-generated image",
+    "counter": "{count} of {max} characters",
+    "fields": {
+      "title": "Title",
+      "subtitle": "Standfirst",
+      "body": "Article text",
+      "coverCaption": "Cover photo caption",
+      "slug": "Address (slug)",
+      "seoTitle": "Search engine title",
+      "seoDescription": "Search engine description"
+    },
+    "help": {
+      "subtitle": "One sentence summing up the article, below the title.",
+      "slug": "Generated from the title until the article is published; you can adjust it.",
+      "slugLive": "The article is live: changing its address breaks links already shared."
+    },
+    "placeholders": {
+      "title": "Write the article's title",
+      "body": "Start with the lead: who, what, when, where and why."
+    },
+    "seo": {
+      "title": "Address and search engines",
+      "description": "Left blank, search engines get the title and the standfirst."
+    },
+    "editor": {
+      "toolbar": "Text formatting",
+      "bold": "Bold",
+      "italic": "Italic",
+      "underline": "Underline",
+      "strike": "Strikethrough",
+      "h2": "Subheading",
+      "h3": "Minor subheading",
+      "bulletList": "Bulleted list",
+      "orderedList": "Numbered list",
+      "blockquote": "Quote",
+      "hr": "Separator",
+      "link": "Insert link",
+      "unlink": "Remove link",
+      "undo": "Undo",
+      "redo": "Redo",
+      "clear": "Clear formatting",
+      "image": "Insert image from the library"
+    },
+    "languages": {
+      "pt": "Portuguese",
+      "en": "English",
+      "title": "Languages",
+      "description": "The languages the article is published in.",
+      "missing": "Missing: {fields}"
+    },
+    "errors": {
+      "body": "The text has formatting that is not accepted. Remove the pasted passage and try again.",
+      "slug": "Use only lowercase letters, numbers and hyphens in the address.",
+      "incomplete": "To publish, every language selected needs a title and a text.",
+      "noLocale": "Select at least one language to publish in.",
+      "schedule": "Choose a date and time in the future.",
+      "status": "This action is not available in the article's current status. Reload the page.",
+      "deletePublished": "Unpublish or archive the article before deleting it."
+    },
+    "done": {
+      "submit": "Submitted for review.",
+      "return": "Returned to draft.",
+      "publish": "Article published.",
+      "schedule": "Publication scheduled.",
+      "unpublish": "Article unpublished.",
+      "archive": "Article archived.",
+      "restore": "Article restored as a draft."
+    },
+    "publication": {
+      "title": "Publication",
+      "publishedAt": "Published on",
+      "scheduledAt": "Scheduled for",
+      "updatedAt": "Last edit",
+      "views": "Reads",
+      "reading": "Reading time",
+      "minutes": "{locale}: {count} min",
+      "viewOnSite": "View on site ({locale})"
+    },
+    "classification": {
+      "title": "Classification",
+      "category": "Section",
+      "noCategory": "No section",
+      "author": "Byline",
+      "authorLocked": "Only editors change the byline."
+    },
+    "cover": {
+      "title": "Cover photo",
+      "description": "Shown on the front page, in lists and when the article is shared.",
+      "none": "No image chosen.",
+      "choose": "Choose image",
+      "change": "Change image",
+      "remove": "Remove"
+    },
+    "highlight": {
+      "title": "Highlight",
+      "featured": "Featured",
+      "featuredHelp": "May take the headline and highlights when the front page is not set by hand.",
+      "breaking": "Breaking",
+      "breakingHelp": "Shown in the site's breaking news strip for two days."
+    },
+    "ai": {
+      "title": "AI writer",
+      "description": "Ask for a draft, a new version or another cover image.",
+      "open": "Open the AI writer"
+    },
+    "sync": {
+      "noPermission": "Your role does not use automatic translation: write each language by hand.",
+      "unavailableTitle": "Automatic translation off",
+      "unavailable": "No AI provider answers right now, so the languages are not kept in sync.",
+      "configure": "Configure artificial intelligence",
+      "running": "Automatic sync on: what you write in {from} is translated into {to}.",
+      "toggle": "Sync",
+      "pausedTitle": "Sync paused",
+      "paused": "You edited the {to} text (or turned sync off), so automatic translations stopped so as not to erase your revision.",
+      "resume": "Sync {from} → {to}",
+      "simulated": "Translation simulated by the local provider (“[EN] …”): configure an AI provider for real translations.",
+      "translating": "translating…",
+      "automatic": "automatic translation",
+      "automaticHint": "Filled by the automatic translation; review it before publishing.",
+      "confirmTitle": "Sync {from} → {to}?",
+      "confirmDescription": "Every {to} field will be replaced by the translation, including what you edited by hand.",
+      "confirm": "Translate and replace",
+      "sourceTag": "source",
+      "targetTag": "translation"
+    },
+    "tags": {
+      "label": "Tags",
+      "placeholder": "Search or create tags",
+      "none": "No tags found",
+      "create": "Create tag “{name}”",
+      "created": "Tag created."
+    },
+    "revisions": {
+      "title": "Version history",
+      "back": "Back to history",
+      "restore": "Restore this version",
+      "restoreTitle": "Restore this version?",
+      "restoreDescription": "The current content will be replaced by this version. The current version stays in the history.",
+      "restored": "Version restored.",
+      "noTitle": "Untitled",
+      "aiImage": "AI-generated image",
+      "failed": "The history could not be loaded.",
+      "empty": "No saved versions yet.",
+      "system": "system",
+      "reasons": {
+        "save": "Edit",
+        "status": "Status change",
+        "restore": "Restore",
+        "ai": "AI writer"
+      }
+    },
+    "schedule": {
+      "title": "Schedule publication",
+      "description": "The article goes live by itself at the chosen time (this browser's time zone).",
+      "when": "Date and time",
+      "future": "Choose a time in the future.",
+      "cancel": "Cancel",
+      "confirm": "Schedule"
+    }
+  },
+  "Media": {
+    "title": "Media",
+    "description": "The images of the news: uploaded by the newsroom or generated by AI, described in both languages.",
+    "untitled": "Untitled image",
+    "ai": "AI",
+    "upload": "Upload images",
+    "generate": "Generate with AI",
+    "uploadTitle": "Upload images",
+    "generateTitle": "Generate an image with AI",
+    "pickerTitle": "Choose an image",
+    "tabs": {
+      "library": "Library",
+      "upload": "Upload",
+      "generate": "Generate with AI"
+    },
+    "search": "Search by title, description or credit",
+    "source": "Source",
+    "sources": {
+      "all": "All",
+      "upload": "Uploaded",
+      "ai": "AI-generated"
+    },
+    "empty": "No images yet",
+    "emptyHint": "Upload photos or generate illustrations with AI to use in the news.",
+    "count": "{count, plural, =0 {No images} one {# image} other {# images}}",
+    "credit": "Credit",
+    "creditHelp": "Who made the photo or the illustration; shown below the image on the site.",
+    "dropTitle": "Drag images here or click to choose",
+    "dropHint": "PNG, JPG or WebP. Images are re-encoded in several sizes without metadata (EXIF, GPS).",
+    "uploading": "Uploading image",
+    "prompt": "Describe the image",
+    "promptHelp": "Say what should appear, the mood and the framing. Generated images show no text, brands or identifiable real people.",
+    "generating": "Generating the image… this may take up to a minute.",
+    "aiUnavailable": "Image generation is off or no AI provider with images answers right now.",
+    "aiSimulated": "Local provider: an abstract placeholder illustration will be drawn.",
+    "details": "Image details",
+    "saved": "Image updated.",
+    "fields": {
+      "title": "Internal title",
+      "alt": "Alternative text",
+      "altHelp": "Describes the image to those who cannot see it (screen readers and search engines).",
+      "caption": "Caption",
+      "credit": "Credit"
+    },
+    "info": {
+      "source": "Source",
+      "size": "Size",
+      "usage": "Usage",
+      "usageCount": "{count, plural, =0 {Not used in any article} one {Used in # article} other {Used in # articles}}",
+      "created": "Added",
+      "prompt": "Request made to the AI"
+    },
+    "delete": "Delete image",
+    "deleteTitle": "Delete the image?",
+    "deleteDescription": "The image and all its sizes will be permanently deleted.",
+    "deleted": "Image deleted.",
+    "renditions": "Each image is kept in three widths for the site and a 1200 × 630 crop for social networks.",
+    "errors": {
+      "tooLarge": "The image exceeds the maximum size allowed.",
+      "unsupportedType": "Upload a PNG, JPG or WebP image.",
+      "load": "The library could not be loaded.",
+      "inUse": "This image is used in {count, plural, one {# article} other {# articles}}: replace it there before deleting it."
+    },
+    "listTitle": "Images",
+    "columns": {
+      "preview": "Image",
+      "title": "Title"
+    },
+    "actions": {
+      "edit": "Edit description",
+      "view": "View details"
+    }
+  },
+  "Categories": {
+    "title": "Sections",
+    "description": "The portal's sections: they organize the news, the site's menu and the front page's blocks.",
+    "listTitle": "Sections",
+    "listDescription": "The order here is the order of the site's menu.",
+    "add": "New section",
+    "edit": "Edit section",
+    "columns": {
+      "name": "Section",
+      "state": "Status",
+      "news": "Articles"
+    },
+    "active": "Active",
+    "inactive": "Inactive",
+    "inMenu": "In menu",
+    "fields": {
+      "name": "Name",
+      "description": "Description",
+      "color": "Colour",
+      "slugPt": "Portuguese address",
+      "slugEn": "English address",
+      "slugHelp": "Left blank, it is generated from the name.",
+      "active": "Active",
+      "activeHelp": "Inactive sections do not appear on the site.",
+      "showInMenu": "Show in menu",
+      "showInMenuHelp": "Lists the section in the site's main menu."
+    },
+    "removeTitle": "Delete the section?",
+    "removeDescription": "“{name}” will be deleted. Only sections without articles can be deleted.",
+    "saved": "Section saved.",
+    "removed": "Section deleted.",
+    "empty": "No sections yet",
+    "emptyHint": "Create the portal's sections, such as Artificial Intelligence, Devices and Security."
+  },
+  "Tags": {
+    "title": "Tags",
+    "description": "The subjects of the news, in both languages, each with its own page on the site.",
+    "listTitle": "Tags",
+    "listDescription": "Reporters also create tags right in the article builder.",
+    "add": "New tag",
+    "edit": "Edit tag",
+    "search": "Search tags",
+    "columns": {
+      "name": "Tag",
+      "slug": "Addresses",
+      "news": "Articles"
+    },
+    "fields": {
+      "name": "Name",
+      "slugPt": "Portuguese address",
+      "slugEn": "English address",
+      "slugHelp": "Left blank, it is generated from the name."
+    },
+    "removeTitle": "Delete the tag?",
+    "removeDescription": "“{name}” will be removed from {count, plural, =0 {no article} one {# article} other {# articles}}. The articles stay published.",
+    "saved": "Tag saved.",
+    "removed": "Tag deleted.",
+    "empty": "No tags found",
+    "emptyHint": "Create tags here or in the article builder.",
+    "count": "{count, plural, =0 {No tags} one {# tag} other {# tags}}"
+  },
+  "FrontPage": {
+    "title": "Front page",
+    "description": "Choose the headline, the highlights and the sections of the site's home page.",
+    "automatic": "Whatever is left empty is filled by the site automatically: first the articles marked as featured, then the newest ones.",
+    "headline": {
+      "title": "Headline",
+      "description": "The main article, at the top of the front page.",
+      "pick": "Search a published article"
+    },
+    "highlights": {
+      "title": "Highlights",
+      "description": "Up to {max} articles beside and below the headline, in the chosen order.",
+      "empty": "No highlights chosen.",
+      "add": "Add a highlight"
+    },
+    "sections": {
+      "title": "Section blocks",
+      "description": "Up to {max} sections shown as blocks, in the chosen order.",
+      "empty": "No sections chosen: the site shows the first four.",
+      "add": "Add a section"
+    },
+    "preview": {
+      "title": "Front page preview",
+      "description": "How the home page will be laid out.",
+      "headline": "Headline",
+      "auto": "Automatic",
+      "sections": "Sections",
+      "sectionsAuto": "The first four sections of the menu."
+    },
+    "moveUp": "Move up",
+    "moveDown": "Move down",
+    "remove": "Remove",
+    "unknown": "Article unavailable",
+    "nothingFound": "No published article found",
+    "save": "Save front page",
+    "clear": "Empty everything",
+    "saved": "Front page updated.",
+    "errors": {
+      "unpublished": "Only published articles may be on the front page. Remove those that went offline."
+    }
+  },
+  "Dashboard": {
+    "title": "Overview",
+    "greeting": "Hello, {name}. Here is how the newsroom is doing.",
+    "noNews": "Your role does not access the news.",
+    "create": "New article",
+    "createWithAi": "Create with AI",
+    "untitled": "Untitled",
+    "seeAll": "See all",
+    "increase": "Up",
+    "decrease": "Down",
+    "kpis": {
+      "published": "Published",
+      "views": "Reads",
+      "week": "Last 7 days",
+      "previousWeek": "vs. previous week",
+      "review": "In review",
+      "reviewCaption": "Waiting for an editor",
+      "scheduled": "Scheduled",
+      "scheduledCaption": "Go live by themselves",
+      "ai": "With AI",
+      "aiCaption": "Articles created with the writer"
+    },
+    "trend": {
+      "title": "Last 30 days",
+      "description": "Reads per day and articles published per day.",
+      "views": "Reads",
+      "published": "Published"
+    },
+    "sections": {
+      "title": "Sections",
+      "description": "Published articles in each section.",
+      "center": "published",
+      "empty": "No articles published yet."
+    },
+    "top": {
+      "title": "Most read this week",
+      "description": "Reads in the last 7 days.",
+      "views": "{count, plural, one {# read} other {# reads}}",
+      "empty": "No reads this week."
+    },
+    "mine": {
+      "title": "My work",
+      "description": "Your drafts, reviews and schedules.",
+      "empty": "Nothing pending with you."
+    },
+    "review": {
+      "title": "Waiting for review",
+      "description": "Oldest first.",
+      "empty": "Nothing waiting for review."
+    },
+    "scheduled": {
+      "title": "Upcoming publications",
+      "description": "Scheduled articles.",
+      "empty": "No publications scheduled."
+    },
+    "messages": {
+      "title": "Readers' messages",
+      "unread": "{count, plural, =0 {No new messages} one {# new message} other {# new messages}}",
+      "open": "Open messages"
+    }
+  }
+}

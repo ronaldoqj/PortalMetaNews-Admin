@@ -1,0 +1,9 @@
+# Only what the image is built from reaches the build: never settings or secrets (.env*), dependencies or outputs.
+*
+!package.json
+!package-lock.json
+!nest-cli.json
+!tsconfig.json
+!tsconfig.build.json
+!src
+**/*.spec.ts

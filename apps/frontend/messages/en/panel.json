@@ -1,0 +1,100 @@
+{
+  "Panel": {
+    "title": "Panel",
+    "viewSite": "View site",
+    "openSite": "Open the site in a new tab"
+  },
+  "Navigation": {
+    "sections": {
+      "newsroom": "Newsroom",
+      "site": "Site",
+      "administration": "Administration"
+    },
+    "dashboard": "Overview",
+    "news": "News",
+    "newNews": "New article",
+    "aiWriter": "AI writer",
+    "frontPage": "Front page",
+    "categories": "Sections",
+    "tags": "Tags",
+    "media": "Media",
+    "themes": "Themes",
+    "branding": "Branding",
+    "siteSettings": "Site details",
+    "legal": "Legal texts",
+    "privacy": "Privacy",
+    "terms": "Terms of use",
+    "contacts": "Messages",
+    "access": "Team and roles",
+    "settings": "Settings",
+    "ai": "Artificial intelligence",
+    "email": "E-mail (SMTP)",
+    "storage": "Storage",
+    "audit": "Audit",
+    "documentation": "Documentation",
+    "profile": "My profile",
+    "toggle": "Open or close the navigation"
+  },
+  "Breadcrumbs": {
+    "home": "Home",
+    "editNews": "Edit article",
+    "conversation": "Conversation",
+    "theme": "Theme",
+    "message": "Message",
+    "document": "Document"
+  },
+  "Auth": {
+    "title": "Panel sign-in",
+    "email": "E-mail",
+    "password": "Password",
+    "enter": "Sign in",
+    "logout": "Sign out",
+    "accountMenu": "Account menu of {name}",
+    "editProfile": "Edit profile",
+    "recoveryHint": "Forgot your password? Ask whoever manages the team for a temporary one.",
+    "firstAccessTitle": "First access: set your password",
+    "firstAccessNotice": "This is a temporary password. For security, set a definitive password now to continue.",
+    "newPassword": "New password",
+    "confirmPassword": "Confirm new password",
+    "firstAccessSubmit": "Set password and continue",
+    "backToLogin": "Back to sign-in",
+    "passwordRequirements": "Use 12 to 128 characters with at least three of: lowercase letters, uppercase letters, numbers and symbols. Do not reuse the temporary password or include your e-mail.",
+    "errors": {
+      "invalidInput": "Check the fields.",
+      "invalidCredentials": "Invalid credentials or access temporarily locked.",
+      "forbidden": "This account has no access to the panel.",
+      "unavailable": "Service unavailable. Please try again.",
+      "passwordMismatch": "The passwords do not match.",
+      "passwordPolicy": "The new password does not meet the security requirements.",
+      "passwordReused": "The new password must differ from the temporary one.",
+      "passwordChangeExpired": "The time to set a new password has expired. Sign in again with the temporary password.",
+      "rateLimited": "Too many attempts in a short time. Wait a moment and try again."
+    },
+    "setup": {
+      "title": "Install the panel",
+      "description": "There is no account yet. This account gets the Administrator role, with full control of the portal. This form works only once.",
+      "name": "Full name",
+      "confirmation": "Confirm password",
+      "token": "Installation token",
+      "tokenHelp": "Set on the server as PANEL_SETUP_TOKEN.",
+      "submit": "Install and sign in",
+      "unavailable": "Installing from the browser is disabled in this environment. Set PANEL_SETUP_TOKEN on the server or use npm run admin:bootstrap.",
+      "errors": {
+        "invalidInput": "Check the details.",
+        "passwordMismatch": "The passwords do not match.",
+        "passwordPolicy": "The password does not meet the requirements.",
+        "alreadyInstalled": "The panel is already installed. Sign in with an existing account.",
+        "setupRefused": "Invalid installation token.",
+        "unavailable": "The installation could not be completed. Please try again."
+      }
+    }
+  },
+  "Roles": {
+    "system": {
+      "admin": "Administrator",
+      "editor": "Editor-in-chief",
+      "reporter": "Reporter",
+      "reviewer": "Copy editor"
+    }
+  }
+}

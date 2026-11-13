@@ -1,0 +1,136 @@
+{
+  "Writer": {
+    "title": "Redator com IA",
+    "newConversation": "Nova notícia com IA",
+    "untitled": "Conversa sem título",
+    "hero": {
+      "title": "Escreva uma notícia com a IA",
+      "intro": "Descreva a pauta com os fatos que você tem. A IA redige a notícia, prepara as versões em português e inglês, sugere editoria, tags e SEO e cria uma imagem de capa. Depois, transforme a proposta em rascunho com um clique.",
+      "tipsTitle": "O que incluir no briefing",
+      "tips": [
+        "Os fatos: quem, o quê, quando, onde e por quê.",
+        "Números, datas e nomes exatamente como devem aparecer.",
+        "Citações entre aspas, com quem disse.",
+        "Fontes e links que a redação já checou."
+      ],
+      "examples": "Exemplos para começar",
+      "samples": [
+        "A prefeitura inaugurou hoje um parque linear de 5 km às margens do rio, com ciclovia e quadras. A obra custou R$ 12 milhões e durou 18 meses. O prefeito disse que o parque \"devolve o rio à cidade\".",
+        "Escreva uma nota curta: a biblioteca municipal amplia o horário de funcionamento a partir de segunda-feira, das 8h às 22h, inclusive aos sábados.",
+        "Faça uma notícia explicativa sobre o lançamento de um satélite universitário que vai monitorar queimadas, construído por 40 estudantes em três anos."
+      ]
+    },
+    "list": {
+      "label": "Conversas",
+      "new": "Nova conversa",
+      "search": "Buscar conversas",
+      "empty": "Nenhuma conversa ainda.",
+      "noResults": "Nenhuma conversa encontrada.",
+      "rename": "Renomear",
+      "title": "Título",
+      "renamed": "Conversa renomeada.",
+      "actions": "Ações da conversa {title}",
+      "linked": "Vinculada a uma notícia"
+    },
+    "remove": {
+      "title": "Excluir conversa",
+      "description": "A conversa “{title}” e as propostas dela serão excluídas. Rascunhos já criados e imagens geradas continuam na redação.",
+      "done": "Conversa excluída."
+    },
+    "options": {
+      "label": "Opções da redação",
+      "language": "Idioma da redação",
+      "languages": {
+        "pt": "Português",
+        "en": "Inglês"
+      },
+      "tone": "Tom",
+      "tones": {
+        "neutral": "Neutro (notícia direta)",
+        "explanatory": "Explicativo",
+        "analytical": "Analítico",
+        "light": "Leve"
+      },
+      "length": "Tamanho",
+      "lengths": {
+        "short": "Curta (~250 palavras)",
+        "medium": "Média (~500 palavras)",
+        "long": "Longa (~900 palavras)"
+      },
+      "image": "Gerar imagem de capa"
+    },
+    "composer": {
+      "label": "Briefing da notícia",
+      "placeholder": "Descreva a pauta: fatos, números, citações e fontes. Ou peça ajustes à última proposta…",
+      "send": "Enviar",
+      "stop": "Parar",
+      "hint": "Ctrl + Enter envia. A IA usa apenas o que você informar; o que faltar aparece como [confirmar: …].",
+      "count": "{count} / {max}"
+    },
+    "stages": {
+      "label": "Andamento",
+      "writing": "Redigindo",
+      "structuring": "Preparando PT e EN",
+      "illustrating": "Criando a capa"
+    },
+    "stopped": "Interrompida",
+    "you": "Você",
+    "assistant": "Redator",
+    "linkedNews": "Notícia vinculada",
+    "openLinked": "Abrir notícia vinculada",
+    "status": {
+      "local": "Modo de simulação local: sem um provedor de IA configurado, o redator monta o rascunho a partir do seu briefing, marca as traduções com [EN]/[PT] e desenha uma ilustração abstrata. Nenhum dado sai do servidor.",
+      "configure": "Configurar a inteligência artificial",
+      "unavailable": "O redator está indisponível",
+      "noImages": "O provedor atual não gera imagens: as propostas virão sem capa."
+    },
+    "proposal": {
+      "title": "Proposta de notícia",
+      "section": "Editoria sugerida",
+      "noSection": "Sem editoria sugerida",
+      "tags": "Tags",
+      "seo": "SEO",
+      "seoTitle": "Título para buscadores",
+      "seoDescription": "Descrição para buscadores",
+      "caption": "Legenda da capa",
+      "covers": "Capa",
+      "noCover": "Sem imagem de capa",
+      "chooseCover": "Usar esta imagem como capa",
+      "chosen": "Capa escolhida",
+      "aiImage": "Imagem gerada por IA",
+      "create": "Criar rascunho",
+      "creating": "Criando rascunho…",
+      "applyLinked": "Aplicar à notícia vinculada",
+      "applyLinkedHint": "Substitui título, linha fina, texto, SEO, tags e capa da notícia vinculada (o histórico de revisões guarda a versão anterior).",
+      "applied": "Rascunho criado.",
+      "appliedLinked": "Notícia atualizada.",
+      "open": "Abrir rascunho",
+      "cannotWrite": "Sua conta não cria notícias; peça a um editor que use esta proposta.",
+      "illustrate": "Gerar outra imagem",
+      "illustrateTitle": "Gerar outra imagem de capa",
+      "illustratePrompt": "Descrição da imagem (em inglês funciona melhor)",
+      "illustrating": "Gerando imagem… pode levar até dois minutos.",
+      "illustrated": "Nova imagem adicionada às opções de capa.",
+      "article": "Texto redigido",
+      "showArticle": "Ver o texto como foi redigido",
+      "hideArticle": "Ocultar o texto redigido"
+    },
+    "errors": {
+      "ai_unconfigured": "Nenhum provedor de IA está configurado. Configure uma chave em Configurações → Inteligência artificial.",
+      "ai_disabled": "A inteligência artificial está desativada nas configurações do painel.",
+      "ai_key_rejected": "O provedor recusou a chave de API configurada.",
+      "ai_provider_failed": "O provedor de IA não respondeu. Tente novamente em instantes.",
+      "ai_images_unavailable": "O provedor atual não gera imagens.",
+      "answer_in_progress": "Uma resposta ainda está sendo escrita nesta conversa.",
+      "brief_invalid": "Escreva o briefing (até 12.000 caracteres).",
+      "structure_failed": "O texto foi redigido, mas não foi possível prepará-lo em PT e EN. Peça de novo ou ajuste o briefing.",
+      "image_failed": "A notícia foi preparada, mas a imagem de capa não pôde ser gerada.",
+      "interrupted": "A resposta foi interrompida.",
+      "proposal_missing": "Esta resposta não tem proposta para aplicar.",
+      "writer_options_invalid": "Opções de redação inválidas.",
+      "failed": "Não foi possível concluir."
+    },
+    "toBottom": "Ir para o fim",
+    "forbidden": "Sua conta não tem permissão para usar o redator com IA."
+  }
+}

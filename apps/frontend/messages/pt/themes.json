@@ -1,0 +1,327 @@
+{
+  "Themes": {
+    "title": "Temas",
+    "description": "Cada tema é um conjunto completo de tokens de design: cores dos modos claro e escuro, campos, tipografia, cantos e o layout do site. Um tema veste o site e outro o painel, trocados com um clique.",
+    "system": "Sistema",
+    "activeSite": "Ativo no site",
+    "activePanel": "Ativo no painel",
+    "updated": "Atualizado {date}",
+    "updatedBy": "Atualizado {date} por {name}",
+    "actions": {
+      "edit": "Editar",
+      "duplicate": "Duplicar",
+      "activateSite": "Ativar no site",
+      "activatePanel": "Ativar no painel",
+      "export": "Exportar JSON",
+      "import": "Importar JSON",
+      "delete": "Excluir",
+      "new": "Novo tema",
+      "save": "Salvar tema",
+      "back": "Voltar aos temas"
+    },
+    "activated": {
+      "site": "O site passou a usar este tema.",
+      "panel": "O painel passou a usar este tema."
+    },
+    "duplicate": {
+      "title": "Duplicar tema",
+      "name": "Nome do novo tema",
+      "copyOf": "{name} (cópia)",
+      "done": "Tema duplicado. Edite-o à vontade."
+    },
+    "create": {
+      "title": "Novo tema",
+      "description": "O novo tema começa com os tokens do tema escolhido como base.",
+      "base": "Tema base",
+      "done": "Tema criado."
+    },
+    "remove": {
+      "title": "Excluir tema",
+      "description": "O tema “{name}” será excluído. Esta ação não pode ser desfeita.",
+      "done": "Tema excluído."
+    },
+    "import": {
+      "title": "Importar tema",
+      "description": "Escolha um arquivo .json exportado por este painel (ou só com os tokens). Ele é validado antes de virar um tema novo.",
+      "choose": "Escolher arquivo JSON",
+      "name": "Nome do tema",
+      "done": "Tema importado.",
+      "invalid": "O arquivo não é um tema válido: confira se foi exportado por este painel e não foi alterado.",
+      "tooLarge": "O arquivo é grande demais para ser um tema (máximo 64 KB)."
+    },
+    "errors": {
+      "theme_system": "Temas do sistema não podem ser excluídos: duplique-os para criar variações.",
+      "theme_active": "Um tema ativo não pode ser excluído. Ative outro tema no site e no painel antes.",
+      "theme_limit": "Limite de temas atingido. Exclua temas que não usa.",
+      "theme_tokens_invalid": "Os tokens do tema são inválidos."
+    },
+    "empty": "Nenhum tema cadastrado.",
+    "forbidden": "Sua conta não tem permissão para gerenciar temas.",
+    "editor": {
+      "title": "Editar tema",
+      "saved": "Tema salvo. O site e o painel usam a nova versão a partir da próxima página aberta.",
+      "identity": "Identificação",
+      "identityHint": "Como o tema aparece na lista.",
+      "name": "Nome",
+      "descriptionField": "Descrição",
+      "colors": "Cores",
+      "colorsHint": "Oito tokens para cada modo. O texto sobre botões é calculado automaticamente.",
+      "contrast": {
+        "good": "Contraste bom com o texto",
+        "low": "Contraste baixo com o texto ({ratio}:1)"
+      },
+      "onColor": "Texto sobre a cor: {color}",
+      "fieldsTitle": "Campos de formulário",
+      "fieldsHint": "Como entradas de texto, seleções e o editor são desenhados no site e no painel.",
+      "typography": "Tipografia",
+      "typographyHint": "A fonte dos títulos e a do texto e dos controles, escolhidas separadamente.",
+      "shapes": "Formas e layout do site",
+      "shapesHint": "Cantos de cartões, botões e imagens; o cabeçalho e o estilo dos cartões de notícia.",
+      "radius": "Cantos",
+      "radiusOptions": {
+        "none": "Retos",
+        "xs": "Mínimos",
+        "sm": "Suaves",
+        "md": "Médios",
+        "lg": "Arredondados",
+        "xl": "Bem arredondados"
+      },
+      "header": "Cabeçalho do site",
+      "headerOptions": {
+        "left": "Logo à esquerda e menu ao lado",
+        "centered": "Logo centralizado sobre o menu"
+      },
+      "cards": "Cartões de notícia",
+      "cardOptions": {
+        "flat": "Planos",
+        "outlined": "Com contorno",
+        "elevated": "Com sombra"
+      },
+      "systemNotice": "Este é um tema do sistema: as alterações valem para ele, mas ele nunca pode ser excluído. Para manter o original, duplique-o antes.",
+      "activeNotice": "Este tema está ativo em: {surfaces}. Ao salvar, a mudança aparece imediatamente.",
+      "surfaces": {
+        "site": "site",
+        "panel": "painel"
+      }
+    },
+    "preview": {
+      "title": "Pré-visualização",
+      "light": "Claro",
+      "dark": "Escuro",
+      "label": "Prévia do site com este tema",
+      "menu": {
+        "home": "Início",
+        "ai": "Inteligência Artificial",
+        "devices": "Dispositivos",
+        "security": "Segurança"
+      },
+      "breaking": "Urgente",
+      "section": "Inteligência Artificial",
+      "headline": "Modelo de IA em português passa a rodar inteiramente no celular",
+      "subtitle": "Versão compacta funciona sem internet e não envia nenhum dado para servidores.",
+      "cards": [
+        "Falha em roteadores domésticos ganha correção",
+        "Nanossatélite universitário envia as primeiras imagens",
+        "Startup de drones agrícolas capta R$ 80 milhões"
+      ],
+      "meta": "Há 2 horas · 3 min de leitura",
+      "read": "Ler notícia",
+      "subscribe": "Assinar a newsletter",
+      "email": "Seu e-mail",
+      "emailPlaceholder": "nome@exemplo.com"
+    },
+    "listTitle": "Temas",
+    "columns": {
+      "preview": "Prévia",
+      "name": "Tema",
+      "status": "Uso",
+      "fonts": "Tipografia",
+      "updated": "Atualização"
+    }
+  },
+  "Branding": {
+    "schemes": {
+      "label": "Modo de cor",
+      "light": "Claro",
+      "dark": "Escuro"
+    },
+    "colors": {
+      "primary": "Primária",
+      "secondary": "Secundária",
+      "background": "Fundo",
+      "surface": "Cartões e painéis",
+      "highlight": "Destaques",
+      "border": "Bordas e linhas",
+      "foreground": "Texto",
+      "muted": "Texto secundário"
+    },
+    "colorHints": {
+      "primary": "Botões, links e realces",
+      "secondary": "Acentos da marca e urgência",
+      "background": "Fundo das páginas",
+      "surface": "Cartões, cabeçalho e painéis",
+      "highlight": "Áreas de destaque e superfícies elevadas",
+      "border": "Linhas e contornos",
+      "foreground": "Títulos e texto principal",
+      "muted": "Legendas, datas e textos de apoio"
+    },
+    "fields": {
+      "variant": {
+        "label": "Estilo do campo",
+        "options": {
+          "default": "Padrão (contorno fino)",
+          "filled": "Preenchido",
+          "outlined": "Contorno destacado",
+          "borderless": "Sem moldura (linha inferior)",
+          "standout": "Em destaque (com sombra)"
+        }
+      },
+      "shape": {
+        "label": "Cantos e densidade",
+        "options": {
+          "default": "Padrão",
+          "square": "Cantos retos",
+          "rounded": "Arredondado",
+          "dense": "Compacto"
+        }
+      }
+    },
+    "typography": {
+      "headings": "Fonte dos títulos",
+      "body": "Fonte do texto e dos controles",
+      "preview": "Amostra",
+      "sampleTitle": "Manchete em destaque",
+      "sampleText": "O texto das notícias, dos menus e dos botões usa esta fonte.",
+      "fonts": {
+        "manrope": {
+          "name": "Manrope",
+          "hint": "Geométrica · ótima para interfaces"
+        },
+        "inter": {
+          "name": "Inter",
+          "hint": "Neogrotesca · leitura confortável"
+        },
+        "plus-jakarta-sans": {
+          "name": "Plus Jakarta Sans",
+          "hint": "Moderna · corporativa"
+        },
+        "satoshi": {
+          "name": "Satoshi",
+          "hint": "Minimalista · premium"
+        },
+        "general-sans": {
+          "name": "General Sans",
+          "hint": "Limpa · neutra"
+        },
+        "roboto": {
+          "name": "Roboto",
+          "hint": "Alta legibilidade"
+        },
+        "poppins": {
+          "name": "Poppins",
+          "hint": "Geométrica · amigável"
+        },
+        "nunito": {
+          "name": "Nunito",
+          "hint": "Arredondada · leve"
+        },
+        "public-sans": {
+          "name": "Public Sans",
+          "hint": "Institucional · editorial"
+        },
+        "newsreader": {
+          "name": "Newsreader",
+          "hint": "Serifada · clássica de jornal"
+        },
+        "system-ui": {
+          "name": "Fonte do sistema",
+          "hint": "Nativa do dispositivo, sem download"
+        }
+      }
+    },
+    "assets": {
+      "title": "Identidade visual",
+      "description": "Logos, ícones da aba do navegador e a imagem padrão de compartilhamento. Sem imagem própria, o site usa a identidade que acompanha o portal.",
+      "slots": {
+        "logo": {
+          "label": "Logo (modo claro)",
+          "hint": "PNG, JPG ou WebP até 5 MB. Fundo transparente; é redimensionado para no máximo 720 × 200."
+        },
+        "logoDark": {
+          "label": "Logo (modo escuro)",
+          "hint": "A versão clara do logo, para fundos escuros. Sem ela, o logo claro é usado nos dois modos."
+        },
+        "favicon": {
+          "label": "Favicon (modo claro)",
+          "hint": "Quadrado, de preferência 512 × 512. Vira um PNG de 64 × 64."
+        },
+        "faviconDark": {
+          "label": "Favicon (modo escuro)",
+          "hint": "Para abas escuras do navegador. Sem ele, o favicon claro é usado."
+        },
+        "social": {
+          "label": "Imagem de compartilhamento",
+          "hint": "1200 × 630, usada quando uma página sem foto é compartilhada (redes sociais, mensageiros)."
+        }
+      },
+      "current": "Imagem atual",
+      "bundled": "Identidade padrão do portal",
+      "upload": "Enviar imagem",
+      "replace": "Trocar imagem",
+      "drop": "Arraste uma imagem ou clique para escolher",
+      "uploading": "Enviando…",
+      "uploaded": "Imagem atualizada.",
+      "remove": "Remover imagem",
+      "removeTitle": "Remover imagem",
+      "removeDescription": "A imagem “{name}” será apagada e o site voltará a usar a identidade padrão.",
+      "removed": "Imagem removida.",
+      "metadata": "Toda imagem é regravada pelo servidor: nenhum metadado do arquivo original (EXIF, GPS) é guardado.",
+      "errors": {
+        "tooLarge": "A imagem excede 5 MB.",
+        "unsupportedType": "Envie uma imagem PNG, JPG ou WebP.",
+        "invalidInput": "A imagem não pôde ser processada.",
+        "forbidden": "Sua conta não pode alterar a identidade visual.",
+        "unavailable": "Não foi possível enviar agora. Tente novamente."
+      }
+    },
+    "site": {
+      "title": "Dados do site",
+      "description": "Nome, slogan, descrição, idioma padrão, contato e redes sociais do portal. Aparecem no cabeçalho, no rodapé e nos resultados de busca.",
+      "sections": {
+        "identity": "Identidade",
+        "identityHint": "O nome e as frases que apresentam o portal.",
+        "contact": "Idioma e contato",
+        "contactHint": "O idioma de quem abre o site sem escolher e o e-mail que recebe os avisos do formulário de contato.",
+        "social": "Redes sociais",
+        "socialHint": "Endereços completos (https://…) dos perfis do portal; em branco, a rede não aparece no site."
+      },
+      "siteName": "Nome do portal",
+      "tagline": "Slogan",
+      "descriptionField": "Descrição",
+      "descriptionHint": "Usada nos resultados de busca e ao compartilhar a página inicial.",
+      "defaultLocale": "Idioma padrão",
+      "locales": {
+        "pt": "Português",
+        "en": "Inglês"
+      },
+      "contactEmail": "E-mail de contato",
+      "contactEmailHint": "Recebe o aviso de cada mensagem enviada pelo site.",
+      "networks": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "x": "X (Twitter)",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp (canal ou link)",
+        "telegram": "Telegram"
+      },
+      "saved": "Dados do site atualizados.",
+      "forbidden": "Sua conta não tem permissão para alterar os dados do site.",
+      "errors": {
+        "social_invalid": "Confira os endereços das redes sociais: cada um deve começar com https://."
+      }
+    },
+    "forbidden": "Sua conta não tem permissão para alterar a identidade visual."
+  }
+}

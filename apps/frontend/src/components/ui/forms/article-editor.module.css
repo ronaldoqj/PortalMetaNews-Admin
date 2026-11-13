@@ -1,0 +1,6 @@
+/* The body editor: the article's own typography (`.article-body`), on the field's surface, growing with the text. */
+.root { border-color: var(--app-border); background: var(--app-surface); }
+.content :global(.ProseMirror) { min-height: var(--article-editor-min-height, 320px); padding: 16px 20px; outline: none; }
+.content :global(.ProseMirror img) { display: block; max-width: 100%; height: auto; border-radius: var(--app-radius-card, 4px); }
+.content :global(.ProseMirror img.ProseMirror-selectednode) { outline: 3px solid var(--mantine-primary-color-filled); }
+.content :global(.ProseMirror p.is-editor-empty:first-child::before) { content: attr(data-placeholder); float: left; height: 0; pointer-events: none; color: var(--app-muted); }

@@ -1,0 +1,72 @@
+/*
+ * The items of a listing (`ListingView`). Colours come from the identity's variables only (`--app-*`), so every
+ * palette, light and dark, draws them. Items are the rows of a table, the cards of a `SimpleGrid` and the children
+ * of an element marked `data-listing-items`; they come in one after the other when the view or the page changes.
+ */
+.view {
+  --listing-accent: var(--app-primary);
+  --listing-soft: color-mix(in srgb, var(--app-primary) 7%, transparent);
+  display: contents;
+}
+
+/* Each element knows its place among its siblings; only the items read it, and only the first few wait at all. */
+.view * { --listing-step: 0; }
+.view *:nth-child(2) { --listing-step: 1; }
+.view *:nth-child(3) { --listing-step: 2; }
+.view *:nth-child(4) { --listing-step: 3; }
+.view *:nth-child(5) { --listing-step: 4; }
+.view *:nth-child(6) { --listing-step: 5; }
+.view *:nth-child(7) { --listing-step: 6; }
+.view *:nth-child(n + 8) { --listing-step: 7; }
+
+.view :is(tbody > tr, :global(.mantine-SimpleGrid-root) > *, [data-listing-items] > *) {
+  animation: listing-in 260ms ease-out backwards;
+  animation-delay: calc(var(--listing-step) * 25ms);
+}
+
+/* Rows: a quiet header, a tinted hover with an accent bar at the start of the row. */
+.view thead th {
+  color: var(--app-muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.view tbody tr { transition: background-color 160ms ease; }
+.view tbody tr > td:first-child { box-shadow: inset 3px 0 0 transparent; transition: box-shadow 160ms ease; }
+.view tbody tr:hover { background: var(--listing-soft); }
+.view tbody tr:hover > td:first-child { box-shadow: inset 3px 0 0 var(--listing-accent); }
+.view ul[data-listing-items] > li { box-shadow: inset 3px 0 0 transparent; transition: background-color 160ms ease, box-shadow 160ms ease; }
+.view ul[data-listing-items] > li:hover { background: var(--listing-soft); box-shadow: inset 3px 0 0 var(--listing-accent); }
+
+/* Cards: each lifts a little under the pointer, with a band in the identity's colours along its top. */
+.view :is(:global(.mantine-SimpleGrid-root), [data-listing-items]) > :global(.mantine-Card-root) {
+  position: relative;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+.view :is(:global(.mantine-SimpleGrid-root), [data-listing-items]) > :global(.mantine-Card-root)::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 3px;
+  background: linear-gradient(90deg, var(--app-primary), var(--app-secondary));
+  opacity: 0;
+  transition: opacity 180ms ease;
+  pointer-events: none;
+}
+.view :is(:global(.mantine-SimpleGrid-root), [data-listing-items]) > :global(.mantine-Card-root):is(:hover, :focus-within) {
+  border-color: color-mix(in srgb, var(--app-primary) 35%, var(--app-border));
+  box-shadow: var(--mantine-shadow-md);
+  transform: translateY(-2px);
+}
+.view :is(:global(.mantine-SimpleGrid-root), [data-listing-items]) > :global(.mantine-Card-root):is(:hover, :focus-within)::before { opacity: 1; }
+
+@keyframes listing-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .view :is(tbody > tr, :global(.mantine-SimpleGrid-root) > *, [data-listing-items] > *) { animation: none; }
+  .view *, .view *::before { transition: none !important; }
+  .view :is(:global(.mantine-SimpleGrid-root), [data-listing-items]) > :global(.mantine-Card-root):is(:hover, :focus-within) { transform: none; }
+}

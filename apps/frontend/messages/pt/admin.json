@@ -1,0 +1,613 @@
+{
+  "Access": {
+    "title": "Equipe e perfis",
+    "description": "As contas da redação e os perfis que definem o que cada uma pode fazer no painel.",
+    "usersTab": "Contas",
+    "rolesTab": "Perfis",
+    "usersTitle": "Contas da equipe",
+    "usersDescription": "Cada conta entra no painel com o próprio e-mail e assina notícias com o próprio nome.",
+    "rolesTitle": "Perfis de acesso",
+    "rolesDescription": "Um perfil é um conjunto de permissões. Os quatro perfis do sistema podem ganhar permissões, mas não perder as originais.",
+    "newUser": "Nova conta",
+    "editUser": "Editar conta",
+    "newRole": "Novo perfil",
+    "editRole": "Editar perfil",
+    "name": "Nome",
+    "email": "E-mail",
+    "emailFixed": "O e-mail de acesso não muda; para outro e-mail, crie uma nova conta.",
+    "newUserHelp": "A conta recebe uma senha temporária, exibida uma única vez, e troca por uma definitiva no primeiro acesso.",
+    "role": "Perfil",
+    "selfHelp": "Você não pode alterar o próprio perfil nem desativar a própria conta.",
+    "enabled": "Conta ativa",
+    "enabledHelp": "Desativada, a conta não entra mais e suas sessões terminam; as notícias que assina continuam no ar.",
+    "jobTitle": "Cargo (assinatura)",
+    "bio": "Minibiografia",
+    "bioHelp": "Aparece na página do autor no site.",
+    "photo": "Foto",
+    "removePhotoTitle": "Remover a foto?",
+    "removePhotoWarning": "A foto de {name} será apagada e as iniciais voltarão a aparecer.",
+    "noUsers": "Nenhuma conta ainda.",
+    "noRoles": "Nenhum perfil ainda.",
+    "you": "você",
+    "state": "Situação",
+    "pendingFirstAccess": "Aguardando 1º acesso",
+    "active": "Ativa",
+    "inactive": "Desativada",
+    "news": "Notícias",
+    "lastLogin": "Último acesso",
+    "never": "Nunca",
+    "edit": "Editar",
+    "newPassword": "Gerar senha temporária",
+    "newPasswordTitle": "Gerar uma senha temporária?",
+    "newPasswordWarning": "A senha atual de {name} deixa de funcionar e as sessões abertas terminam. A nova senha aparece uma única vez.",
+    "system": "Sistema",
+    "custom": "Personalizado",
+    "systemDescriptions": {
+      "admin": "Controle total do portal, inclusive equipe, perfis e integrações.",
+      "editor": "Edita e publica qualquer notícia, cuida da capa, das editorias e da mídia.",
+      "reporter": "Escreve as próprias notícias e as envia para revisão.",
+      "reviewer": "Revisa e corrige qualquer notícia, sem publicar."
+    },
+    "roleDescription": "Descrição",
+    "systemRoleHelp": "Perfil do sistema: o nome e a descrição são fixos, e as permissões originais ficam marcadas.",
+    "permissionsTitle": "Permissões",
+    "permissionCount": "{count, plural, one {# permissão} other {# permissões}}",
+    "members": "Contas",
+    "memberCount": "{count, plural, =0 {nenhuma conta} one {# conta} other {# contas}}",
+    "delete": "Excluir",
+    "deleteTitle": "Excluir o perfil?",
+    "deleteWarning": "O perfil {name} será excluído. Só é possível excluir perfis sem contas.",
+    "deleted": "Perfil excluído.",
+    "roleSaved": "Perfil salvo.",
+    "userSaved": "Conta salva.",
+    "errors": {
+      "email_taken": "Já existe uma conta com este e-mail.",
+      "role_system": "Perfis do sistema mantêm o nome e a descrição e não podem ser excluídos.",
+      "role_baseline": "Perfis do sistema não podem perder as permissões originais.",
+      "role_in_use": "Este perfil ainda tem contas. Mude o perfil delas antes de excluir.",
+      "access_lockout": "Ao menos uma conta ativa precisa manter a permissão \"Equipe e perfis\".",
+      "role_not_found": "O perfil escolhido não existe mais.",
+      "user_disabled": "Contas desativadas não recebem senha temporária: reative a conta antes."
+    },
+    "permissionGroups": {
+      "news": "Notícias",
+      "content": "Conteúdo e redação",
+      "site": "Site",
+      "administration": "Administração"
+    },
+    "permissions": {
+      "news_read": {
+        "label": "Ler notícias",
+        "description": "Vê todas as notícias do painel, em qualquer situação, e a visão geral."
+      },
+      "news_write": {
+        "label": "Escrever notícias",
+        "description": "Cria notícias e edita as próprias enquanto estão em rascunho ou revisão."
+      },
+      "news_edit_all": {
+        "label": "Editar qualquer notícia",
+        "description": "Edita notícias de qualquer autor, inclusive publicadas (correções), e troca a assinatura."
+      },
+      "news_publish": {
+        "label": "Publicar",
+        "description": "Publica, agenda, despublica e arquiva notícias."
+      },
+      "news_delete": {
+        "label": "Excluir notícias",
+        "description": "Exclui notícias que não estão publicadas."
+      },
+      "taxonomy_manage": {
+        "label": "Editorias e tags",
+        "description": "Cria, edita, ordena e remove editorias e tags."
+      },
+      "media_manage": {
+        "label": "Mídia",
+        "description": "Envia, descreve, gera com IA e remove imagens da biblioteca."
+      },
+      "ai_use": {
+        "label": "Usar a IA",
+        "description": "Usa o redator com IA e a tradução automática do construtor."
+      },
+      "front_page_manage": {
+        "label": "Capa",
+        "description": "Escolhe a manchete, os destaques e as editorias da página inicial."
+      },
+      "themes_manage": {
+        "label": "Temas e identidade visual",
+        "description": "Cria e ativa temas e troca logotipos, favicons e a imagem de compartilhamento."
+      },
+      "site_manage": {
+        "label": "Dados do site",
+        "description": "Edita o nome, a descrição, as redes sociais e os textos legais do site."
+      },
+      "contacts_read": {
+        "label": "Mensagens de leitores",
+        "description": "Lê e organiza as mensagens enviadas pelo formulário de contato."
+      },
+      "users_manage": {
+        "label": "Equipe e perfis",
+        "description": "Cria contas, gera senhas temporárias e define perfis e permissões."
+      },
+      "settings_manage": {
+        "label": "Integrações",
+        "description": "Configura a inteligência artificial, o e-mail (SMTP) e consulta o armazenamento."
+      },
+      "audit_read": {
+        "label": "Auditoria",
+        "description": "Consulta o registro de tudo o que cada conta fez no painel."
+      },
+      "documentation_read": {
+        "label": "Documentação",
+        "description": "Lê a documentação técnica do projeto publicada no painel."
+      }
+    },
+    "forbiddenTitle": "Sem permissão",
+    "forbiddenDescription": "Seu perfil não inclui esta área. Peça a quem administra a equipe para ajustar suas permissões."
+  },
+  "Profile": {
+    "title": "Meu perfil",
+    "description": "Seus dados no painel e o perfil de autor que o site mostra nas suas notícias.",
+    "account": "Conta",
+    "accountHelp": "Nome e foto exibidos no painel e nas assinaturas.",
+    "author": "Perfil de autor",
+    "authorHelp": "Aparece abaixo da sua assinatura e na sua página de autor, em português e em inglês.",
+    "name": "Nome",
+    "email": "E-mail de acesso",
+    "emailHelp": "Para usar outro e-mail, peça uma nova conta a quem administra a equipe.",
+    "jobTitle": "Cargo",
+    "jobTitleHelp": "Ex.: Repórter de inteligência artificial.",
+    "bio": "Minibiografia",
+    "bioHelp": "Até 1.000 caracteres.",
+    "role": "Perfil de acesso",
+    "saved": "Perfil atualizado.",
+    "photo": {
+      "label": "Foto",
+      "optional": "opcional",
+      "choose": "Escolher foto",
+      "change": "Trocar foto",
+      "discard": "Desfazer",
+      "remove": "Remover foto",
+      "removeTitle": "Remover a foto?",
+      "removeWarning": "A foto será apagada e as iniciais voltarão a aparecer.",
+      "removed": "Foto removida.",
+      "pending": "A foto será enviada ao salvar.",
+      "hint": "PNG, JPG ou WebP com até 5 MB. A imagem é recortada em quadrado e regravada sem metadados (EXIF, GPS).",
+      "errors": {
+        "tooLarge": "A imagem excede 5 MB.",
+        "unsupportedType": "Envie uma imagem PNG, JPG ou WebP.",
+        "invalidInput": "A imagem não pôde ser processada.",
+        "forbidden": "Você não tem autorização para alterar esta foto.",
+        "unavailable": "Não foi possível enviar a foto agora. Tente novamente."
+      }
+    }
+  },
+  "Credentials": {
+    "title": "Senha temporária",
+    "onceWarning": "Copie esta senha agora: ela só aparece neste momento e não pode ser consultada depois.",
+    "email": "E-mail de acesso",
+    "password": "Senha temporária",
+    "copy": "Copiar senha",
+    "copied": "Senha copiada",
+    "done": "Concluído",
+    "delivery": {
+      "manual": "Entregue esta senha à pessoa por um canal seguro. No primeiro acesso, ela define uma senha definitiva."
+    }
+  },
+  "Contacts": {
+    "title": "Mensagens de leitores",
+    "description": "O que os leitores enviaram pelo formulário de contato do site: sugestões de pauta, correções, publicidade e outros assuntos.",
+    "unread": "{count, plural, one {# nova} other {# novas}}",
+    "total": "{count, plural, =0 {Nenhuma mensagem} one {# mensagem} other {# mensagens}}",
+    "empty": "Nenhuma mensagem encontrada.",
+    "emptyHint": "As mensagens enviadas pelo site aparecem aqui.",
+    "filters": {
+      "search": "Buscar",
+      "searchPlaceholder": "Nome, e-mail ou texto",
+      "status": "Situação",
+      "topic": "Assunto"
+    },
+    "statuses": {
+      "new": "Nova",
+      "read": "Lida",
+      "archived": "Arquivada"
+    },
+    "topics": {
+      "tip": "Sugestão de pauta",
+      "correction": "Correção",
+      "advertising": "Publicidade",
+      "press": "Imprensa",
+      "privacy": "Privacidade",
+      "other": "Outro assunto"
+    },
+    "back": "Voltar às mensagens",
+    "markUnread": "Marcar como nova",
+    "archive": "Arquivar",
+    "restore": "Restaurar",
+    "reply": "Responder por e-mail",
+    "replySubject": "Re: {topic} — Portal Meta News",
+    "fields": {
+      "email": "E-mail",
+      "received": "Recebida em",
+      "language": "Idioma do site"
+    },
+    "languages": {
+      "pt": "Português",
+      "en": "Inglês"
+    },
+    "readBy": "Lida por {name} em {date}",
+    "listTitle": "Mensagens recebidas",
+    "columns": {
+      "from": "Remetente",
+      "status": "Situação",
+      "message": "Mensagem",
+      "date": "Recebida"
+    }
+  },
+  "Audit": {
+    "title": "Auditoria",
+    "description": "O registro permanente do que cada conta fez no painel: quem, o quê, quando e sobre qual item. Nunca guarda o texto das notícias nem credenciais.",
+    "filters": {
+      "action": "Ação",
+      "actionPlaceholder": "Ex.: news.published",
+      "outcome": "Resultado",
+      "any": "Todos",
+      "from": "De",
+      "to": "Até",
+      "resource": "Item (identificador)",
+      "resourcePlaceholder": "UUID do item",
+      "clear": "Limpar",
+      "apply": "Filtrar"
+    },
+    "outcomes": {
+      "success": "Concluída",
+      "denied": "Recusada"
+    },
+    "columns": {
+      "when": "Quando",
+      "action": "Ação",
+      "actor": "Quem",
+      "outcome": "Resultado",
+      "details": "Detalhes"
+    },
+    "system": "Sistema (automático)",
+    "removedActor": "Conta removida",
+    "empty": "Nenhum registro para estes filtros.",
+    "total": "{count, plural, =0 {Nenhum registro} one {# registro} other {# registros}}",
+    "invalidRange": "A data inicial deve ser anterior à final.",
+    "unavailable": "Não foi possível carregar a auditoria agora. Tente novamente.",
+    "areaAction": "Ação em {area}",
+    "areas": {
+      "news": "Notícias",
+      "theme": "Temas",
+      "user": "Contas",
+      "role": "Perfis",
+      "media": "Mídia",
+      "category": "Editorias",
+      "tag": "Tags",
+      "site": "Site",
+      "settings": "Configurações",
+      "ai_writer": "Redator com IA",
+      "contact": "Mensagens",
+      "front_page": "Capa",
+      "panel": "Painel",
+      "password": "Senhas"
+    },
+    "resources": {
+      "news": "Notícia",
+      "theme": "Tema",
+      "user": "Conta",
+      "role": "Perfil",
+      "media": "Imagem",
+      "category": "Editoria",
+      "tag": "Tag",
+      "legal_document": "Texto legal",
+      "contact_message": "Mensagem de leitor",
+      "ai_conversation": "Conversa com a IA"
+    },
+    "actions": {
+      "panel_installed": "Painel instalado",
+      "password_forced_change": "Senha temporária trocada no primeiro acesso",
+      "news_created": "Notícia criada",
+      "news_submitted": "Notícia enviada para revisão",
+      "news_returned": "Notícia devolvida ao rascunho",
+      "news_published": "Notícia publicada",
+      "news_scheduled": "Publicação agendada",
+      "news_unpublished": "Notícia despublicada",
+      "news_archived": "Notícia arquivada",
+      "news_restored": "Notícia restaurada",
+      "news_deleted": "Notícia excluída",
+      "news_revision_restored": "Versão anterior restaurada",
+      "theme_created": "Tema criado",
+      "theme_updated": "Tema alterado",
+      "theme_deleted": "Tema excluído",
+      "theme_activated": "Tema ativado",
+      "site_identity_updated": "Dados do site alterados",
+      "site_asset_updated": "Imagem de marca trocada",
+      "site_asset_removed": "Imagem de marca removida",
+      "site_legal_updated": "Texto legal alterado",
+      "site_legal_restored": "Texto legal restaurado ao padrão",
+      "category_created": "Editoria criada",
+      "category_updated": "Editoria alterada",
+      "category_deleted": "Editoria excluída",
+      "category_reordered": "Editorias reordenadas",
+      "tag_created": "Tag criada",
+      "tag_updated": "Tag alterada",
+      "tag_deleted": "Tag excluída",
+      "media_uploaded": "Imagem enviada",
+      "media_generated": "Imagem gerada por IA",
+      "media_updated": "Imagem descrita",
+      "media_deleted": "Imagem excluída",
+      "user_created": "Conta criada",
+      "user_updated": "Conta alterada",
+      "user_temporary_password_issued": "Senha temporária gerada",
+      "user_profile_updated": "Perfil próprio alterado",
+      "user_avatar_updated": "Foto alterada",
+      "user_avatar_removed": "Foto removida",
+      "role_created": "Perfil criado",
+      "role_updated": "Perfil alterado",
+      "role_deleted": "Perfil excluído",
+      "settings_ai_updated": "Configuração de IA alterada",
+      "settings_email_updated": "Configuração de e-mail alterada",
+      "ai_writer_requested": "Pedido ao redator com IA",
+      "ai_writer_applied": "Proposta da IA aplicada",
+      "contact_status_changed": "Mensagem de leitor movida",
+      "front_page_updated": "Capa alterada"
+    },
+    "listTitle": "Registros"
+  },
+  "Settings": {
+    "title": "Configurações",
+    "description": "As integrações do portal, os dados do site e a aparência. Cada área aparece para quem tem a permissão dela.",
+    "empty": "Seu perfil não inclui nenhuma área de configuração.",
+    "entries": {
+      "ai": {
+        "title": "Inteligência artificial",
+        "description": "Provedor, chave, modelos e o manual de estilo usado pela tradução e pelo redator."
+      },
+      "email": {
+        "title": "E-mail (SMTP)",
+        "description": "Servidor de envio e o teste de entrega."
+      },
+      "storage": {
+        "title": "Armazenamento",
+        "description": "Onde ficam as imagens e quanto a biblioteca ocupa."
+      },
+      "site": {
+        "title": "Dados do site",
+        "description": "Nome, slogan, descrição, idioma padrão, contato e redes sociais."
+      },
+      "themes": {
+        "title": "Temas",
+        "description": "Cores, tipografia e estilo do site e do painel."
+      },
+      "branding": {
+        "title": "Identidade visual",
+        "description": "Logotipos, favicons e imagem de compartilhamento."
+      },
+      "legal": {
+        "title": "Textos legais",
+        "description": "Política de privacidade e termos de uso, em português e inglês."
+      },
+      "access": {
+        "title": "Equipe e perfis",
+        "description": "Contas da redação, perfis e permissões."
+      }
+    }
+  },
+  "AiSettings": {
+    "title": "Inteligência artificial",
+    "description": "O provedor de modelos da tradução automática, do redator com IA e das imagens geradas.",
+    "current": "Em uso agora",
+    "status": "Situação",
+    "available": "Disponível",
+    "unavailable": "Indisponível",
+    "effectiveProvider": "Provedor",
+    "key": "Chave",
+    "keySet": "Chave salva no painel",
+    "keyEnvironment": "Chave do servidor (GEMINI_API_KEY)",
+    "keyMissing": "Sem chave",
+    "textModel": "Modelo de texto",
+    "imageModel": "Modelo de imagem",
+    "images": "Gerar imagens",
+    "imagesOn": "Ligada",
+    "imagesOff": "Desligada",
+    "codes": {
+      "ai_disabled": "A IA está desativada.",
+      "ai_unconfigured": "Nenhuma chave configurada: informe uma chave do Gemini ou escolha o provedor local (só em desenvolvimento).",
+      "ai_provider_failed": "O provedor não respondeu. Tente novamente em instantes.",
+      "ai_key_rejected": "O provedor recusou a chave. Confira a chave salva.",
+      "ai_images_unavailable": "A geração de imagens está desligada ou o provedor não tem modelo de imagem."
+    },
+    "localNotice": "O provedor local não usa modelo de linguagem: marca as traduções com [EN]/[PT], monta rascunhos com o texto do pedido e desenha capas abstratas. Serve para testar os fluxos sem custo.",
+    "test": {
+      "run": "Testar",
+      "ok": "O provedor respondeu: a configuração funciona.",
+      "failed": "O teste falhou: {reason}"
+    },
+    "provider": "Provedor",
+    "providerHelp": "Automático usa o Gemini quando há chave e, sem ela, o provedor local (apenas fora de produção).",
+    "providers": {
+      "auto": "Automático",
+      "gemini": "Google Gemini",
+      "local": "Local (simulação)",
+      "disabled": "Desativado"
+    },
+    "apiKey": "Chave de API do Gemini",
+    "apiKeyKept": "Há uma chave salva: deixe em branco para mantê-la.",
+    "apiKeyHelp": "Somente escrita: depois de salva, a chave é guardada cifrada e nunca mais exibida.",
+    "apiKeyEnvironment": "O servidor também tem uma chave (GEMINI_API_KEY); a salva aqui tem prioridade.",
+    "removeKey": "Remover a chave salva",
+    "modelHelp": "Em branco, usa o padrão indicado.",
+    "imageModelHelp": "Modelos \"gemini-*-image\" ou \"imagen-*\". Em branco, usa o padrão indicado.",
+    "imagesHelp": "Permite que o redator com IA e a biblioteca de mídia gerem imagens de capa.",
+    "guidelines": "Manual de estilo da redação",
+    "guidelinesHelp": "Vai em todos os pedidos à IA (tradução, redação, imagens): tom, termos preferidos, grafias, o que evitar.",
+    "guidelinesPlaceholder": "Ex.: Use \"presidente\" em minúscula. Evite adjetivos. Datas por extenso. Em inglês, ortografia americana.",
+    "providerSection": "Provedor e modelos",
+    "providerSectionHelp": "Quem responde aos pedidos de tradução, redação e imagem.",
+    "guidelinesSection": "Estilo editorial",
+    "guidelinesSectionHelp": "As regras que a IA segue para escrever como a redação.",
+    "saved": "Configuração salva.",
+    "privacyNote": "A IA recebe só o texto de cada pedido e o manual de estilo; nada de contas, senhas ou mensagens de leitores.",
+    "errors": {
+      "keyRequired": "O provedor Gemini precisa de uma chave (salva aqui ou no servidor).",
+      "keyInvalid": "A chave parece inválida: confira se foi copiada inteira, sem espaços.",
+      "modelInvalid": "Nome de modelo inválido.",
+      "invalidInput": "Confira os campos."
+    }
+  },
+  "EmailSettings": {
+    "title": "E-mail (SMTP)",
+    "description": "O envio de e-mails do portal: o aviso de nova mensagem de leitor para o e-mail de contato e o teste.",
+    "current": "Situação atual",
+    "status": "Envio",
+    "effective": {
+      "panel": "Ativo · servidor deste painel",
+      "environment": "Ativo · servidor do ambiente",
+      "off": "Desligado",
+      "missing": "Ligado, sem servidor"
+    },
+    "environmentRelay": "Servidor do ambiente (SMTP_*)",
+    "environmentYes": "Configurado",
+    "environmentNo": "Não configurado",
+    "panelRelay": "Servidor salvo no painel",
+    "panelRelayNone": "Nenhum",
+    "missingNotice": "O envio está ligado, mas não há servidor: configure um abaixo ou as variáveis SMTP_* do servidor.",
+    "test": {
+      "run": "Enviar teste",
+      "ok": "E-mail de teste enviado para a sua conta.",
+      "failed": "O teste falhou: {reason}"
+    },
+    "codes": {
+      "smtp_unconfigured": "nenhum servidor configurado.",
+      "smtp_unreachable": "não foi possível conectar e autenticar no servidor.",
+      "smtp_delivery_failed": "o servidor recusou a mensagem."
+    },
+    "enabled": "Enviar e-mails",
+    "enabledHelp": "Desligado, nenhum e-mail sai do portal; as mensagens de leitores continuam no painel.",
+    "host": "Servidor (host)",
+    "port": "Porta",
+    "portHelp": "465 com TLS; 587, 25 ou 2525 com STARTTLS.",
+    "secure": "TLS implícito",
+    "secureHelp": "Ligue para a porta 465; desligue para 587, 25 e 2525.",
+    "user": "Usuário",
+    "password": "Senha",
+    "passwordKept": "Há uma senha salva: deixe em branco para mantê-la.",
+    "passwordHelp": "Guardada cifrada e nunca mais exibida.",
+    "removePassword": "Remover a senha salva",
+    "fromEmail": "E-mail do remetente",
+    "fromName": "Nome do remetente",
+    "sendingSection": "Envio",
+    "sendingSectionHelp": "Liga ou desliga todos os e-mails do portal.",
+    "serverSection": "Servidor SMTP do painel",
+    "serverSectionHelp": "Sem servidor aqui, o portal usa o do ambiente (SMTP_*), se houver.",
+    "saved": "Configuração de e-mail salva.",
+    "errors": {
+      "invalid": "Confira o servidor, a porta (465 com TLS; 587, 25 ou 2525 sem), o remetente e, havendo usuário, a senha."
+    }
+  },
+  "Storage": {
+    "title": "Armazenamento",
+    "description": "Onde o portal guarda as imagens e quanto a biblioteca de mídia ocupa.",
+    "items": "Imagens",
+    "size": "Espaço ocupado",
+    "generated": "Geradas por IA",
+    "uploadLimit": "Limite por envio",
+    "store": "Armazenamento de arquivos",
+    "storeHelp": "As imagens ficam em um armazenamento privado e o site as entrega por um endereço próprio, sem expor o armazenamento.",
+    "driver": "Tipo",
+    "drivers": {
+      "local": "Disco do servidor",
+      "s3": "Bucket compatível com S3"
+    },
+    "status": "Situação",
+    "reachable": "Acessível",
+    "unreachable": "Inacessível",
+    "bucket": "Bucket",
+    "unreachableNotice": "O armazenamento não respondeu: novos envios falham até que volte. Verifique a configuração do servidor.",
+    "environmentNote": "O tipo de armazenamento e suas credenciais são definidos nas variáveis de ambiente da API (STORAGE_DRIVER, S3_*), nunca no painel."
+  },
+  "SiteLegal": {
+    "privacy": {
+      "title": "Política de privacidade",
+      "description": "O texto da página de privacidade do site, em português e em inglês. Cada página do site mostra a edição do seu idioma."
+    },
+    "terms": {
+      "title": "Termos de uso",
+      "description": "O texto da página de termos de uso do site, em português e em inglês. Cada página do site mostra a edição do seu idioma."
+    },
+    "editions": {
+      "pt": {
+        "label": "Português",
+        "law": "Lida nas páginas em português · referência legal: LGPD (Lei nº 13.709/2018)."
+      },
+      "en": {
+        "label": "Inglês",
+        "law": "Lida nas páginas em inglês · escreva para leitores internacionais."
+      }
+    },
+    "status": {
+      "default": "Texto padrão",
+      "custom": "Texto personalizado"
+    },
+    "unsaved": "Alterações não salvas",
+    "updatedBy": "Atualizado em {date} por {name}",
+    "someone": "uma conta removida",
+    "viewOnSite": "Ver no site",
+    "restore": "Restaurar padrão",
+    "restoreTitle": "Restaurar o texto padrão?",
+    "restoreWarning": "A edição em {edition} volta ao texto padrão e o texto personalizado é descartado. O site passa a exibir o padrão imediatamente.",
+    "restored": "Texto padrão restaurado.",
+    "save": "Salvar e publicar",
+    "saved": "Texto salvo e publicado no site.",
+    "edit": "Editar",
+    "preview": "Pré-visualizar",
+    "emptyPreview": "Escreva o conteúdo para ver a pré-visualização.",
+    "fields": {
+      "title": "Título",
+      "summary": "Resumo",
+      "summaryHelp": "Aparece no topo da página e na descrição para buscadores.",
+      "content": "Conteúdo",
+      "contentHelp": "Use Markdown: ## para seções, ### para subseções, **negrito**, listas com -, tabelas e avisos com > [!NOTE] ou > [!IMPORTANT]. HTML não é aceito."
+    },
+    "characters": "{count, number} de {max, number} caracteres",
+    "onThisPage": "Nesta página",
+    "updatedOn": "Última atualização em {date}",
+    "unavailable": "Não foi possível carregar este documento agora. Tente novamente em instantes."
+  },
+  "Documentation": {
+    "document": "Documento",
+    "title": "Documentação",
+    "description": "Guias, regras de arquitetura e procedimentos do Portal Meta News, publicados a partir dos arquivos Markdown do repositório enquanto o projeto é construído.",
+    "statDocuments": "{count, plural, one {documento} other {documentos}}",
+    "statGroups": "{count, plural, one {seção} other {seções}}",
+    "statHours": "{count, plural, one {hora de leitura} other {horas de leitura}}",
+    "searchLabel": "Buscar na documentação",
+    "searchPlaceholder": "Buscar por título, assunto ou arquivo",
+    "noResults": "Nenhum documento encontrado",
+    "noResultsHint": "Tente outras palavras ou limpe a busca.",
+    "languageNote": "Os guias são escritos em português e as regras de arquitetura em inglês, como no repositório.",
+    "readingTime": "{minutes} min de leitura",
+    "source": "Arquivo de origem no repositório",
+    "back": "Voltar à documentação",
+    "onThisPage": "Neste documento",
+    "pagerLabel": "Outros documentos",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "copy": "Copiar código",
+    "copied": "Copiado",
+    "headingLink": "Link para esta seção",
+    "opensInNewTab": "Abre em uma nova aba",
+    "notPublished": "Este arquivo está no repositório e não é publicado no painel.",
+    "unavailable": "Não foi possível ler este documento agora.",
+    "emptyTitle": "Documentação ainda não publicada",
+    "empty": "Nenhum documento foi publicado neste ambiente. Em desenvolvimento, o comando npm run dev do frontend publica o índice DOCUMENTATION.md automaticamente; fora dele, rode node scripts/sync-docs.mjs.",
+    "alerts": {
+      "note": "Nota",
+      "tip": "Dica",
+      "important": "Importante",
+      "warning": "Atenção",
+      "caution": "Cuidado"
+    }
+  }
+}

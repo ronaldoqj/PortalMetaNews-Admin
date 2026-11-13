@@ -1,0 +1,168 @@
+{
+  "Site": {
+    "skipToContent": "Ir para o conteúdo",
+    "menu": {
+      "open": "Abrir menu",
+      "close": "Fechar menu",
+      "label": "Editorias",
+      "home": "Início",
+      "latest": "Últimas",
+      "search": "Buscar",
+      "searchLabel": "Buscar notícias",
+      "searchPlaceholder": "Buscar no portal…",
+      "searchSubmit": "Buscar",
+      "language": "Idioma",
+      "sections": "Editorias",
+      "searchClose": "Fechar busca"
+    },
+    "breaking": "Urgente",
+    "home": {
+      "title": "Notícias de hoje",
+      "highlights": "Destaques",
+      "latest": "Últimas notícias",
+      "mostRead": "Mais lidas",
+      "seeAll": "Ver todas",
+      "sectionMore": "Mais em {section}",
+      "empty": "Nenhuma notícia publicada ainda.",
+      "emptyHint": "As notícias publicadas no painel aparecem aqui.",
+      "more": "Mais notícias"
+    },
+    "card": {
+      "minutes": "{count} min",
+      "readingTime": "{count} min de leitura",
+      "aiBadge": "IA",
+      "aiCoverTitle": "Imagem gerada por inteligência artificial"
+    },
+    "latest": {
+      "title": "Últimas notícias",
+      "description": "Tudo o que foi publicado, do mais recente ao mais antigo."
+    },
+    "category": {
+      "empty": "Ainda não há notícias nesta editoria.",
+      "eyebrow": "Editoria"
+    },
+    "tag": {
+      "title": "#{name}",
+      "description": "Notícias marcadas com “{name}”.",
+      "eyebrow": "Tag",
+      "empty": "Ainda não há notícias com esta tag."
+    },
+    "author": {
+      "eyebrow": "Autor",
+      "articles": "Notícias de {name}",
+      "empty": "Ainda não há notícias deste autor neste idioma.",
+      "description": "Notícias assinadas por {name}."
+    },
+    "search": {
+      "title": "Buscar",
+      "description": "Encontre notícias por palavras do título, da linha fina ou do texto.",
+      "label": "O que você procura?",
+      "placeholder": "Ex.: eleições, inflação, tecnologia",
+      "submit": "Buscar",
+      "results": "{count, plural, =0 {Nenhum resultado} one {# resultado} other {# resultados}} para “{query}”",
+      "empty": "Nada encontrado para “{query}”. Tente outras palavras.",
+      "prompt": "Digite um termo para buscar nas notícias publicadas."
+    },
+    "pagination": {
+      "label": "Paginação",
+      "previous": "Anteriores",
+      "next": "Próximas",
+      "page": "Página {page} de {pages}"
+    },
+    "footer": {
+      "sections": "Editorias",
+      "about": "Sobre",
+      "institutional": "Institucional",
+      "privacy": "Política de privacidade",
+      "terms": "Termos de uso",
+      "contact": "Fale conosco",
+      "rss": "RSS",
+      "rights": "© {year} {name}. Todos os direitos reservados.",
+      "follow": "Siga o {name}",
+      "noTracking": "Leitura sem rastreamento: contamos visitas sem identificar ninguém."
+    },
+    "social": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "x": "X",
+      "youtube": "YouTube",
+      "tiktok": "TikTok",
+      "linkedin": "LinkedIn",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram"
+    },
+    "legal": {
+      "eyebrow": "Institucional",
+      "onThisPage": "Nesta página",
+      "updatedOn": "Atualizado em {date}",
+      "unavailable": "Este texto está indisponível no momento. Tente novamente em instantes.",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "notPublished": "Documento não publicado",
+      "headingLink": "Link para esta seção",
+      "opensInNewTab": "(abre em nova aba)",
+      "alerts": {
+        "note": "Nota",
+        "tip": "Dica",
+        "important": "Importante",
+        "warning": "Atenção",
+        "caution": "Cuidado"
+      }
+    },
+    "contact": {
+      "title": "Fale conosco",
+      "eyebrow": "Contato",
+      "description": "Envie sugestões de pauta, correções, pedidos de imprensa ou de publicidade. A redação lê todas as mensagens.",
+      "privacy": "Usamos seus dados só para responder a esta mensagem. Não guardamos seu endereço IP nem qualquer rastro do seu navegador."
+    },
+    "rssTitle": "{name} — RSS ({language})"
+  },
+  "Article": {
+    "by": "Por",
+    "published": "Publicado em {date}",
+    "updated": "Atualizado em {date}",
+    "readingTime": "{count} min de leitura",
+    "section": "Editoria",
+    "breaking": "Urgente",
+    "tags": "Tags",
+    "related": "Leia também",
+    "aboutAuthor": "Sobre o autor",
+    "moreFromAuthor": "Mais notícias de {name}",
+    "aiImage": "Imagem gerada por IA",
+    "aiAssisted": "Esta notícia foi produzida com apoio de inteligência artificial e revisada pela redação antes de ser publicada.",
+    "share": {
+      "label": "Compartilhar",
+      "copy": "Copiar link",
+      "copied": "Link copiado",
+      "whatsapp": "Compartilhar no WhatsApp",
+      "x": "Compartilhar no X",
+      "facebook": "Compartilhar no Facebook",
+      "linkedin": "Compartilhar no LinkedIn"
+    },
+    "shareThis": "Compartilhe esta notícia"
+  },
+  "Contact": {
+    "name": "Seu nome",
+    "email": "Seu e-mail",
+    "topic": "Assunto",
+    "message": "Mensagem",
+    "messageHint": "Escreva com detalhes: o que aconteceu, onde, quando e como podemos confirmar.",
+    "send": "Enviar mensagem",
+    "sentTitle": "Mensagem enviada!",
+    "sentBody": "Obrigado. A redação vai ler a sua mensagem e responder pelo e-mail informado, se necessário.",
+    "sendAnother": "Enviar outra mensagem",
+    "topics": {
+      "tip": "Sugestão de pauta",
+      "correction": "Correção",
+      "advertising": "Publicidade",
+      "press": "Imprensa",
+      "privacy": "Privacidade e dados",
+      "other": "Outro assunto"
+    },
+    "errors": {
+      "invalidInput": "Confira os campos: a mensagem precisa de pelo menos 10 caracteres.",
+      "rateLimited": "Muitas mensagens em pouco tempo. Tente novamente em alguns minutos.",
+      "unavailable": "Não foi possível enviar agora. Tente novamente em instantes."
+    }
+  }
+}

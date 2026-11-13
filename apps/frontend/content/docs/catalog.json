@@ -1,0 +1,204 @@
+{
+  "groups": [
+    {
+      "title": "Comece por aqui",
+      "description": "Visão geral, ambiente de desenvolvimento e o que cada projeto contém.",
+      "documents": [
+        {
+          "slug": "readme",
+          "title": "Visão geral do projeto",
+          "summary": "O que é o Portal Meta News, como subir o ambiente e onde fica cada coisa.",
+          "source": "README.md",
+          "words": 465
+        },
+        {
+          "slug": "claude",
+          "title": "Diretrizes do projeto",
+          "summary": "O arquivo de contexto enxuto dos assistentes: invariantes do produto, regras gerais e uma linha por área.",
+          "source": "CLAUDE.md",
+          "words": 1258
+        },
+        {
+          "slug": "readme-dev-ports",
+          "title": "Portas de desenvolvimento",
+          "summary": "As portas terminadas em 27 (site/painel, API e banco) e onde são definidas.",
+          "source": "README-DEV-PORTS.md",
+          "words": 215
+        },
+        {
+          "slug": "apps-backend-readme",
+          "title": "Backend",
+          "summary": "A API NestJS: módulos, banco, comandos e testes.",
+          "source": "apps/backend/README.md",
+          "words": 346
+        },
+        {
+          "slug": "apps-frontend-readme",
+          "title": "Frontend",
+          "summary": "O Next.js: áreas, biblioteca de componentes, comandos e testes.",
+          "source": "apps/frontend/README.md",
+          "words": 263
+        },
+        {
+          "slug": "docs-implantacao",
+          "title": "Implantação",
+          "summary": "Variáveis, imagens e passos para publicar em produção.",
+          "source": "docs/implantacao.md",
+          "words": 463
+        },
+        {
+          "slug": "development-history",
+          "title": "Histórico de desenvolvimento",
+          "summary": "O que foi construído, em ordem, e as decisões tomadas.",
+          "source": "DEVELOPMENT-HISTORY.md",
+          "words": 1658
+        },
+        {
+          "slug": "pendencias",
+          "title": "Pendências",
+          "summary": "Decisões em aberto e trabalho deixado para depois.",
+          "source": "PENDENCIAS.md",
+          "words": 256
+        }
+      ]
+    },
+    {
+      "title": "Guias do produto",
+      "description": "O que cada área faz e como usar, em português.",
+      "documents": [
+        {
+          "slug": "docs-redacao-e-noticias",
+          "title": "Redação e notícias",
+          "summary": "Lista de notícias, construtor bilíngue com tradução sincronizada, fluxo editorial, revisões, mídia, editorias, tags, capa e visão geral.",
+          "source": "docs/redacao-e-noticias.md",
+          "words": 1481
+        },
+        {
+          "slug": "docs-redator-com-ia",
+          "title": "Redator com IA",
+          "summary": "Criar notícias com a IA: pauta, opções, texto e imagem gerados e o rascunho pronto no construtor.",
+          "source": "docs/redator-com-ia.md",
+          "words": 667
+        },
+        {
+          "slug": "docs-temas-e-identidade-visual",
+          "title": "Temas e identidade visual",
+          "summary": "O gerenciador de temas por tokens, a pré-visualização, logos, favicons e dados do site.",
+          "source": "docs/temas-e-identidade-visual.md",
+          "words": 555
+        },
+        {
+          "slug": "docs-identidade-visual",
+          "title": "Identidade visual da marca",
+          "summary": "O logotipo, as cores, a tipografia e como regenerar os arquivos da marca.",
+          "source": "docs/identidade-visual.md",
+          "words": 774
+        },
+        {
+          "slug": "docs-site-publico",
+          "title": "Site público",
+          "summary": "Páginas, capa, idiomas e endereços, busca, RSS, sitemap, SEO e contador de leituras sem rastreamento.",
+          "source": "docs/site-publico.md",
+          "words": 1321
+        },
+        {
+          "slug": "docs-painel-administracao",
+          "title": "Administração do painel",
+          "summary": "Equipe e perfis, permissões, meu perfil, configurações, mensagens, auditoria e textos legais.",
+          "source": "docs/painel-administracao.md",
+          "words": 1705
+        },
+        {
+          "slug": "docs-documentacao-no-painel",
+          "title": "A documentação no painel",
+          "summary": "Como esta documentação é publicada e como acrescentar um documento.",
+          "source": "docs/documentacao-no-painel.md",
+          "words": 882
+        }
+      ]
+    },
+    {
+      "title": "Arquitetura",
+      "description": "As regras completas de cada área, em inglês, como as diretrizes: o `CLAUDE.md` traz o resumo e aponta para cá.",
+      "documents": [
+        {
+          "slug": "docs-architecture-development",
+          "title": "Desenvolvimento e publicação",
+          "summary": "Ambiente, portas, banco, dados de demonstração, testes e imagens de produção.",
+          "source": "docs/architecture/development.md",
+          "words": 668
+        },
+        {
+          "slug": "docs-architecture-hosts-and-domains",
+          "title": "Hosts e áreas",
+          "summary": "Site, painel e API: quem atende em cada endereço e como o host vira área.",
+          "source": "docs/architecture/hosts-and-domains.md",
+          "words": 212
+        },
+        {
+          "slug": "docs-architecture-i18n",
+          "title": "Internacionalização",
+          "summary": "Idiomas, rotas localizadas, catálogos em partes e textos bilíngues da redação.",
+          "source": "docs/architecture/i18n.md",
+          "words": 208
+        },
+        {
+          "slug": "docs-architecture-frontend-conventions",
+          "title": "Convenções do frontend",
+          "summary": "Acesso à API, biblioteca de componentes, relays, tema e navegação.",
+          "source": "docs/architecture/frontend-conventions.md",
+          "words": 501
+        },
+        {
+          "slug": "docs-architecture-backend-conventions",
+          "title": "Convenções do backend",
+          "summary": "Módulos, controladores, permissões, validação, erros e auditoria.",
+          "source": "docs/architecture/backend-conventions.md",
+          "words": 187
+        },
+        {
+          "slug": "docs-architecture-newsroom",
+          "title": "Redação (regras)",
+          "summary": "Notícias, fluxo editorial, sincronização de idiomas, revisões, mídia, editorias, tags e capa.",
+          "source": "docs/architecture/newsroom.md",
+          "words": 678
+        },
+        {
+          "slug": "docs-architecture-ai-writer",
+          "title": "Redator com IA (regras)",
+          "summary": "Provedores, prompts, streaming, proposta estruturada, imagens e aplicação ao construtor.",
+          "source": "docs/architecture/ai-writer.md",
+          "words": 394
+        },
+        {
+          "slug": "docs-architecture-themes-and-branding",
+          "title": "Temas e identidade (regras)",
+          "summary": "Tokens, temas ativos por área, renderização no SSR e imagens de marca.",
+          "source": "docs/architecture/themes-and-branding.md",
+          "words": 357
+        },
+        {
+          "slug": "docs-architecture-public-site",
+          "title": "Site público (regras)",
+          "summary": "Conteúdo publicado por idioma, SEO, feed, sitemap e privacidade dos leitores.",
+          "source": "docs/architecture/public-site.md",
+          "words": 932
+        },
+        {
+          "slug": "docs-architecture-panel-administration",
+          "title": "Administração do painel (regras)",
+          "summary": "Contas, perfis, permissões, configurações, auditoria e documentação.",
+          "source": "docs/architecture/panel-administration.md",
+          "words": 879
+        },
+        {
+          "slug": "docs-architecture-api-routes",
+          "title": "Rotas da API",
+          "summary": "Referência gerada dos controladores: método, caminho e quem pode chamar.",
+          "source": "docs/architecture/api-routes.md",
+          "words": 1118
+        }
+      ]
+    }
+  ]
+}

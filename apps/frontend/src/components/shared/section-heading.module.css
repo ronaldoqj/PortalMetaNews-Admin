@@ -1,0 +1,41 @@
+/* The section heading's look lives here alone: eyebrow, rules, title, description and the room before the content. */
+.root { max-width: 760px; }
+.center { max-width: 1040px; margin-inline: auto; text-align: center; }
+/* The content beneath a centered heading starts after this room; a heading beside its content needs none. */
+.center:not(:last-child) { margin-bottom: 56px; }
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 3vw, 24px);
+  margin-bottom: 12px;
+  font-family: var(--mantine-font-family);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--app-primary);
+}
+.center .eyebrow { justify-content: center; }
+.eyebrow::before,
+.center .eyebrow::after { content: ""; flex: 0 1 40px; min-width: 16px; height: 2px; border-radius: 2px; background: var(--app-secondary); }
+.center .eyebrow::before,
+.center .eyebrow::after { flex-basis: 72px; }
+:global([data-mantine-color-scheme="dark"]) .eyebrow { color: var(--app-secondary); }
+:global([data-mantine-color-scheme="dark"]) .eyebrow::before,
+:global([data-mantine-color-scheme="dark"]) .center .eyebrow::after { background: var(--app-primary); }
+
+.title { max-width: 700px; font-size: 36px; line-height: 1.2; letter-spacing: 0; }
+.center .title { max-width: none; text-wrap: balance; }
+
+.description { margin-top: 12px; font-size: 18px; line-height: 1.6; color: var(--app-muted); }
+
+.extra { margin-top: 12px; }
+.center .extra { display: flex; justify-content: center; }
+
+@media (max-width: 48em) {
+  .center:not(:last-child) { margin-bottom: 40px; }
+  .title { font-size: 28px; }
+  .description { font-size: 16px; }
+}

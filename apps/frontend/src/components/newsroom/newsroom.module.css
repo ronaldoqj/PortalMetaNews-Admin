@@ -1,0 +1,25 @@
+/* Media tiles: the image over its dominant colour while it loads, a ring when selected. */
+.tile { overflow: hidden; border-radius: var(--app-radius-card, 4px); border: 1px solid var(--app-border); }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile[data-selected] { outline: 3px solid var(--mantine-primary-color-filled); outline-offset: 2px; }
+.tileButton { display: block; width: 100%; border-radius: var(--app-radius-card, 4px); }
+.tileButton:focus-visible { outline: 2px solid var(--mantine-primary-color-filled); outline-offset: 3px; }
+
+/* The builder: the content column and, from desktops up, the sidebar beside it. */
+.builder { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--mantine-spacing-lg); align-items: start; }
+@media (min-width: 75em) { .builder { grid-template-columns: minmax(0, 1fr) 340px; } }
+.sidebar { display: flex; flex-direction: column; gap: var(--mantine-spacing-md); }
+@media (min-width: 75em) { .sidebar { position: sticky; top: 84px; } }
+
+/* A field filled by the automatic translation keeps a discreet mark until someone edits it. */
+.autoMark { display: inline-flex; align-items: center; gap: 4px; font-size: var(--mantine-font-size-xs); color: var(--app-muted); }
+.titleInput input { font-family: var(--mantine-font-family-headings); font-size: 1.6rem; font-weight: 700; min-height: 3rem; }
+
+/* The cover in the sidebar and the front page preview. */
+.cover { overflow: hidden; border-radius: var(--app-radius-card, 4px); border: 1px solid var(--app-border); background: var(--app-highlight); }
+.cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.homePreview { display: grid; gap: 8px; grid-template-columns: 2fr 1fr; }
+.homeSlot { min-height: 72px; padding: 10px 12px; border: 1px dashed var(--app-border); border-radius: var(--app-radius-card, 4px); background: var(--app-surface); }
+.homeSlot[data-filled] { border-style: solid; background: var(--app-highlight); }
+.homeHeadline { grid-row: span 2; min-height: 160px; }

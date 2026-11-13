@@ -1,0 +1,156 @@
+{
+  "Metadata": {
+    "title": "Portal Meta News",
+    "description": "Notícias com contexto, em português e inglês."
+  },
+  "Locales": {
+    "pt": "PT",
+    "en": "EN",
+    "names": {
+      "pt": "Português",
+      "en": "English"
+    },
+    "label": "Idioma"
+  },
+  "ColorScheme": {
+    "toggle": "Alternar tema claro/escuro",
+    "light": "Claro",
+    "dark": "Escuro",
+    "auto": "Automático",
+    "label": "Tema de cores"
+  },
+  "NotFound": {
+    "title": "Página não encontrada",
+    "description": "O endereço pode ter mudado ou a página não existe mais.",
+    "home": "Ir para a página inicial",
+    "eyebrow": "Erro 404"
+  },
+  "ErrorPage": {
+    "title": "Algo deu errado",
+    "description": "Não foi possível exibir esta página. Tente novamente em instantes.",
+    "retry": "Tentar novamente",
+    "eyebrow": "Erro 500",
+    "reference": "Referência: {digest}",
+    "home": "Ir para o início"
+  },
+  "RichText": {
+    "toolbar": "Formatação do texto",
+    "bold": "Negrito",
+    "italic": "Itálico",
+    "underline": "Sublinhado",
+    "bulletList": "Lista com marcadores",
+    "orderedList": "Lista numerada",
+    "clearFormatting": "Limpar formatação",
+    "required": "Preencha este campo.",
+    "tooShort": "Escreva pelo menos {min} caracteres."
+  },
+  "Confirmation": {
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "typeToConfirm": "Digite {value} para confirmar"
+  },
+  "Listing": {
+    "view": {
+      "label": "Modo de exibição",
+      "list": "Lista",
+      "grid": "Grade"
+    }
+  },
+  "I18nText": {
+    "language": "Idioma do texto",
+    "languages": {
+      "pt": "PT",
+      "en": "EN"
+    },
+    "help": "Escreva em português e em inglês; um idioma em branco usa o texto do outro.",
+    "translationLabel": "{label} (inglês)",
+    "fallback": "Em branco, as páginas em inglês mostram o texto em português.",
+    "translate": "Traduzir do outro idioma",
+    "translating": "Traduzindo…"
+  },
+  "Common": {
+    "brand": "Portal Meta News",
+    "loading": "Carregando…",
+    "actions": {
+      "save": "Salvar",
+      "saveChanges": "Salvar alterações",
+      "cancel": "Cancelar",
+      "close": "Fechar",
+      "back": "Voltar",
+      "create": "Criar",
+      "add": "Adicionar",
+      "edit": "Editar",
+      "remove": "Remover",
+      "delete": "Excluir",
+      "archive": "Arquivar",
+      "restore": "Restaurar",
+      "confirm": "Confirmar",
+      "search": "Pesquisar",
+      "clear": "Limpar",
+      "apply": "Aplicar",
+      "open": "Abrir",
+      "download": "Baixar",
+      "copy": "Copiar",
+      "copied": "Copiado",
+      "retry": "Tentar novamente",
+      "more": "Mais ações",
+      "seeAll": "Ver tudo",
+      "discard": "Descartar",
+      "next": "Avançar",
+      "previous": "Voltar",
+      "send": "Enviar",
+      "upload": "Enviar arquivo",
+      "select": "Selecionar",
+      "filters": "Filtros",
+      "clearFilters": "Limpar filtros",
+      "moveUp": "Mover para cima",
+      "moveDown": "Mover para baixo",
+      "view": "Ver",
+      "new": "Novo"
+    },
+    "states": {
+      "saved": "Alterações salvas.",
+      "created": "Criado com sucesso.",
+      "removed": "Removido.",
+      "empty": "Nada por aqui ainda.",
+      "noResults": "Nenhum resultado para os filtros aplicados.",
+      "unsaved": "Há alterações não salvas.",
+      "optional": "opcional",
+      "required": "obrigatório",
+      "yes": "Sim",
+      "no": "Não",
+      "none": "Nenhum",
+      "all": "Todos",
+      "never": "Nunca",
+      "today": "Hoje",
+      "yesterday": "Ontem"
+    },
+    "errors": {
+      "invalidInput": "Verifique os dados informados.",
+      "forbidden": "Você não tem permissão para fazer isso.",
+      "notFound": "O item não existe mais ou você não tem acesso a ele.",
+      "conflict": "Este item foi alterado por outra pessoa ou já existe um registro com estes dados.",
+      "rateLimited": "Muitas tentativas em pouco tempo. Aguarde um instante e tente de novo.",
+      "tooLarge": "O arquivo excede o tamanho máximo permitido.",
+      "unsupportedType": "Este tipo de arquivo não é aceito.",
+      "aborted": "Envio cancelado.",
+      "unavailable": "Não foi possível concluir agora. Tente novamente."
+    },
+    "pagination": {
+      "total": "{count, plural, =0 {Nenhum item} one {# item} other {# itens}}",
+      "page": "Página {page} de {pages}"
+    },
+    "validation": {
+      "required": "Preencha este campo.",
+      "invalid": "Valor inválido.",
+      "tooShort": "Use pelo menos {min} caracteres.",
+      "tooLong": "Use no máximo {max} caracteres."
+    },
+    "table": {
+      "actions": "Ações",
+      "select": "Selecionar",
+      "selectAll": "Selecionar todos"
+    },
+    "breadcrumb": "Navegação estrutural"
+  }
+}

@@ -1,0 +1,327 @@
+{
+  "Themes": {
+    "title": "Themes",
+    "description": "Each theme is a complete set of design tokens: light and dark colours, fields, typography, corners and the site's layout. One theme dresses the site and another the panel, switched in one click.",
+    "system": "System",
+    "activeSite": "Active on the site",
+    "activePanel": "Active on the panel",
+    "updated": "Updated {date}",
+    "updatedBy": "Updated {date} by {name}",
+    "actions": {
+      "edit": "Edit",
+      "duplicate": "Duplicate",
+      "activateSite": "Use on the site",
+      "activatePanel": "Use on the panel",
+      "export": "Export JSON",
+      "import": "Import JSON",
+      "delete": "Delete",
+      "new": "New theme",
+      "save": "Save theme",
+      "back": "Back to themes"
+    },
+    "activated": {
+      "site": "The site now uses this theme.",
+      "panel": "The panel now uses this theme."
+    },
+    "duplicate": {
+      "title": "Duplicate theme",
+      "name": "Name of the new theme",
+      "copyOf": "{name} (copy)",
+      "done": "Theme duplicated. Edit it freely."
+    },
+    "create": {
+      "title": "New theme",
+      "description": "The new theme starts with the tokens of the theme chosen as its base.",
+      "base": "Base theme",
+      "done": "Theme created."
+    },
+    "remove": {
+      "title": "Delete theme",
+      "description": "The theme “{name}” will be deleted. This cannot be undone.",
+      "done": "Theme deleted."
+    },
+    "import": {
+      "title": "Import theme",
+      "description": "Choose a .json file exported by this panel (or one with the tokens only). It is validated before it becomes a new theme.",
+      "choose": "Choose JSON file",
+      "name": "Theme name",
+      "done": "Theme imported.",
+      "invalid": "The file is not a valid theme: check that it was exported by this panel and not changed.",
+      "tooLarge": "The file is too large to be a theme (64 KB at most)."
+    },
+    "errors": {
+      "theme_system": "System themes cannot be deleted: duplicate them to create variations.",
+      "theme_active": "An active theme cannot be deleted. Activate another theme on the site and the panel first.",
+      "theme_limit": "Theme limit reached. Delete themes you do not use.",
+      "theme_tokens_invalid": "The theme's tokens are invalid."
+    },
+    "empty": "No themes yet.",
+    "forbidden": "Your account may not manage themes.",
+    "editor": {
+      "title": "Edit theme",
+      "saved": "Theme saved. The site and the panel use the new version from the next page opened.",
+      "identity": "Identification",
+      "identityHint": "How the theme appears in the list.",
+      "name": "Name",
+      "descriptionField": "Description",
+      "colors": "Colours",
+      "colorsHint": "Eight tokens for each scheme. The text over buttons is computed automatically.",
+      "contrast": {
+        "good": "Good contrast with the text",
+        "low": "Low contrast with the text ({ratio}:1)"
+      },
+      "onColor": "Text over the colour: {color}",
+      "fieldsTitle": "Form fields",
+      "fieldsHint": "How text inputs, selects and the editor are drawn on the site and the panel.",
+      "typography": "Typography",
+      "typographyHint": "The headings typeface and that of text and controls, chosen separately.",
+      "shapes": "Shapes and site layout",
+      "shapesHint": "Corners of cards, buttons and images; the header and the style of news cards.",
+      "radius": "Corners",
+      "radiusOptions": {
+        "none": "Square",
+        "xs": "Minimal",
+        "sm": "Soft",
+        "md": "Medium",
+        "lg": "Rounded",
+        "xl": "Very rounded"
+      },
+      "header": "Site header",
+      "headerOptions": {
+        "left": "Logo on the left, menu beside it",
+        "centered": "Centred logo above the menu"
+      },
+      "cards": "News cards",
+      "cardOptions": {
+        "flat": "Flat",
+        "outlined": "Outlined",
+        "elevated": "Elevated"
+      },
+      "systemNotice": "This is a system theme: your changes apply to it, but it can never be deleted. To keep the original, duplicate it first.",
+      "activeNotice": "This theme is active on: {surfaces}. Saving shows the change right away.",
+      "surfaces": {
+        "site": "the site",
+        "panel": "the panel"
+      }
+    },
+    "preview": {
+      "title": "Preview",
+      "light": "Light",
+      "dark": "Dark",
+      "label": "Preview of the site with this theme",
+      "menu": {
+        "home": "Home",
+        "ai": "Artificial Intelligence",
+        "devices": "Devices",
+        "security": "Security"
+      },
+      "breaking": "Breaking",
+      "section": "Artificial Intelligence",
+      "headline": "Portuguese-language AI model now runs entirely on the phone",
+      "subtitle": "A compact version works offline and sends no data to any server.",
+      "cards": [
+        "Home router flaw gets a fix",
+        "University nanosatellite sends its first images",
+        "Agricultural drone startup raises R$80 million"
+      ],
+      "meta": "2 hours ago · 3 min read",
+      "read": "Read article",
+      "subscribe": "Subscribe to the newsletter",
+      "email": "Your e-mail",
+      "emailPlaceholder": "name@example.com"
+    },
+    "listTitle": "Themes",
+    "columns": {
+      "preview": "Preview",
+      "name": "Theme",
+      "status": "Use",
+      "fonts": "Typography",
+      "updated": "Updated"
+    }
+  },
+  "Branding": {
+    "schemes": {
+      "label": "Colour scheme",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "colors": {
+      "primary": "Primary",
+      "secondary": "Secondary",
+      "background": "Background",
+      "surface": "Cards and panels",
+      "highlight": "Highlights",
+      "border": "Borders and lines",
+      "foreground": "Text",
+      "muted": "Secondary text"
+    },
+    "colorHints": {
+      "primary": "Buttons, links and highlights",
+      "secondary": "Brand accents and breaking news",
+      "background": "Page background",
+      "surface": "Cards, header and panels",
+      "highlight": "Highlighted areas and raised surfaces",
+      "border": "Lines and outlines",
+      "foreground": "Headings and main text",
+      "muted": "Captions, dates and supporting text"
+    },
+    "fields": {
+      "variant": {
+        "label": "Field style",
+        "options": {
+          "default": "Default (thin outline)",
+          "filled": "Filled",
+          "outlined": "Strong outline",
+          "borderless": "Borderless (underline)",
+          "standout": "Standout (with shadow)"
+        }
+      },
+      "shape": {
+        "label": "Corners and density",
+        "options": {
+          "default": "Default",
+          "square": "Square corners",
+          "rounded": "Rounded",
+          "dense": "Compact"
+        }
+      }
+    },
+    "typography": {
+      "headings": "Headings typeface",
+      "body": "Text and controls typeface",
+      "preview": "Sample",
+      "sampleTitle": "Featured headline",
+      "sampleText": "The text of articles, menus and buttons uses this typeface.",
+      "fonts": {
+        "manrope": {
+          "name": "Manrope",
+          "hint": "Geometric · great for interfaces"
+        },
+        "inter": {
+          "name": "Inter",
+          "hint": "Neo-grotesque · comfortable reading"
+        },
+        "plus-jakarta-sans": {
+          "name": "Plus Jakarta Sans",
+          "hint": "Modern · corporate"
+        },
+        "satoshi": {
+          "name": "Satoshi",
+          "hint": "Minimalist · premium"
+        },
+        "general-sans": {
+          "name": "General Sans",
+          "hint": "Clean · neutral"
+        },
+        "roboto": {
+          "name": "Roboto",
+          "hint": "Highly legible"
+        },
+        "poppins": {
+          "name": "Poppins",
+          "hint": "Geometric · friendly"
+        },
+        "nunito": {
+          "name": "Nunito",
+          "hint": "Rounded · light"
+        },
+        "public-sans": {
+          "name": "Public Sans",
+          "hint": "Institutional · editorial"
+        },
+        "newsreader": {
+          "name": "Newsreader",
+          "hint": "Serif · classic newspaper"
+        },
+        "system-ui": {
+          "name": "System font",
+          "hint": "The device's own, no download"
+        }
+      }
+    },
+    "assets": {
+      "title": "Branding",
+      "description": "Logos, browser tab icons and the default sharing image. Without its own image, the site uses the identity bundled with the portal.",
+      "slots": {
+        "logo": {
+          "label": "Logo (light scheme)",
+          "hint": "PNG, JPG or WebP up to 5 MB. Transparent background; resized to at most 720 × 200."
+        },
+        "logoDark": {
+          "label": "Logo (dark scheme)",
+          "hint": "The light version of the logo, for dark backgrounds. Without it, the light logo is used in both schemes."
+        },
+        "favicon": {
+          "label": "Favicon (light scheme)",
+          "hint": "Square, ideally 512 × 512. Becomes a 64 × 64 PNG."
+        },
+        "faviconDark": {
+          "label": "Favicon (dark scheme)",
+          "hint": "For dark browser tabs. Without it, the light favicon is used."
+        },
+        "social": {
+          "label": "Sharing image",
+          "hint": "1200 × 630, used when a page without a photo is shared (social networks, messengers)."
+        }
+      },
+      "current": "Current image",
+      "bundled": "The portal's default identity",
+      "upload": "Upload image",
+      "replace": "Replace image",
+      "drop": "Drag an image here or click to choose",
+      "uploading": "Uploading…",
+      "uploaded": "Image updated.",
+      "remove": "Remove image",
+      "removeTitle": "Remove image",
+      "removeDescription": "The image “{name}” will be deleted and the site will use the default identity again.",
+      "removed": "Image removed.",
+      "metadata": "Every image is re-encoded by the server: no metadata of the original file (EXIF, GPS) is kept.",
+      "errors": {
+        "tooLarge": "The image exceeds 5 MB.",
+        "unsupportedType": "Upload a PNG, JPG or WebP image.",
+        "invalidInput": "The image could not be processed.",
+        "forbidden": "Your account may not change the branding.",
+        "unavailable": "The upload failed. Please try again."
+      }
+    },
+    "site": {
+      "title": "Site details",
+      "description": "The portal's name, tagline, description, default language, contact and social profiles. They appear in the header, the footer and search results.",
+      "sections": {
+        "identity": "Identity",
+        "identityHint": "The name and the sentences that present the portal.",
+        "contact": "Language and contact",
+        "contactHint": "The language of whoever opens the site without choosing, and the e-mail that receives the contact form's notices.",
+        "social": "Social networks",
+        "socialHint": "Full addresses (https://…) of the portal's profiles; blank, the network does not appear on the site."
+      },
+      "siteName": "Portal name",
+      "tagline": "Tagline",
+      "descriptionField": "Description",
+      "descriptionHint": "Used in search results and when the home page is shared.",
+      "defaultLocale": "Default language",
+      "locales": {
+        "pt": "Portuguese",
+        "en": "English"
+      },
+      "contactEmail": "Contact e-mail",
+      "contactEmailHint": "Receives a notice of each message sent through the site.",
+      "networks": {
+        "instagram": "Instagram",
+        "facebook": "Facebook",
+        "x": "X (Twitter)",
+        "youtube": "YouTube",
+        "tiktok": "TikTok",
+        "linkedin": "LinkedIn",
+        "whatsapp": "WhatsApp (channel or link)",
+        "telegram": "Telegram"
+      },
+      "saved": "Site details updated.",
+      "forbidden": "Your account may not change the site details.",
+      "errors": {
+        "social_invalid": "Check the social profile addresses: each must start with https://."
+      }
+    },
+    "forbidden": "Your account may not change the branding."
+  }
+}

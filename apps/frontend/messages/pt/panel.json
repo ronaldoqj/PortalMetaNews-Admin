@@ -1,0 +1,100 @@
+{
+  "Panel": {
+    "title": "Painel",
+    "viewSite": "Ver o site",
+    "openSite": "Abrir o site em nova aba"
+  },
+  "Navigation": {
+    "sections": {
+      "newsroom": "Redação",
+      "site": "Site",
+      "administration": "Administração"
+    },
+    "dashboard": "Visão geral",
+    "news": "Notícias",
+    "newNews": "Nova notícia",
+    "aiWriter": "Redator com IA",
+    "frontPage": "Capa",
+    "categories": "Editorias",
+    "tags": "Tags",
+    "media": "Mídia",
+    "themes": "Temas",
+    "branding": "Identidade visual",
+    "siteSettings": "Dados do site",
+    "legal": "Textos legais",
+    "privacy": "Privacidade",
+    "terms": "Termos de uso",
+    "contacts": "Mensagens",
+    "access": "Equipe e perfis",
+    "settings": "Configurações",
+    "ai": "Inteligência artificial",
+    "email": "E-mail (SMTP)",
+    "storage": "Armazenamento",
+    "audit": "Auditoria",
+    "documentation": "Documentação",
+    "profile": "Meu perfil",
+    "toggle": "Abrir ou fechar a navegação"
+  },
+  "Breadcrumbs": {
+    "home": "Início",
+    "editNews": "Editar notícia",
+    "conversation": "Conversa",
+    "theme": "Tema",
+    "message": "Mensagem",
+    "document": "Documento"
+  },
+  "Auth": {
+    "title": "Acesso ao painel",
+    "email": "E-mail",
+    "password": "Senha",
+    "enter": "Entrar",
+    "logout": "Sair",
+    "accountMenu": "Menu da conta de {name}",
+    "editProfile": "Editar perfil",
+    "recoveryHint": "Esqueceu a senha? Peça a quem administra a equipe uma senha temporária.",
+    "firstAccessTitle": "Primeiro acesso: defina sua senha",
+    "firstAccessNotice": "Esta é uma senha temporária. Por segurança, defina agora uma senha definitiva para continuar.",
+    "newPassword": "Nova senha",
+    "confirmPassword": "Confirmar nova senha",
+    "firstAccessSubmit": "Definir senha e continuar",
+    "backToLogin": "Voltar ao login",
+    "passwordRequirements": "Use de 12 a 128 caracteres com pelo menos três destes tipos: letras minúsculas, letras maiúsculas, números e símbolos. Não repita a senha temporária nem use o seu e-mail.",
+    "errors": {
+      "invalidInput": "Verifique os campos informados.",
+      "invalidCredentials": "Credenciais inválidas ou acesso temporariamente bloqueado.",
+      "forbidden": "Esta conta não tem acesso ao painel.",
+      "unavailable": "Serviço indisponível. Tente novamente.",
+      "passwordMismatch": "As senhas não coincidem.",
+      "passwordPolicy": "A nova senha não cumpre os requisitos de segurança.",
+      "passwordReused": "A nova senha precisa ser diferente da senha temporária.",
+      "passwordChangeExpired": "O prazo para definir a nova senha expirou. Entre novamente com a senha temporária.",
+      "rateLimited": "Muitas tentativas em pouco tempo. Aguarde um instante e tente de novo."
+    },
+    "setup": {
+      "title": "Instalar o painel",
+      "description": "Ainda não existe nenhuma conta. Esta conta recebe o perfil Administrador, com controle total do portal. Este formulário só funciona uma vez.",
+      "name": "Nome completo",
+      "confirmation": "Confirmar senha",
+      "token": "Token de instalação",
+      "tokenHelp": "Definido no servidor em PANEL_SETUP_TOKEN.",
+      "submit": "Instalar e entrar",
+      "unavailable": "A instalação pelo navegador está desativada neste ambiente. Defina PANEL_SETUP_TOKEN no servidor ou use npm run admin:bootstrap.",
+      "errors": {
+        "invalidInput": "Confira os dados informados.",
+        "passwordMismatch": "As senhas não coincidem.",
+        "passwordPolicy": "A senha não atende aos requisitos.",
+        "alreadyInstalled": "O painel já foi instalado. Entre com uma conta existente.",
+        "setupRefused": "Token de instalação inválido.",
+        "unavailable": "Não foi possível concluir a instalação. Tente novamente."
+      }
+    }
+  },
+  "Roles": {
+    "system": {
+      "admin": "Administrador",
+      "editor": "Editor-chefe",
+      "reporter": "Repórter",
+      "reviewer": "Revisor"
+    }
+  }
+}
