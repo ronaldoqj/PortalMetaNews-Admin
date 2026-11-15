@@ -3,6 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { DataSource, type EntityManager } from 'typeorm';
 import { hasPermission, requirePermission, type Actor } from '../../common/access/permissions.js';
 import { AiUnavailableException, type AiProvider, type ChatTurn } from '../../common/ai/ai-provider.js';
+import { AiStylesService, isStyleChoice } from '../../common/ai/ai-styles.service.js';
 import { AiService } from '../../common/ai/ai.service.js';
 import { ARTICLE_SCHEMA, STRUCTURE_SYSTEM, structurePrompt, writerSystem, type WriterOptions } from '../../common/ai/prompts.js';
 import { audit } from '../../common/audit/audit.js';
@@ -21,8 +22,9 @@ const STALE_STREAM_MINUTES = 5;
 const TONES = ['neutral', 'explanatory', 'analytical', 'light'] as const;
 const LENGTHS = ['short', 'medium', 'long'] as const;
 
-export interface WriterSettings extends WriterOptions { image: boolean }
-const DEFAULT_OPTIONS: WriterSettings = { language: 'pt', tone: 'neutral', length: 'medium', image: true };
+/** `styleId`: the editorial style chosen for the conversation, `none`, or `null` for the newsroom's default at each request. */
+export interface WriterSettings extends WriterOptions { image: boolean; styleId: string | null }
+const DEFAULT_OPTIONS: WriterSettings = { language: 'pt', tone: 'neutral', length: 'medium', image: true, styleId: null };
 /** Request DTOs carry every declared field, the absent ones as `undefined`: only the given values may override. */
 const defined = <T extends object>(value: T | undefined): Partial<T> =>
   Object.fromEntries(Object.entries(value ?? {}).filter(([, entry]) => entry !== undefined)) as Partial<T>;
@@ -65,6 +67,7 @@ export class AiWriterService {
   constructor(
     @Inject(DataSource) private readonly database: DataSource,
     @Inject(AiService) private readonly ai: AiService,
+    @Inject(AiStylesService) private readonly styles: AiStylesService,
     @Inject(MediaService) private readonly media: MediaService,
     @Inject(NewsService) private readonly news: NewsService,
     @Inject(TagsService) private readonly tags: TagsService,
@@ -73,6 +76,12 @@ export class AiWriterService {
   async status(actor: Actor) {
     requirePermission(actor, 'ai:use');
     return this.ai.status();
+  }
+
+  /** The editorial styles the writer offers, the default first. */
+  async styleChoices(actor: Actor) {
+    requirePermission(actor, 'ai:use');
+    return this.styles.choices(actor);
   }
 
   async list(actor: Actor) {
@@ -134,6 +143,8 @@ export class AiWriterService {
         AND created_at >= now() - make_interval(mins => ${STALE_STREAM_MINUTES})`, [id]);
       if (streaming.length) throw new ConflictException({ statusCode: 409, message: 'An answer is still being written', code: 'answer_in_progress' });
       const options = this.options({ ...conversation.options, ...defined(input.options) });
+      // The chosen style's instructions, read now: an edit in the settings applies from the next request on.
+      const guidelines = await this.styles.instructionsFor(options.styleId);
       const history: MessageRow[] = await manager.query(`SELECT * FROM public.ai_messages WHERE conversation_id = $1 AND status = 'complete'
         ORDER BY created_at DESC, id DESC LIMIT ${HISTORY_TURNS}`, [id]);
       const [userMessage]: MessageRow[] = await manager.query(`INSERT INTO public.ai_messages (id, conversation_id, role, content) VALUES ($1, $2, 'user', $3) RETURNING *`,
@@ -148,9 +159,9 @@ export class AiWriterService {
         'SELECT id, slug, name FROM public.categories WHERE active ORDER BY position');
       await audit(manager, { actorId: actor.userId, action: 'ai_writer.requested', resourceType: 'ai_conversation', resourceId: id, metadata: { provider: context.provider.id } });
       return {
-        actor, provider: context.provider, conversation, options, assistantId, userMessage, site: context.site, guidelines: context.guidelines, images: context.images,
+        actor, provider: context.provider, conversation, options, assistantId, userMessage, site: context.site, guidelines, images: context.images,
         categories: categories.map((category) => ({ id: category.id, slug: category.slug.pt, name: resolveI18nString(category.name, options.language) })),
-        system: writerSystem(context.site, options, categories.map((category) => resolveI18nString(category.name, options.language)), context.guidelines),
+        system: writerSystem(context.site, options, categories.map((category) => resolveI18nString(category.name, options.language)), guidelines),
         turns: [...history.reverse().map((message): ChatTurn => ({ role: message.role, content: message.content })), { role: 'user', content }],
       };
     });
@@ -283,10 +294,10 @@ export class AiWriterService {
   private options(input: Partial<WriterSettings> | undefined): WriterSettings {
     const value = { ...DEFAULT_OPTIONS, ...defined(input) } as WriterSettings;
     if (!isContentLocale(value.language) || !(TONES as readonly string[]).includes(value.tone) || !(LENGTHS as readonly string[]).includes(value.length)
-      || typeof value.image !== 'boolean') {
+      || typeof value.image !== 'boolean' || !isStyleChoice(value.styleId)) {
       throw new BadRequestException({ statusCode: 400, message: 'Invalid options', code: 'writer_options_invalid' });
     }
-    return { language: value.language, tone: value.tone, length: value.length, image: value.image };
+    return { language: value.language, tone: value.tone, length: value.length, image: value.image, styleId: value.styleId };
   }
 
   private async conversation(manager: EntityManager, actor: Actor, id: string, lock = false): Promise<ConversationRow> {

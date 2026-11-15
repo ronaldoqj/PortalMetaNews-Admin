@@ -67,7 +67,7 @@ total consistência entre os assistentes.
 - Bilingual sync: the builder translates the source language into the other while sync is on; typing in the target
   pauses it; resuming re-translates everything (`docs/architecture/newsroom.md`).
 - AI (`docs/architecture/ai-writer.md`): the provider is Gemini with a key (panel or `GEMINI_API_KEY`), else the
-  deterministic local provider in development; prompts live in `common/ai/prompts.ts`, with the newsroom's style guide.
+  deterministic local provider in development; prompts live in `common/ai/prompts.ts`, with the chosen editorial style (`ai_styles`, one default).
 - The site (`docs/architecture/public-site.md`) shows published content only, counts reads per day without any trace of
   the reader, and keeps a language's URLs in that language.
 

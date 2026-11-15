@@ -7,11 +7,31 @@ export const WRITER_LANGUAGES = ["pt", "en"] as const;
 export const WRITER_TONES = ["neutral", "explanatory", "analytical", "light"] as const;
 export const WRITER_LENGTHS = ["short", "medium", "long"] as const;
 
+/** No editorial style for the conversation; `null` follows the newsroom's default. */
+export const NO_STYLE = "none";
+const styleChoiceSchema = z.union([z.uuid(), z.literal(NO_STYLE)]).nullable();
+
 export const writerOptionsSchema = z.object({
   language: z.enum(WRITER_LANGUAGES), tone: z.enum(WRITER_TONES), length: z.enum(WRITER_LENGTHS), image: z.boolean(),
+  /** The editorial style chosen for the conversation, `none`, or `null` for the newsroom's default. */
+  styleId: styleChoiceSchema,
 }).strict();
 export type WriterOptions = z.infer<typeof writerOptionsSchema>;
-export const DEFAULT_OPTIONS: WriterOptions = { language: "pt", tone: "neutral", length: "medium", image: true };
+export const DEFAULT_OPTIONS: WriterOptions = { language: "pt", tone: "neutral", length: "medium", image: true, styleId: null };
+
+/** An editorial style the writer offers (`panel/ai-writer/styles`), the default first. */
+export const writerStyleSchema = z.object({ id: z.uuid(), name: z.string(), isDefault: z.boolean() }).strict();
+export type WriterStyle = z.infer<typeof writerStyleSchema>;
+
+/**
+ * The style a conversation's choice shows as: the chosen one, the default for `null` or for a style removed since it
+ * was chosen (as the API resolves it), `none` when there is no default either.
+ */
+export function chosenStyle(styles: readonly WriterStyle[], styleId: string | null): string {
+  if (styleId === NO_STYLE) return NO_STYLE;
+  return styles.find((style) => style.id === styleId)?.id ?? styles.find((style) => style.isDefault)?.id ?? NO_STYLE;
+}
+
 
 /** What answers now (`panel/ai-writer/status`): never a key. */
 export const aiStatusSchema = z.object({

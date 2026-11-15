@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, HttpCode, Inject, Param, ParseUUIDPipe, Patch, Post, Res } from '@nestjs/common';
 import { Transform, Type } from 'class-transformer';
-import { IsBoolean, IsIn, IsOptional, IsString, IsUUID, MaxLength, MinLength, ValidateIf, ValidateNested } from 'class-validator';
+import { IsBoolean, IsIn, IsOptional, IsString, IsUUID, Matches, MaxLength, MinLength, ValidateIf, ValidateNested } from 'class-validator';
 import type { Response } from 'express';
 import { CurrentUser, RequirePermissions } from '../../common/access/access.controller.js';
 import type { Actor } from '../../common/access/permissions.js';
@@ -15,6 +15,9 @@ class WriterOptionsDto {
   @IsOptional() @IsIn(['neutral', 'explanatory', 'analytical', 'light']) tone?: 'neutral' | 'explanatory' | 'analytical' | 'light';
   @IsOptional() @IsIn(['short', 'medium', 'long']) length?: 'short' | 'medium' | 'long';
   @IsOptional() @IsBoolean() image?: boolean;
+  /** A style's id, `none`, or `null` for the newsroom's default. */
+  @IsOptional() @ValidateIf((_object: unknown, value: unknown) => value !== null)
+  @Matches(/^(none|[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})$/) styleId?: string | null;
 }
 
 export class CreateConversationDto {
@@ -55,6 +58,12 @@ export class AiWriterController {
   @Get('status') @RequirePermissions('ai:use')
   status(@CurrentUser() actor: Actor) {
     return this.writer.status(actor);
+  }
+
+  /** The editorial styles to choose from (names only), the default first. */
+  @Get('styles') @RequirePermissions('ai:use')
+  styles(@CurrentUser() actor: Actor) {
+    return this.writer.styleChoices(actor);
   }
 
   @Get('conversations') @RequirePermissions('ai:use')

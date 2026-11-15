@@ -11,20 +11,22 @@ import { hashAdminPassword } from '../access/access.service.js';
 import { bootstrapAccount } from '../access/first-administrator.js';
 import { isStrongAdminPassword } from '../access/password-policy.js';
 import { PERMISSIONS, SYSTEM_ROLES, type Actor, type Permission } from '../access/permissions.js';
+import { AiStylesService } from '../ai/ai-styles.service.js';
 import { LocalProvider } from '../ai/local-provider.js';
 import { MEDIA_VARIANT_NAMES, mediaVariantKey, mediaVariantMimeType, renderMediaImage } from '../storage/media-images.js';
 import { mediaFolder } from '../storage/storage-layout.js';
 import { StorageService } from '../storage/storage.service.js';
-import { SEED_ARTICLES as ARTICLES, SEED_CATEGORIES as CATEGORIES, SEED_FRONT_PAGE_SECTIONS, type SeedArticle } from './seed-demo-content.js';
+import { SEED_AI_STYLES, SEED_ARTICLES as ARTICLES, SEED_CATEGORIES as CATEGORIES, SEED_FRONT_PAGE_SECTIONS, type SeedArticle } from './seed-demo-content.js';
 import { commonsCredit, fetchCommonsPhoto } from './seed-photos.js';
 
 /**
  * Development seed (`npm run db:seed:demo`): the editorial team of a technology news portal, its sections, tags and
  * sixteen fictitious bilingual news items (`seed-demo-content.ts`), one published in Portuguese only, one waiting for
- * review and one scheduled, plus two weeks of reading history and the front page. Covers are real, openly licensed
- * photographs fetched from Wikimedia Commons (`seed-photos.ts`) and stored like any upload, in the configured store
- * (the bucket, with `STORAGE_DRIVER=s3`); offline, the local provider's placeholder stands in. Every account comes from
- * the Git-ignored `.env.demo-seed`; no AI model is called. Refuses to run in production.
+ * review and one scheduled, plus two weeks of reading history, the front page and three editorial styles for the AI
+ * writer. Covers are real, openly licensed photographs fetched from Wikimedia Commons (`seed-photos.ts`) and stored
+ * like any upload, in the configured store (the bucket, with `STORAGE_DRIVER=s3`); offline, the local provider's
+ * placeholder stands in. Every account comes from the Git-ignored `.env.demo-seed`; no AI model is called. Refuses to
+ * run in production.
  */
 
 const escape = (text: string) => text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -85,6 +87,10 @@ try {
     await database.query('DELETE FROM public.media');
     for (const { id } of media) await storage.deletePrefix(mediaFolder(id)).catch(() => undefined);
   }
+
+  // Editorial styles for the AI writer, only while the newsroom has none of its own.
+  const styles = application.get(AiStylesService);
+  if (!(await styles.list(admin)).length) for (const style of SEED_AI_STYLES) await styles.create(admin, style);
 
   const categories = application.get(CategoriesService);
   const existingCategories = await categories.list(admin);

@@ -4,11 +4,20 @@ Rules of the AI writer. Guide: [Redator com IA](../redator-com-ia.md).
 
 - API: `modules/ai-writer` (`AiWriterService`, `AiWriterController` under `panel/ai-writer`), every route `ai:use`. Prompts live
   only in `common/ai/prompts.ts` (`writerSystem`, `STRUCTURE_SYSTEM`, `ARTICLE_SCHEMA`, `imagePrompt`), each appending the
-  newsroom's style guide (`settings.ai_guidelines`). The model receives the brief, the conversation (last 8 complete turns),
-  the active sections and the style guide — nothing else of the newsroom.
+  conversation's editorial style. The model receives the brief, the conversation (last 8 complete turns), the active
+  sections and that style's instructions — nothing else of the newsroom.
+- Editorial styles (`ai_styles`, `common/ai/ai-styles.service.ts`): named instructions (name ≤ 80, unique ignoring case;
+  instructions ≤ 4,000; at most 20), at most one the default (a partial unique index). Managed under
+  `panel/settings/ai/styles` (`settings:manage`); the first one created becomes the default, removing the default leaves
+  none. `GET panel/ai-writer/styles` (`ai:use`) lists names only, the default first. Audit records the action and whether
+  the style is the default, never its text.
+- A conversation's `styleId` is a style's id, `none` (no style) or `null` (the newsroom's default, read at each request).
+  The instructions are read when a request is prepared (`instructionsFor`), so an edit applies from the next request; a
+  style removed since it was chosen falls back to the default. Translation in the builder and the settings' test use
+  the default style.
 - Conversations and messages (`ai_conversations`, `ai_messages`) belong to one account: every query is scoped by `user_id`
-  and a foreign conversation answers 404. Options (`language`, `tone`, `length`, `image`) are validated by the API and may
-  change per request.
+  and a foreign conversation answers 404. Options (`language`, `tone`, `length`, `image`, `styleId`) are validated by the
+  API and may change per request.
 - An answer is three steps streamed as server-sent events — `user`, `status` (`writing` → `structuring` → `illustrating`),
   `delta`, `proposal`, `image`, then `done` or `error`. Everything that can refuse a request (not the account's
   conversation, an answer already streaming, no provider) answers an ordinary HTTP error before the stream opens.

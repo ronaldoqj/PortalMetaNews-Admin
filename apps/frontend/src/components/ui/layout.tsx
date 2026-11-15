@@ -25,7 +25,7 @@ export function Section({ title, description, actions, icon: Icon, children, flu
       {Icon && <ThemeIcon variant="light" size={36} radius="md" aria-hidden="true"><Icon size={18} /></ThemeIcon>}
       <Stack gap={2} miw={0}>
         {title && <Title order={3} size="h4">{title}</Title>}
-        {description && <Text size="sm" c="dimmed">{description}</Text>}
+        {description && <Text size="sm" c="dimmed" component={typeof description === "string" ? "p" : "div"}>{description}</Text>}
       </Stack>
     </Group>
     {actions && <Group gap="xs" wrap="nowrap" style={{ flexShrink: 0 }}>{actions}</Group>}

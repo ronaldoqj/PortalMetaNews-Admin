@@ -57,6 +57,10 @@
         "medium": "Medium (~500 words)",
         "long": "Long (~900 words)"
       },
+      "style": "Editorial style",
+      "styleHelp": "The style instructions the AI follows in this conversation",
+      "defaultStyle": "{name} (default)",
+      "noStyle": "No editorial style",
       "image": "Generate a cover image"
     },
     "composer": {

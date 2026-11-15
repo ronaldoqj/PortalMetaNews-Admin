@@ -302,7 +302,8 @@
       "tag": "Tag",
       "legal_document": "Legal text",
       "contact_message": "Reader's message",
-      "ai_conversation": "AI conversation"
+      "ai_conversation": "AI conversation",
+      "ai_style": "AI editorial style"
     },
     "actions": {
       "panel_installed": "Panel installed",
@@ -347,6 +348,9 @@
       "role_updated": "Role changed",
       "role_deleted": "Role deleted",
       "settings_ai_updated": "AI settings changed",
+      "settings_ai_style_created": "AI editorial style created",
+      "settings_ai_style_updated": "AI editorial style changed",
+      "settings_ai_style_removed": "AI editorial style deleted",
       "settings_email_updated": "E-mail settings changed",
       "ai_writer_requested": "AI writer request",
       "ai_writer_applied": "AI proposal applied",
@@ -362,7 +366,7 @@
     "entries": {
       "ai": {
         "title": "Artificial intelligence",
-        "description": "Provider, key, models and the style guide used by translation and the writer."
+        "description": "Provider, key, models and the editorial styles used by translation and the writer."
       },
       "email": {
         "title": "E-mail (SMTP)",
@@ -440,20 +444,49 @@
     "modelHelp": "Blank uses the default shown.",
     "imageModelHelp": "\"gemini-*-image\" or \"imagen-*\" models. Blank uses the default shown.",
     "imagesHelp": "Lets the AI writer and the media library generate cover images.",
-    "guidelines": "Newsroom style guide",
-    "guidelinesHelp": "Goes into every AI request (translation, writing, images): tone, preferred terms, spellings, what to avoid.",
-    "guidelinesPlaceholder": "E.g. Lowercase \"president\". Avoid adjectives. Spell out dates. In English, American spelling.",
     "providerSection": "Provider and models",
     "providerSectionHelp": "Who answers translation, writing and image requests.",
-    "guidelinesSection": "Editorial style",
-    "guidelinesSectionHelp": "The rules the AI follows to write like the newsroom.",
     "saved": "Settings saved.",
-    "privacyNote": "The AI receives only each request's text and the style guide; never accounts, passwords or readers' messages.",
+    "privacyNote": "The AI receives only each request's text and the chosen editorial style; never accounts, passwords or readers' messages.",
     "errors": {
       "keyRequired": "The Gemini provider needs a key (saved here or on the server).",
       "keyInvalid": "The key looks invalid: check it was copied whole, without spaces.",
       "modelInvalid": "Invalid model name.",
       "invalidInput": "Check the fields."
+    },
+    "styles": {
+      "title": "Editorial styles",
+      "description": "Instructions the AI follows to write like the newsroom. The default applies to translation and to every new conversation of the AI writer; in the writer, another style can be chosen.",
+      "add": "New style",
+      "edit": "Edit style",
+      "default": "Default",
+      "makeDefault": "Make default",
+      "madeDefault": "Default style changed.",
+      "saved": "Style saved.",
+      "removed": "Style deleted.",
+      "removeTitle": "Delete style?",
+      "removeDescription": "The style \"{name}\" will no longer be offered in the AI writer. Conversations that used it will follow the default style.",
+      "removeDefaultDescription": "\"{name}\" is the default style: without it, the AI has no style until you make another one the default.",
+      "empty": "No editorial styles",
+      "emptyHint": "Create a style with the newsroom’s rules (tone, terms, spellings, what to avoid). The first one becomes the default.",
+      "columns": {
+        "name": "Style",
+        "instructions": "Instructions"
+      },
+      "fields": {
+        "name": "Name",
+        "namePlaceholder": "E.g. Newsroom default, Explanatory, Technical analysis",
+        "instructions": "Instructions for the AI",
+        "instructionsHelp": "They go into the AI requests (writing, structuring and translation): tone, audience, preferred terms, spellings, what to avoid.",
+        "instructionsPlaceholder": "E.g. Write for the curious reader, not for specialists. Spell out acronyms the first time. Avoid adjectives. Spell out dates.",
+        "isDefault": "Default style",
+        "isDefaultHelp": "Used for translation and already selected in every new conversation of the AI writer. Only one style is the default."
+      },
+      "errors": {
+        "nameTaken": "A style with this name already exists.",
+        "limit": "Limit of 20 styles reached: delete one to create another.",
+        "invalid": "Enter the name (up to 80 characters) and the instructions (up to 4,000)."
+      }
     }
   },
   "EmailSettings": {

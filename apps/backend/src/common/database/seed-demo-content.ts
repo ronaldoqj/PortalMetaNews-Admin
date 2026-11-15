@@ -457,3 +457,32 @@ export const SEED_ARTICLES: SeedArticle[] = [
     },
   },
 ];
+
+/** Editorial styles for the AI writer: the first is the newsroom's default. */
+export const SEED_AI_STYLES: Array<{ name: string; instructions: string }> = [
+  {
+    name: 'Padrão da redação',
+    instructions: [
+      'Escreva para o leitor curioso, não para especialistas: explique siglas e termos técnicos na primeira vez que aparecem.',
+      'Abra com o fato principal e o seu efeito para o leitor; contexto e números vêm depois.',
+      'Use números com fonte e evite adjetivos de propaganda ("revolucionário", "incrível").',
+      'Nomes de empresas e produtos fictícios ou não confirmados devem ser identificados como tal.',
+    ].join('\n'),
+  },
+  {
+    name: 'Explicativo para iniciantes',
+    instructions: [
+      'Imagine que o leitor nunca ouviu falar do assunto.',
+      'Inclua um parágrafo "O que é" com uma analogia do dia a dia e termine com "O que muda para você", em tópicos curtos.',
+      'Frases curtas, voz ativa, nenhum jargão sem explicação.',
+    ].join('\n'),
+  },
+  {
+    name: 'Análise técnica',
+    instructions: [
+      'Escreva para profissionais de tecnologia: pode usar termos técnicos sem explicar os básicos.',
+      'Traga especificações, comparações com a geração anterior ou com concorrentes e as limitações conhecidas.',
+      'Termine com uma seção "Ainda não sabemos" listando o que falta confirmar.',
+    ].join('\n'),
+  },
+];

@@ -302,7 +302,8 @@
       "tag": "Tag",
       "legal_document": "Texto legal",
       "contact_message": "Mensagem de leitor",
-      "ai_conversation": "Conversa com a IA"
+      "ai_conversation": "Conversa com a IA",
+      "ai_style": "Estilo editorial da IA"
     },
     "actions": {
       "panel_installed": "Painel instalado",
@@ -347,6 +348,9 @@
       "role_updated": "Perfil alterado",
       "role_deleted": "Perfil excluído",
       "settings_ai_updated": "Configuração de IA alterada",
+      "settings_ai_style_created": "Estilo editorial da IA criado",
+      "settings_ai_style_updated": "Estilo editorial da IA alterado",
+      "settings_ai_style_removed": "Estilo editorial da IA excluído",
       "settings_email_updated": "Configuração de e-mail alterada",
       "ai_writer_requested": "Pedido ao redator com IA",
       "ai_writer_applied": "Proposta da IA aplicada",
@@ -362,7 +366,7 @@
     "entries": {
       "ai": {
         "title": "Inteligência artificial",
-        "description": "Provedor, chave, modelos e o manual de estilo usado pela tradução e pelo redator."
+        "description": "Provedor, chave, modelos e os estilos editoriais usados pela tradução e pelo redator."
       },
       "email": {
         "title": "E-mail (SMTP)",
@@ -440,20 +444,49 @@
     "modelHelp": "Em branco, usa o padrão indicado.",
     "imageModelHelp": "Modelos \"gemini-*-image\" ou \"imagen-*\". Em branco, usa o padrão indicado.",
     "imagesHelp": "Permite que o redator com IA e a biblioteca de mídia gerem imagens de capa.",
-    "guidelines": "Manual de estilo da redação",
-    "guidelinesHelp": "Vai em todos os pedidos à IA (tradução, redação, imagens): tom, termos preferidos, grafias, o que evitar.",
-    "guidelinesPlaceholder": "Ex.: Use \"presidente\" em minúscula. Evite adjetivos. Datas por extenso. Em inglês, ortografia americana.",
     "providerSection": "Provedor e modelos",
     "providerSectionHelp": "Quem responde aos pedidos de tradução, redação e imagem.",
-    "guidelinesSection": "Estilo editorial",
-    "guidelinesSectionHelp": "As regras que a IA segue para escrever como a redação.",
     "saved": "Configuração salva.",
-    "privacyNote": "A IA recebe só o texto de cada pedido e o manual de estilo; nada de contas, senhas ou mensagens de leitores.",
+    "privacyNote": "A IA recebe só o texto de cada pedido e o estilo editorial escolhido; nada de contas, senhas ou mensagens de leitores.",
     "errors": {
       "keyRequired": "O provedor Gemini precisa de uma chave (salva aqui ou no servidor).",
       "keyInvalid": "A chave parece inválida: confira se foi copiada inteira, sem espaços.",
       "modelInvalid": "Nome de modelo inválido.",
       "invalidInput": "Confira os campos."
+    },
+    "styles": {
+      "title": "Estilos editoriais",
+      "description": "Instruções que a IA segue para escrever como a redação. O padrão vale para a tradução e para cada nova conversa do redator com IA; no redator, dá para escolher outro estilo.",
+      "add": "Novo estilo",
+      "edit": "Editar estilo",
+      "default": "Padrão",
+      "makeDefault": "Tornar padrão",
+      "madeDefault": "Estilo padrão alterado.",
+      "saved": "Estilo salvo.",
+      "removed": "Estilo excluído.",
+      "removeTitle": "Excluir estilo?",
+      "removeDescription": "O estilo \"{name}\" deixa de ser oferecido no redator com IA. Conversas que o usavam passam a seguir o estilo padrão.",
+      "removeDefaultDescription": "\"{name}\" é o estilo padrão: sem ele, a IA fica sem estilo até você marcar outro como padrão.",
+      "empty": "Nenhum estilo editorial",
+      "emptyHint": "Crie um estilo com as regras da redação (tom, termos, grafias, o que evitar). O primeiro vira o padrão.",
+      "columns": {
+        "name": "Estilo",
+        "instructions": "Instruções"
+      },
+      "fields": {
+        "name": "Nome",
+        "namePlaceholder": "Ex.: Padrão da redação, Explicativo, Análise técnica",
+        "instructions": "Instruções para a IA",
+        "instructionsHelp": "Vão nos pedidos à IA (redação, estruturação e tradução): tom, público, termos preferidos, grafias, o que evitar.",
+        "instructionsPlaceholder": "Ex.: Escreva para o leitor curioso, não para especialistas. Explique siglas na primeira vez. Evite adjetivos. Datas por extenso.",
+        "isDefault": "Estilo padrão",
+        "isDefaultHelp": "Usado na tradução e já selecionado em cada nova conversa do redator com IA. Só um estilo é o padrão."
+      },
+      "errors": {
+        "nameTaken": "Já existe um estilo com este nome.",
+        "limit": "Limite de 20 estilos atingido: exclua um para criar outro.",
+        "invalid": "Informe o nome (até 80 caracteres) e as instruções (até 4.000)."
+      }
     }
   },
   "EmailSettings": {

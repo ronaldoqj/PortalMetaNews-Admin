@@ -162,7 +162,9 @@ export function createBrandingTheme(branding: Branding) {
         const color = filledText(props);
         return { root: color ? { "--ai-color": color } : {} };
       } },
-      Badge: { vars: badgeGradient, styles: badgeShadow },
+      // A badge is a label inside a line (a page description, a name, a table cell): an inline `span`, never a `div`, so it
+      // is valid inside a paragraph and the server's HTML matches the browser's.
+      Badge: { defaultProps: { component: "span" }, vars: badgeGradient, styles: badgeShadow },
       // Avatars default to `light`, so only an explicitly filled one takes the readable text colour.
       Avatar: { vars: (_theme: unknown, props: { variant?: string; color?: string }) => {
         const color = props.variant === "filled" ? filledText(props) : undefined;

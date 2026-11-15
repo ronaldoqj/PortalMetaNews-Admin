@@ -57,6 +57,10 @@
         "medium": "Média (~500 palavras)",
         "long": "Longa (~900 palavras)"
       },
+      "style": "Estilo editorial",
+      "styleHelp": "As instruções de estilo que a IA segue nesta conversa",
+      "defaultStyle": "{name} (padrão)",
+      "noStyle": "Sem estilo editorial",
       "image": "Gerar imagem de capa"
     },
     "composer": {

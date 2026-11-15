@@ -1,5 +1,6 @@
 import { afterAll, beforeAll, expect, it } from 'vitest';
 import { createNewsroom, type Newsroom } from '../../../test/support/newsroom.js';
+import { AiStylesService } from '../../common/ai/ai-styles.service.js';
 import { describeWithDatabase } from '../../../test/support/test-database.js';
 
 const MEDIA_PNG = Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAIAAABLbSncAAAAEklEQVR4nGP4z8CAFWEXHbQSACj/P8Fu7N9hAAAAAElFTkSuQmCC', 'base64');
@@ -91,6 +92,41 @@ describeWithDatabase('newsroom (database)', () => {
     expect(draft.body.title.en).toBe('[EN] A biblioteca reabriu hoje');
     // Conversations are their author's alone.
     await room.api('editor').get(`/panel/ai-writer/conversations/${conversation.body.id}`).expect(404);
+  });
+
+  it('keeps several editorial styles with one default, and lets the writer choose one per conversation', async () => {
+    const admin = room.api('admin');
+    const reporter = room.api('reporter');
+    const styles = room.app.get(AiStylesService);
+    expect(await styles.instructionsFor(null)).toBe('');
+    // The first style becomes the default; a later one may take its place.
+    const plain = await admin.post('/panel/settings/ai/styles').send({ name: 'Direto', instructions: 'Frases curtas.' }).expect(201);
+    expect(plain.body.isDefault).toBe(true);
+    const deep = await admin.post('/panel/settings/ai/styles').send({ name: 'Analítico', instructions: 'Explique o contexto.', isDefault: true }).expect(201);
+    const listed = await admin.get('/panel/settings/ai/styles').expect(200);
+    expect(listed.body.map((style: { name: string; isDefault: boolean }) => [style.name, style.isDefault])).toEqual([['Analítico', true], ['Direto', false]]);
+    await admin.post('/panel/settings/ai/styles').send({ name: 'direto', instructions: 'Outra coisa.' }).expect(409)
+      .expect((response) => expect(response.body.code).toBe('ai_style_name_taken'));
+    // Managing styles is an integration setting; choosing one only needs the AI.
+    await reporter.post('/panel/settings/ai/styles').send({ name: 'X', instructions: 'Y' }).expect(403);
+    await reporter.get('/panel/settings/ai/styles').expect(403);
+    const choices = await reporter.get('/panel/ai-writer/styles').expect(200);
+    expect(choices.body).toEqual([{ id: deep.body.id, name: 'Analítico', isDefault: true }, { id: plain.body.id, name: 'Direto', isDefault: false }]);
+    // A conversation follows the default until one is chosen; the choice is kept with it.
+    const conversation = await reporter.post('/panel/ai-writer/conversations').send({}).expect(201);
+    expect(conversation.body.options.styleId).toBeNull();
+    const chosen = await reporter.patch(`/panel/ai-writer/conversations/${conversation.body.id}`).send({ options: { styleId: plain.body.id } }).expect(200);
+    expect(chosen.body.options.styleId).toBe(plain.body.id);
+    await reporter.patch(`/panel/ai-writer/conversations/${conversation.body.id}`).send({ options: { styleId: 'outro' } }).expect(400);
+    expect(await styles.instructionsFor(null)).toBe('Explique o contexto.');
+    expect(await styles.instructionsFor(plain.body.id)).toBe('Frases curtas.');
+    expect(await styles.instructionsFor('none')).toBe('');
+    // A removed style falls back to the default; removing the default leaves none.
+    await admin.delete(`/panel/settings/ai/styles/${plain.body.id}`).expect(204);
+    expect(await styles.instructionsFor(plain.body.id)).toBe('Explique o contexto.');
+    await admin.patch(`/panel/settings/ai/styles/${deep.body.id}`).send({ isDefault: false }).expect(200);
+    expect(await styles.instructionsFor(null)).toBe('');
+    await admin.delete(`/panel/settings/ai/styles/${deep.body.id}`).expect(204);
   });
 
   it('manages themes: activates one on the site and protects system and active themes', async () => {

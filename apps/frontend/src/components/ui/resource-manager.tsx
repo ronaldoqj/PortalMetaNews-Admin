@@ -8,7 +8,7 @@ import type { z } from "zod";
 import type { ApiResult } from "../admin/api-result";
 import { useApiAction } from "../shared/use-api-action";
 import { Button } from "./button";
-import { DataView, useListingView, type Column } from "./data-view";
+import { DataView, useListingView, type Column, type RowAction } from "./data-view";
 import { FormModal, type FormField } from "./forms/auto-form";
 import { Section } from "./layout";
 import { useConfirmation } from "./use-confirmation";
@@ -19,7 +19,7 @@ import { useConfirmation } from "./use-confirmation";
  * (categories, tags, stages, areas...) is one call of this, differing only in its fields, columns and actions.
  */
 export function ResourceManager<Item extends { id: string }, Values extends Record<string, unknown>>({
-  title, description, icon, items, columns, fields, schema, blank, toValues, labels, save, remove, reorder, canManage = true, empty, removable, listing,
+  title, description, icon, items, columns, fields, schema, blank, toValues, labels, save, remove, reorder, canManage = true, empty, removable, listing, itemActions, errors,
 }: {
   title: string; description?: string; icon?: LucideIcon;
   items: readonly Item[]; columns: ReadonlyArray<Column<Item>>;
@@ -36,6 +36,10 @@ export function ResourceManager<Item extends { id: string }, Values extends Reco
   removable?: (item: Item) => boolean;
   /** Names the list for remembering its view (cards or rows); the title is used when left out. */
   listing?: string;
+  /** The item's own actions besides edit, move and remove ("make default"), shown after edit. */
+  itemActions?: (item: Item) => ReadonlyArray<RowAction | false | null | undefined>;
+  /** Own wording for the dialog's refusals, by kind or by the API's `code`. */
+  errors?: Partial<Record<string, string>>;
 }) {
   const translate = useTranslations("Common.actions");
   const router = useRouter();
@@ -58,6 +62,7 @@ export function ResourceManager<Item extends { id: string }, Values extends Reco
         const index = items.indexOf(item);
         return [
           { label: translate("edit"), icon: Pencil, onClick: () => setEditing(item) },
+          ...(itemActions?.(item) ?? []),
           reorder && { label: translate("moveUp"), icon: ArrowUp, onClick: () => void move(index, -1), disabled: index === 0 || order.pending },
           reorder && { label: translate("moveDown"), icon: ArrowDown, onClick: () => void move(index, 1), disabled: index === items.length - 1 || order.pending },
           remove && (!removable || removable(item)) && { label: translate("delete"), icon: Trash2, tone: "danger" as const, onClick: () => confirmation.ask({
@@ -66,7 +71,7 @@ export function ResourceManager<Item extends { id: string }, Values extends Reco
         ];
       } : undefined} />
     <FormModal opened={!!editing} onClose={() => setEditing(undefined)} title={editing === "new" ? labels.add : labels.edit} fields={fields} schema={schema}
-      initial={editing && editing !== "new" ? toValues(editing) : blank} success={labels.saved}
+      initial={editing && editing !== "new" ? toValues(editing) : blank} success={labels.saved} errors={errors}
       onSubmit={(values) => save(editing && editing !== "new" ? editing.id : null, values)} />
     {confirmation.dialog}
   </Section>;

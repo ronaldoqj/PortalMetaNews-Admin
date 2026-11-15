@@ -2,7 +2,7 @@
 
 import { Drawer, Text } from "@mantine/core";
 import {
-  ArrowDown, ArrowUp, Check, CircleAlert, ImageIcon, Lightbulb, Link2, ListChecks, Menu, MessageSquarePlus, PenLine, Pencil, Search, Sparkles, Square,
+  ArrowDown, ArrowUp, Check, CircleAlert, ImageIcon, Lightbulb, Link2, ListChecks, Menu, MessageSquarePlus, PenLine, Pencil, PenTool, Search, Sparkles, Square,
   Trash2, Wand2,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -16,8 +16,8 @@ import { SegmentedControl } from "../ui/forms/input";
 import { createConversation, loadConversation, removeConversation, renameConversation } from "./actions";
 import { ArticleMarkdown } from "./article-markdown";
 import {
-  BRIEF_MAX, DEFAULT_OPTIONS, WRITER_LANGUAGES, WRITER_LENGTHS, WRITER_TONES, type AiStatus, type Conversation, type ConversationDetail, type Proposal,
-  type SectionNames, type WriterMedia, type WriterMessage, type WriterOptions, type WriterStage,
+  BRIEF_MAX, chosenStyle, DEFAULT_OPTIONS, NO_STYLE, WRITER_LANGUAGES, WRITER_LENGTHS, WRITER_TONES, type AiStatus, type Conversation, type ConversationDetail, type Proposal,
+  type SectionNames, type WriterMedia, type WriterMessage, type WriterOptions, type WriterStage, type WriterStyle,
 } from "./contracts";
 import { ProposalCard } from "./proposal-card";
 import { useWriterStream } from "./use-writer-stream";
@@ -37,9 +37,9 @@ const CODES = [
  * covers) and, before the first brief, what to include and a few examples. A conversation is created on the first
  * brief (linked to a news item when the page was opened from one) and the address follows it without reloading.
  */
-export function WriterWorkspace({ status, conversations: initialList, conversation, linkNewsId, sections, canWrite, canIllustrate, canConfigure }: {
+export function WriterWorkspace({ status, conversations: initialList, conversation, linkNewsId, sections, editorialStyles, canWrite, canIllustrate, canConfigure }: {
   status: AiStatus; conversations: Conversation[]; conversation: ConversationDetail | null; linkNewsId: string | null; sections: SectionNames;
-  canWrite: boolean; canIllustrate: boolean; canConfigure: boolean;
+  editorialStyles: readonly WriterStyle[]; canWrite: boolean; canIllustrate: boolean; canConfigure: boolean;
 }) {
   const t = useTranslations("Writer");
   const common = useTranslations("Common.actions");
@@ -293,6 +293,13 @@ export function WriterWorkspace({ status, conversations: initialList, conversati
               <Select size="xs" w={190} allowDeselect={false} aria-label={t("options.length")} value={options.length} disabled={running}
                 data={WRITER_LENGTHS.map((value) => ({ value, label: t(`options.lengths.${value}`) }))}
                 onChange={(value) => value && setOptions((current) => ({ ...current, length: value as WriterOptions["length"] }))} />
+              {editorialStyles.length > 0 && <Select size="xs" w={230} allowDeselect={false} aria-label={t("options.style")} title={t("options.styleHelp")}
+                value={chosenStyle(editorialStyles, options.styleId)} disabled={running} leftSection={<PenTool size={13} aria-hidden="true" />}
+                data={[
+                  ...editorialStyles.map((style) => ({ value: style.id, label: style.isDefault ? t("options.defaultStyle", { name: style.name }) : style.name })),
+                  { value: NO_STYLE, label: t("options.noStyle") },
+                ]}
+                onChange={(value) => value && setOptions((current) => ({ ...current, styleId: value }))} />}
               <Switch size="xs" label={t("options.image")} checked={options.image} disabled={running}
                 onChange={(event) => { const image = event.currentTarget.checked; setOptions((current) => ({ ...current, image })); }} />
               {brief.length > BRIEF_MAX * 0.8 && <Text size="xs" c="dimmed">{t("composer.count", { count: brief.length, max: BRIEF_MAX })}</Text>}

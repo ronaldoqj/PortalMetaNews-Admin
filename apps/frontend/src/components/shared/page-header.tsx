@@ -9,7 +9,7 @@ export function PageHeader({ title, description, actions, id }: { title: ReactNo
   return <Group justify="space-between" align="flex-start" gap="md">
     <Stack gap={4} miw={0} style={{ flex: "1 1 320px" }}>
       <Title order={2} id={id}>{title}</Title>
-      {description && <Text size="sm" c="dimmed" maw={760}>{description}</Text>}
+      {description && <Text size="sm" c="dimmed" maw={760} component={typeof description === "string" ? "p" : "div"}>{description}</Text>}
     </Stack>
     {actions && <Group gap="sm">{actions}</Group>}
   </Group>;

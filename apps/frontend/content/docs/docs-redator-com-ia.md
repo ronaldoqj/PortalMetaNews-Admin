@@ -12,6 +12,9 @@ Fica em **Painel → Redação → Redator com IA** (`/redator-ia`) e exige a pe
    - **Idioma** (PT ou EN): o idioma em que o texto é redigido primeiro; a outra versão vem da etapa de preparação.
    - **Tom**: neutro (notícia direta), explicativo, analítico ou leve.
    - **Tamanho**: curta (~250 palavras), média (~500) ou longa (~900).
+   - **Estilo editorial**: as instruções de estilo que a IA segue (cadastradas em *Configurações > Inteligência
+     artificial*). Vem marcado o estilo **padrão** da redação; o menu oferece os outros e *Sem estilo editorial*. A
+     escolha fica guardada na conversa; se o estilo for excluído depois, a conversa passa a seguir o padrão.
    - **Gerar imagem de capa**: liga ou desliga a ilustração.
 3. Envie (botão ou **Ctrl + Enter**). A resposta aparece em etapas: **Redigindo** (o texto surge ao vivo),
    **Preparando PT e EN** e **Criando a capa**. O botão de parar interrompe a redação; o que já foi escrito fica salvo.

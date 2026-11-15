@@ -15,7 +15,8 @@
   thumbnail of `width` in the rows, `title`, `aside` beside the title, `hidden` for rows only; any other column is a
   labelled detail). `useListingView(listing, fallback = "grid")` keeps the reader's choice per listing in the browser and
   returns `{ view, toggle }`: put `toggle` in the listing's header (`Section` actions or a `FilterBar`) and pass `view` to
-  `DataView`. `ResourceManager` does it by itself. A dense log may start as rows (`useListingView("audit", "list")`).
+  `DataView`. `ResourceManager` does it by itself (with `itemActions` for an item's own actions, such as "make default", and
+  `errors` for the dialog's refusals by code). A dense log may start as rows (`useListingView("audit", "list")`).
 - **List motion and style:** rows and cards enter one after the other (25 ms apart, the first eight), so switching views
   or pages animates; rows have a quiet uppercase header, a tinted hover with an accent bar and actions that come forward
   on hover; cards lift with a band in the theme's colours. A list that draws its own items (a picker's tiles) wraps them
@@ -32,4 +33,7 @@
 - **Navigation never waits in silence:** a `loading.tsx` in every folder with pages (`AdminPageSkeleton`, `SitePageSkeleton`),
   independent API calls awaited together. A server page answers a missing record with `<PageNotFound />`.
 - Every modal is the shared `Modal`; every destructive action asks through `useConfirmation`.
+- **Valid nesting, or hydration breaks.** Badges are inline (`span`, a theme default), so they fit inside a line of text;
+  the `description` of `Page`/`PageHeader`/`Section` is a paragraph when it is a string and a `div` when it is a node.
+  Never put a block (`div`, `Group`, `Stack`) inside a `Text`, which renders a `p`.
 - The panel's menu and breadcrumbs are data (`components/layout/area-navigation.ts`), filtered by the account's permissions.

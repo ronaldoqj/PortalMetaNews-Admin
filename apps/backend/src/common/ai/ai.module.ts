@@ -1,5 +1,6 @@
 import { Global, Module } from '@nestjs/common';
 import { GoogleGenAI } from '@google/genai';
+import { AiStylesService } from './ai-styles.service.js';
 import { AiService } from './ai.service.js';
 import { GEMINI_CLIENT_FACTORY, type GeminiClientFactory } from './gemini-provider.js';
 
@@ -8,8 +9,9 @@ import { GEMINI_CLIENT_FACTORY, type GeminiClientFactory } from './gemini-provid
 @Module({
   providers: [
     { provide: GEMINI_CLIENT_FACTORY, useValue: ((apiKey: string) => new GoogleGenAI({ apiKey })) satisfies GeminiClientFactory },
+    AiStylesService,
     AiService,
   ],
-  exports: [AiService],
+  exports: [AiService, AiStylesService],
 })
 export class AiModule {}

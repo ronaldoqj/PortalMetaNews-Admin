@@ -8,6 +8,7 @@ import { AiUnavailableException, type AiProvider, type AiUnavailableCode } from 
 import {
   DEFAULT_GEMINI_IMAGE_MODEL, DEFAULT_GEMINI_TEXT_MODEL, GEMINI_CLIENT_FACTORY, GeminiProvider, type GeminiClientFactory,
 } from './gemini-provider.js';
+import { AiStylesService } from './ai-styles.service.js';
 import { LocalProvider } from './local-provider.js';
 
 /** Gemini when a key exists and the local provider otherwise (`auto`), or one of them, or off. */
@@ -18,7 +19,7 @@ const OWNER = 'site';
 
 interface SettingsRow {
   site_name: string; ai_provider: AiProviderSetting; ai_api_key_encrypted: string | null; ai_text_model: string | null; ai_image_model: string | null;
-  ai_guidelines: string; ai_images: boolean;
+  ai_images: boolean;
 }
 
 /** What answers now, or why nothing does. Never carries a key. */
@@ -38,13 +39,13 @@ export interface AiSettingsUpdate {
   apiKey?: string;
   textModel?: string | null;
   imageModel?: string | null;
-  guidelines?: string;
   images?: boolean;
 }
 
 export interface AiContext {
   provider: AiProvider;
   site: string;
+  /** The default editorial style's instructions (`AiStylesService`), or none. */
   guidelines: string;
   /** Whether covers may be generated (the panel's switch and the provider's image model). */
   images: boolean;
@@ -63,14 +64,18 @@ export class AiService {
     @Inject(ConfigService) private readonly config: ConfigService,
     @Inject(SecretCipher) private readonly cipher: SecretCipher,
     @Inject(GEMINI_CLIENT_FACTORY) private readonly createClient: GeminiClientFactory,
+    @Inject(AiStylesService) private readonly styles: AiStylesService,
   ) {}
 
-  /** The provider and the newsroom's guidance; 503 with the reason when no provider answers. */
+  /** The provider and the newsroom's default style; 503 with the reason when no provider answers. */
   async context(): Promise<AiContext> {
     const row = await this.row();
     const resolved = this.resolve(row);
     if (!resolved.provider) throw new AiUnavailableException(resolved.code);
-    return { provider: resolved.provider, site: row.site_name, guidelines: row.ai_guidelines, images: row.ai_images && resolved.provider.imageModel !== null };
+    return {
+      provider: resolved.provider, site: row.site_name, guidelines: await this.styles.defaultInstructions(),
+      images: row.ai_images && resolved.provider.imageModel !== null,
+    };
   }
 
   /** What any account of the panel may know: whether the AI answers, and with what kind of provider. */
@@ -87,18 +92,18 @@ export class AiService {
   async updateSettings(actor: Actor, input: AiSettingsUpdate) {
     requirePermission(actor, 'settings:manage');
     return this.database.transaction(async (manager) => {
-      const [current]: SettingsRow[] = await manager.query('SELECT ai_provider, ai_api_key_encrypted, ai_text_model, ai_image_model, ai_guidelines, ai_images FROM public.settings WHERE singleton FOR UPDATE');
+      const [current]: SettingsRow[] = await manager.query('SELECT ai_provider, ai_api_key_encrypted, ai_text_model, ai_image_model, ai_images FROM public.settings WHERE singleton FOR UPDATE');
       const key = this.nextKey(input.apiKey, current.ai_api_key_encrypted);
       if (input.provider === 'gemini' && !key && !this.environmentKey) {
         throw new BadRequestException({ statusCode: 400, message: 'An API key is required', code: 'ai_key_required' });
       }
       await manager.query(`UPDATE public.settings SET ai_provider = $1, ai_api_key_encrypted = $2, ai_text_model = $3, ai_image_model = $4,
-        ai_guidelines = $5, ai_images = $6, updated_at = now(), updated_by = $7 WHERE singleton`,
+        ai_images = $5, updated_at = now(), updated_by = $6 WHERE singleton`,
       [input.provider, key, this.model(input.textModel, current.ai_text_model), this.model(input.imageModel, current.ai_image_model),
-        input.guidelines === undefined ? current.ai_guidelines : input.guidelines.trim().slice(0, 4000), input.images ?? current.ai_images, actor.userId]);
-      // The decision only: never the key, a model name or the guidance text.
+        input.images ?? current.ai_images, actor.userId]);
+      // The decision only: never the key or a model name.
       await audit(manager, { actorId: actor.userId, action: 'settings.ai_updated', metadata: { provider: input.provider, ownKey: key !== null } });
-      const [row]: SettingsRow[] = await manager.query(`SELECT site_name, ai_provider, ai_api_key_encrypted, ai_text_model, ai_image_model, ai_guidelines, ai_images
+      const [row]: SettingsRow[] = await manager.query(`SELECT site_name, ai_provider, ai_api_key_encrypted, ai_text_model, ai_image_model, ai_images
         FROM public.settings WHERE singleton`);
       return this.view(row);
     });
@@ -126,7 +131,7 @@ export class AiService {
   }
 
   private async row(): Promise<SettingsRow> {
-    const [row]: SettingsRow[] = await this.database.query(`SELECT site_name, ai_provider, ai_api_key_encrypted, ai_text_model, ai_image_model, ai_guidelines, ai_images
+    const [row]: SettingsRow[] = await this.database.query(`SELECT site_name, ai_provider, ai_api_key_encrypted, ai_text_model, ai_image_model, ai_images
       FROM public.settings WHERE singleton`);
     return row;
   }
@@ -184,7 +189,7 @@ export class AiService {
   private view(row: SettingsRow) {
     return {
       provider: row.ai_provider, apiKeySet: row.ai_api_key_encrypted !== null, environmentKeySet: this.environmentKey !== undefined,
-      textModel: row.ai_text_model, imageModel: row.ai_image_model, guidelines: row.ai_guidelines, images: row.ai_images,
+      textModel: row.ai_text_model, imageModel: row.ai_image_model, images: row.ai_images,
       defaults: { textModel: DEFAULT_GEMINI_TEXT_MODEL, imageModel: DEFAULT_GEMINI_IMAGE_MODEL },
       effective: this.effective(this.resolve(row), row),
     };

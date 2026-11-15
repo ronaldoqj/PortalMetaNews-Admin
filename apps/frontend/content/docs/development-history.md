@@ -122,3 +122,14 @@ criptografia — como referência.
   começou no disco. Ficam no projeto só a identidade visual padrão (`public/brand`) e a documentação.
 - Desenvolvimento migrado: `STORAGE_DRIVER=s3`, arquivos copiados com `storage:copy-local`, seed refeito no bucket e a
   pasta local `apps/backend/storage` removida.
+
+## 2026-11 — Vários estilos editoriais para a IA
+
+- O "Estilo editorial" único (`settings.ai_guidelines`) virou uma lista de estilos com nome e instruções (`ai_styles`),
+  com no máximo um padrão. A migração `1900000000002-ai-styles` leva o texto existente para o primeiro estilo, padrão.
+- Em *Configurações > Inteligência artificial*: criar, editar, excluir e *Tornar padrão*. O padrão vale para a tradução
+  e já vem escolhido em cada nova conversa do redator com IA, que ganhou o menu **Estilo editorial** (outros estilos ou
+  *Sem estilo editorial*); a escolha fica guardada na conversa.
+- O seed cria três estilos de exemplo (*Padrão da redação*, *Explicativo para iniciantes*, *Análise técnica*).
+- Correções no caminho: selos (`Badge`) passam a ser `span` e as descrições ricas de página e seção, `div`, o que
+  acabou com o erro de hidratação "`<div>` dentro de `<p>`"; um detalhe sozinho ocupa o cartão inteiro no `DataView`.

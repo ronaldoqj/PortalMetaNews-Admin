@@ -2,7 +2,11 @@
 
 import { panelApi } from "../admin/api-call";
 import { INVALID_INPUT, type ApiResult } from "../admin/api-result";
-import { aiSettingsSchema, aiTestSchema, emailSettingsSchema, emailTestSchema, saveAiSettingsSchema, saveEmailSettingsSchema, type AiTest, type EmailTest } from "./contracts";
+import { removeResource, saveResource } from "../admin/resource";
+import {
+  aiSettingsSchema, aiStyleInputSchema, aiStyleSchema, aiTestSchema, emailSettingsSchema, emailTestSchema, saveAiSettingsSchema, saveEmailSettingsSchema,
+  type AiStyle, type AiTest, type EmailTest,
+} from "./contracts";
 
 const SLOW = 60_000;
 
@@ -11,6 +15,19 @@ export async function saveAiSettings(input: unknown): Promise<ApiResult> {
   if (!parsed.success) return INVALID_INPUT;
   const result = await panelApi("panel/settings/ai", { method: "PUT", body: parsed.data, permission: "settings:manage", schema: aiSettingsSchema, revalidate: true });
   return result.ok ? { ok: true, data: null } : result;
+}
+
+export async function saveAiStyle(id: string | null, values: unknown): Promise<ApiResult<AiStyle>> {
+  return saveResource("panel/settings/ai/styles", id, values, aiStyleInputSchema, { permission: "settings:manage", schema: aiStyleSchema });
+}
+
+/** Makes a style the default: the one the AI uses wherever no one chooses another. */
+export async function makeAiStyleDefault(id: string): Promise<ApiResult<AiStyle>> {
+  return saveResource("panel/settings/ai/styles", id, { isDefault: true }, aiStyleInputSchema.pick({ isDefault: true }), { permission: "settings:manage", schema: aiStyleSchema });
+}
+
+export async function removeAiStyle(id: string): Promise<ApiResult> {
+  return removeResource("panel/settings/ai/styles", id, "settings:manage");
 }
 
 /** A one-word translation through the saved configuration: proves the key and the model. */

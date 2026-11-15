@@ -97,8 +97,12 @@ Define quem responde à tradução automática, ao redator com IA e à geração
 - **Modelos**: o de texto (padrão `gemini-2.5-flash`) e o de imagem (padrão `gemini-2.5-flash-image`; também aceita
   modelos `imagen-*`). Em branco, valem os padrões.
 - **Gerar imagens**: liga ou desliga a geração de capas pelo redator e pela biblioteca de mídia.
-- **Manual de estilo da redação**: até 4.000 caracteres que vão em **todo** pedido à IA — tom, grafias, termos
-  preferidos, o que evitar.
+- **Estilos editoriais**: as instruções que a IA segue para escrever como a redação — tom, público, grafias, termos
+  preferidos, o que evitar (até 4.000 caracteres cada, até 20 estilos). Crie quantos quiser (por exemplo *Padrão da
+  redação*, *Explicativo para iniciantes*, *Análise técnica*) e marque um como **padrão** pelo menu do estilo
+  (*Tornar padrão*) ou ao editá-lo. O padrão vale para a tradução do construtor e já vem escolhido em cada nova conversa
+  do redator com IA, onde dá para trocar por outro. O primeiro estilo criado vira o padrão; excluir o padrão deixa a
+  redação sem estilo até você marcar outro.
 - **Testar** pede ao provedor a tradução de uma palavra e diz se a configuração funciona. O quadro *Em uso agora* mostra
   o provedor efetivo, os modelos e, quando a IA não responde, o motivo.
 

@@ -1,20 +1,21 @@
 "use client";
 
 import { Group, Stack, Text } from "@mantine/core";
-import { Bot, KeyRound, PenTool, PlugZap } from "lucide-react";
+import { Bot, KeyRound, PlugZap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { AutoForm, Button, DetailList, Notice, Section, StatusBadge, useApiAction, type FormField } from "../ui";
 import { saveAiSettings, testAi } from "./actions";
-import type { AiSettings, AiTest } from "./contracts";
+import { AiStylesManager } from "./ai-styles";
+import type { AiSettings, AiStyle, AiTest } from "./contracts";
 
-type Values = { provider: string; apiKey: string; removeKey: boolean; textModel: string; imageModel: string; images: boolean; guidelines: string };
+type Values = { provider: string; apiKey: string; removeKey: boolean; textModel: string; imageModel: string; images: boolean };
 
 /**
  * The model provider of the portal: Gemini with a key (stored encrypted, write-only), the local provider (offline
- * simulation, development only) or off. The style guide goes into every prompt: translation, writing, images.
+ * simulation, development only) or off, and the newsroom's editorial styles, which go into the prompts.
  */
-export function AiSettingsPanel({ settings }: { settings: AiSettings }) {
+export function AiSettingsPanel({ settings, styles }: { settings: AiSettings; styles: readonly AiStyle[] }) {
   const t = useTranslations("AiSettings");
   const [test, setTest] = useState<AiTest>();
   const runTest = useApiAction(testAi, { quiet: true });
@@ -31,7 +32,6 @@ export function AiSettingsPanel({ settings }: { settings: AiSettings }) {
     { name: "imageModel", type: "text", label: t("imageModel"), placeholder: settings.defaults.imageModel, description: t("imageModelHelp"), maxLength: 100,
       when: (values) => values.provider === "auto" || values.provider === "gemini" },
     { name: "images", type: "switch", label: t("images"), description: t("imagesHelp") },
-    { name: "guidelines", type: "textarea", label: t("guidelines"), description: t("guidelinesHelp"), maxLength: 4000, rows: 8, placeholder: t("guidelinesPlaceholder") },
   ];
   return <Stack gap="lg">
     <Section title={t("current")} icon={Bot} actions={<Button size="xs" variant="light" leftSection={<PlugZap size={14} aria-hidden="true" />} loading={runTest.pending}
@@ -53,15 +53,15 @@ export function AiSettingsPanel({ settings }: { settings: AiSettings }) {
     <AutoForm<Values> layout="page" fields={fields} success={t("saved")}
       sections={[
         { title: t("providerSection"), description: t("providerSectionHelp"), icon: KeyRound, fields: ["provider", "apiKey", "removeKey", "textModel", "imageModel", "images"] },
-        { title: t("guidelinesSection"), description: t("guidelinesSectionHelp"), icon: PenTool, fields: ["guidelines"] },
       ]}
-      initial={{ provider: settings.provider, apiKey: "", removeKey: false, textModel: settings.textModel ?? "", imageModel: settings.imageModel ?? "", images: settings.images, guidelines: settings.guidelines }}
+      initial={{ provider: settings.provider, apiKey: "", removeKey: false, textModel: settings.textModel ?? "", imageModel: settings.imageModel ?? "", images: settings.images }}
       errors={{ ai_key_required: t("errors.keyRequired"), ai_key_invalid: t("errors.keyInvalid"), ai_model_invalid: t("errors.modelInvalid"), invalidInput: t("errors.invalidInput") }}
       onSubmit={(values) => saveAiSettings({
         provider: values.provider, apiKey: values.removeKey ? "" : values.apiKey.trim() || undefined,
-        textModel: values.textModel.trim() || null, imageModel: values.imageModel.trim() || null, guidelines: values.guidelines, images: values.images,
+        textModel: values.textModel.trim() || null, imageModel: values.imageModel.trim() || null, images: values.images,
       })}>
       <Group><Text size="xs" c="dimmed">{t("privacyNote")}</Text></Group>
     </AutoForm>
+    <AiStylesManager styles={styles} />
   </Stack>;
 }

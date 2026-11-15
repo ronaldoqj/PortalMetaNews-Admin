@@ -35,7 +35,8 @@ readers' messages, audit trail, legal texts and documentation. Guide: [Administr
 
 - AI (`panel/settings/ai`, `settings:manage`): provider `auto | gemini | local | disabled`; the key is write-only
   (omitted keeps it, `""` removes it), encrypted by `SecretCipher` (`ai-api-key`, owner `site`); text and image model
-  names are validated against `MODEL`; `guidelines` (≤ 4,000) are appended to every prompt (`common/ai/prompts.ts`).
+  names are validated against `MODEL`. The editorial styles appended to the prompts are their own collection
+  (`panel/settings/ai/styles`, rules in [AI writer](ai-writer.md)), listed below the provider form.
   `POST panel/settings/ai/test` translates one word through the saved configuration. `GET panel/settings/ai/status`
   (any account) tells the builder whether translation is available. In production `auto` without a key is unavailable.
 - E-mail (`panel/settings/email`): off by default; the panel relay (password write-only, `smtp-password`) wins over the

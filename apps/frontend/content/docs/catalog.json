@@ -16,7 +16,7 @@
           "title": "Diretrizes do projeto",
           "summary": "O arquivo de contexto enxuto dos assistentes: invariantes do produto, regras gerais e uma linha por área.",
           "source": "CLAUDE.md",
-          "words": 1258
+          "words": 1261
         },
         {
           "slug": "readme-dev-ports",
@@ -51,7 +51,7 @@
           "title": "Histórico de desenvolvimento",
           "summary": "O que foi construído, em ordem, e as decisões tomadas.",
           "source": "DEVELOPMENT-HISTORY.md",
-          "words": 1658
+          "words": 1804
         },
         {
           "slug": "pendencias",
@@ -78,7 +78,7 @@
           "title": "Redator com IA",
           "summary": "Criar notícias com a IA: pauta, opções, texto e imagem gerados e o rascunho pronto no construtor.",
           "source": "docs/redator-com-ia.md",
-          "words": 667
+          "words": 719
         },
         {
           "slug": "docs-temas-e-identidade-visual",
@@ -106,7 +106,7 @@
           "title": "Administração do painel",
           "summary": "Equipe e perfis, permissões, meu perfil, configurações, mensagens, auditoria e textos legais.",
           "source": "docs/painel-administracao.md",
-          "words": 1705
+          "words": 1783
         },
         {
           "slug": "docs-documentacao-no-painel",
@@ -147,7 +147,7 @@
           "title": "Convenções do frontend",
           "summary": "Acesso à API, biblioteca de componentes, relays, tema e navegação.",
           "source": "docs/architecture/frontend-conventions.md",
-          "words": 501
+          "words": 575
         },
         {
           "slug": "docs-architecture-backend-conventions",
@@ -168,7 +168,7 @@
           "title": "Redator com IA (regras)",
           "summary": "Provedores, prompts, streaming, proposta estruturada, imagens e aplicação ao construtor.",
           "source": "docs/architecture/ai-writer.md",
-          "words": 394
+          "words": 523
         },
         {
           "slug": "docs-architecture-themes-and-branding",
@@ -189,14 +189,14 @@
           "title": "Administração do painel (regras)",
           "summary": "Contas, perfis, permissões, configurações, auditoria e documentação.",
           "source": "docs/architecture/panel-administration.md",
-          "words": 879
+          "words": 891
         },
         {
           "slug": "docs-architecture-api-routes",
           "title": "Rotas da API",
           "summary": "Referência gerada dos controladores: método, caminho e quem pode chamar.",
           "source": "docs/architecture/api-routes.md",
-          "words": 1118
+          "words": 1163
         }
       ]
     }

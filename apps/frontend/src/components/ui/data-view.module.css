@@ -98,6 +98,8 @@
   font-size: var(--mantine-font-size-sm);
 }
 .cardDetails > div { min-width: 0; }
+/* A lone detail (a description, instructions) takes the whole card instead of half of it. */
+.cardDetails > div:only-child { grid-column: 1 / -1; }
 .cardDetails dt { color: var(--app-muted); font-size: 11px; font-weight: 600; letter-spacing: 0.05em; text-transform: uppercase; }
 .cardDetails dd { margin: 2px 0 0; overflow-wrap: anywhere; }
 

@@ -52,6 +52,7 @@ A permissão indicada é a que o controlador exige; os serviços conferem de nov
 | POST | `/panel/ai-writer/messages/:id/apply` | ai:use | `modules/ai-writer/ai-writer.controller.ts` |
 | POST | `/panel/ai-writer/messages/:id/illustrate` | ai:use | `modules/ai-writer/ai-writer.controller.ts` |
 | GET | `/panel/ai-writer/status` | ai:use | `modules/ai-writer/ai-writer.controller.ts` |
+| GET | `/panel/ai-writer/styles` | ai:use | `modules/ai-writer/ai-writer.controller.ts` |
 | GET | `/panel/audit` | audit:read | `modules/team/team.controller.ts` |
 | GET | `/panel/badges` | conta do painel | `modules/dashboard/dashboard.controller.ts` |
 | GET | `/panel/categories` | conta do painel | `modules/newsroom/newsroom.controller.ts` |
@@ -91,6 +92,10 @@ A permissão indicada é a que o controlador exige; os serviços conferem de nov
 | GET | `/panel/settings/ai` | settings:manage | `modules/settings/settings.controller.ts` |
 | PUT | `/panel/settings/ai` | settings:manage | `modules/settings/settings.controller.ts` |
 | GET | `/panel/settings/ai/status` | conta do painel | `modules/settings/settings.controller.ts` |
+| GET | `/panel/settings/ai/styles` | settings:manage | `modules/settings/settings.controller.ts` |
+| POST | `/panel/settings/ai/styles` | settings:manage | `modules/settings/settings.controller.ts` |
+| DELETE | `/panel/settings/ai/styles/:id` | settings:manage | `modules/settings/settings.controller.ts` |
+| PATCH | `/panel/settings/ai/styles/:id` | settings:manage | `modules/settings/settings.controller.ts` |
 | POST | `/panel/settings/ai/test` | settings:manage | `modules/settings/settings.controller.ts` |
 | GET | `/panel/settings/email` | settings:manage | `modules/settings/settings.controller.ts` |
 | PUT | `/panel/settings/email` | settings:manage | `modules/settings/settings.controller.ts` |
@@ -124,4 +129,4 @@ A permissão indicada é a que o controlador exige; os serviços conferem de nov
 | POST | `/panel/themes/:id/activate` | themes:manage | `modules/site/site.controller.ts` |
 | POST | `/panel/translate` | ai:use | `modules/newsroom/newsroom.controller.ts` |
 
-Total: 105 rotas.
+Total: 110 rotas.

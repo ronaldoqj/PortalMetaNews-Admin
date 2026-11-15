@@ -3,7 +3,8 @@ import type { TranslateInput } from './ai-provider.js';
 
 /**
  * Every instruction the portal gives a model, in one place, so the editorial voice is reviewed where it is defined.
- * The newsroom's own style guide (`settings.ai_guidelines`) is appended to each one.
+ * The newsroom's editorial style (`ai_styles`: the one chosen in the AI writer, the default elsewhere) is appended to
+ * each one.
  */
 
 export const LANGUAGE_NAMES: Record<ContentLocale, string> = { pt: 'Brazilian Portuguese', en: 'English' };

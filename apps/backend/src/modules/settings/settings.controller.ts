@@ -1,10 +1,11 @@
-import { Body, Controller, Get, HttpCode, Inject, Injectable, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpCode, Inject, Injectable, Param, ParseUUIDPipe, Patch, Post, Put } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { Transform } from 'class-transformer';
 import { IsBoolean, IsEmail, IsIn, IsInt, IsOptional, IsString, Matches, Max, MaxLength, Min, ValidateIf } from 'class-validator';
 import { DataSource } from 'typeorm';
 import { CurrentUser, RequirePermissions } from '../../common/access/access.controller.js';
 import { requirePermission, type Actor } from '../../common/access/permissions.js';
+import { AI_STYLE_LIMITS, AiStylesService } from '../../common/ai/ai-styles.service.js';
 import { AI_PROVIDERS, AiService, type AiProviderSetting } from '../../common/ai/ai.service.js';
 import { EmailSettingsService } from '../../common/mail/email-settings.service.js';
 import { StorageService } from '../../common/storage/storage.service.js';
@@ -19,8 +20,21 @@ export class AiSettingsDto {
   @IsOptional() @IsString() @MaxLength(256) apiKey?: string;
   @IsOptional() @ValidateIf(optional) @IsString() @Matches(MODEL) textModel?: string | null;
   @IsOptional() @ValidateIf(optional) @IsString() @Matches(MODEL) imageModel?: string | null;
-  @IsOptional() @IsString() @MaxLength(4000) guidelines?: string;
   @IsOptional() @IsBoolean() images?: boolean;
+}
+
+const trimmed = ({ value }: { value: unknown }) => (typeof value === 'string' ? value.trim() : value);
+
+export class CreateAiStyleDto {
+  @Transform(trimmed) @IsString() @MaxLength(AI_STYLE_LIMITS.name) name!: string;
+  @Transform(trimmed) @IsString() @MaxLength(AI_STYLE_LIMITS.instructions) instructions!: string;
+  @IsOptional() @IsBoolean() isDefault?: boolean;
+}
+
+export class UpdateAiStyleDto {
+  @IsOptional() @Transform(trimmed) @IsString() @MaxLength(AI_STYLE_LIMITS.name) name?: string;
+  @IsOptional() @Transform(trimmed) @IsString() @MaxLength(AI_STYLE_LIMITS.instructions) instructions?: string;
+  @IsOptional() @IsBoolean() isDefault?: boolean;
 }
 
 export class EmailSettingsDto {
@@ -62,6 +76,7 @@ export class StorageInfoService {
 export class SettingsController {
   constructor(
     @Inject(AiService) private readonly ai: AiService,
+    @Inject(AiStylesService) private readonly styles: AiStylesService,
     @Inject(EmailSettingsService) private readonly email: EmailSettingsService,
     @Inject(StorageInfoService) private readonly storage: StorageInfoService,
   ) {}
@@ -80,6 +95,28 @@ export class SettingsController {
   @Post('ai/test') @HttpCode(200) @RequirePermissions('settings:manage')
   testAi(@CurrentUser() actor: Actor) {
     return this.ai.test(actor);
+  }
+
+  /** The newsroom's editorial styles for the AI, the default first. */
+  @Get('ai/styles') @RequirePermissions('settings:manage')
+  aiStyles(@CurrentUser() actor: Actor) {
+    return this.styles.list(actor);
+  }
+
+  @Post('ai/styles') @RequirePermissions('settings:manage')
+  createAiStyle(@CurrentUser() actor: Actor, @Body() body: CreateAiStyleDto) {
+    return this.styles.create(actor, body);
+  }
+
+  /** Also marks the style as the default (`isDefault: true`), or leaves the newsroom without one (`false`). */
+  @Patch('ai/styles/:id') @RequirePermissions('settings:manage')
+  updateAiStyle(@CurrentUser() actor: Actor, @Param('id', ParseUUIDPipe) id: string, @Body() body: UpdateAiStyleDto) {
+    return this.styles.update(actor, id, body);
+  }
+
+  @Delete('ai/styles/:id') @HttpCode(204) @RequirePermissions('settings:manage')
+  removeAiStyle(@CurrentUser() actor: Actor, @Param('id', ParseUUIDPipe) id: string) {
+    return this.styles.remove(actor, id);
   }
 
   /** Whether the AI answers now: any account may know it, so the builder can offer translation. */
